@@ -50,6 +50,8 @@
     gap:10px;
     margin-bottom:16px;
   }
+
+ 
   .eyebrow::before{
     content:"";
     width:16px;height:1px;background:var(--accent);display:inline-block;
@@ -452,8 +454,8 @@
 
   /* ---------- INVESTOR (light) ---------- */
   .investor{padding:110px 0;}
-  .investor h2{font-size:clamp(30px,5.2vw,54px);font-weight:800;line-height:1.05;margin-bottom:26px;}
-  .investor p{color:var(--paper-dim);max-width:440px;margin-bottom:34px;font-size:15.5px;}
+  .investor h2{font-size:100px;font-weight:800;line-height:1.05;margin-bottom:50px; color:black}
+  .investor p{color:var(--paper-dim);max-width:440px;margin-bottom:50px;font-size:15.5px;}
 
   /* ---------- FOOTER ---------- */
   footer{background:#0a0a0b;border-top:1px solid var(--line);padding:64px 0 32px;}
