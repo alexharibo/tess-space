@@ -148,6 +148,10 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
       ctx.fill();
     }
 
+
+    // partners
+
+    
     // satellites + orbit rings
     sats.forEach(s=>{
       const ang = t*0.0002*s.speed*60 + s.offset;
@@ -168,7 +172,3 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   requestAnimationFrame(draw);
 })();
 
-/* mobile burger (scrolls to footer contact as simple affordance) */
-document.getElementById('burger').addEventListener('click', ()=>{
-  document.querySelector('nav.links').style.display = document.querySelector('nav.links').style.display==='flex' ? 'none':'flex';
-});

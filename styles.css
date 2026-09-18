@@ -441,21 +441,108 @@
   .ev-card p{font-size:14px;color:var(--ink-dim);margin:0;max-width:280px;}
 
   /* ---------- PARTNER CTA (photo replaced with schematic) ---------- */
-  .partner-cta{position:relative;min-height:520px;display:flex;align-items:center;background:
-      linear-gradient(100deg, rgba(5,5,6,0.94) 0%, rgba(5,5,6,0.55) 46%, rgba(20,14,8,0.25) 100%),
-      repeating-linear-gradient(115deg, #1b1c1e 0 2px, #141416 2px 90px);
-    overflow:hidden;
-    border-top:1px solid var(--line);
-  }
-  .partner-cta .rig{position:absolute;right:-4%;top:50%;transform:translateY(-50%);width:52%;opacity:.9;}
-  .partner-cta .content{position:relative;z-index:2;padding:70px 0;max-width:560px;}
-  .partner-cta h2{font-size:clamp(28px,4.6vw,46px);font-weight:800;line-height:1.05;margin-bottom:20px;}
-  .partner-cta p{color:var(--ink-dim);max-width:400px;margin-bottom:30px;font-size:15px;}
+.partner-cta {
+  position: relative;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  background: 
+    linear-gradient(100deg, rgba(5,5,6,0.96) 0%, rgba(5,5,6,0.7) 46%, rgba(20,14,8,0.25) 100%),
+    url('./assets/mcard.jpg') center/cover no-repeat; /* Udskift med dit eget baggrundsbillede */
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+}
+
+.partner-cta .wrap { 
+  width: 100%; 
+} 
+ 
+.partner-cta .rig { 
+  display: none; 
+} 
+ 
+.partner-cta .content { 
+  position: relative; 
+  z-index: 2; 
+  padding: 70px 0; 
+  max-width: 560px; 
+  margin-left: 0;
+  margin-right: auto; 
+  text-align: left; 
+} 
+/* Lad .wrap passe sig selv, så den flugter perfekt med resten af sidens indhold */
+.partner-cta .wrap {
+  width: 100%;
+}
+
+/* Fjern den gamle SVG-tegning helt */
+.partner-cta .rig {
+  display: none;
+}
+
+/* Sørg for at indholdet holder sig til venstre i .wrap-containeren */
+.partner-cta .content {
+  position: relative;
+  z-index: 2;
+  padding: 70px 0;
+  max-width: 560px;
+  margin-left: 0; /* Holder teksten i venstre side af wrap'en */
+  margin-right: auto;
+  text-align: left;
+}
+
+.partner-cta h2 {
+  font-size: clamp(28px, 4.6vw, 46px);
+  font-weight: 800;
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+
+.partner-cta p {
+  color: var(--ink-dim);
+  max-width: 400px;
+  margin-bottom: 30px;
+  font-size: 15px;
+}
 
   /* ---------- INVESTOR (light) ---------- */
   .investor{padding:110px 0;}
   .investor h2{font-size:100px;font-weight:800;line-height:1.05;margin-bottom:50px; color:black}
   .investor p{color:var(--paper-dim);max-width:440px;margin-bottom:50px;font-size:15.5px;}
+
+  .investor {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.investor-book {
+  position: absolute;
+  z-index: -1;
+
+  /* Placering */
+  right: 10%;
+  bottom: -5%;
+  
+  /* Størrelse */
+  width: 620px;
+  height: 820px;
+
+  background-image: url("assets/investorbook.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  /* Gør den diskret bag teksten */
+
+  pointer-events: none;
+}
+
+/* Sørger for at teksten altid ligger ovenpå */
+.investor .wrap {
+  position: relative;
+  z-index: 1;
+}
 
   /* ---------- FOOTER ---------- */
   footer{background:#0a0a0b;border-top:1px solid var(--line);padding:64px 0 32px;}
