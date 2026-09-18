@@ -169,6 +169,202 @@
     display:flex;flex-direction:column;justify-content:flex-end;
     padding:18px;
   }
+  /* ================================
+   MISSION CARDS — DESKTOP
+================================ */
+.scene {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.mcard {
+  position: relative;
+  min-height: 300px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,.08);
+
+  transition:
+    transform .45s cubic-bezier(.22,1,.36,1),
+    opacity .4s ease,
+    filter .4s ease,
+    border-color .4s ease,
+    box-shadow .4s ease;
+
+  z-index: 1;
+}
+
+/* Hover — kun enheder med mus */
+@media (hover: hover) and (pointer: fine) {
+
+  .mcard:hover {
+    transform: scale(1.045);
+    border-color: var(--accent);
+
+    box-shadow:
+      0 0 20px rgba(255,255,255,.08),
+      0 0 45px color-mix(
+        in srgb,
+        var(--accent) 25%,
+        transparent
+      );
+
+    z-index: 5;
+  }
+
+  .mission-grid:has(.mcard:hover) .mcard:not(:hover) {
+    opacity: .45;
+    filter: brightness(.65);
+    transform: scale(.97);
+  }
+
+  .mcard:hover .scene {
+    transform: scale(1.08);
+    filter: brightness(1.15);
+  }
+
+  .mcard:hover .badge {
+    transform: scale(1.15) rotate(8deg);
+    filter:
+      drop-shadow(0 0 5px var(--accent))
+      drop-shadow(0 0 12px var(--accent));
+  }
+
+  .mcard:hover .content {
+    transform: translateY(-5px);
+  }
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 768px) {
+
+  .mission-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .mcard {
+    min-height: 330px;
+    transform: scale(1);
+    opacity: 1;
+    filter: none;
+  }
+
+  /*
+    Aktivt kort på mobil.
+    JavaScript tilføjer .is-active
+    når brugeren trykker.
+  */
+
+  .mcard.is-active {
+    transform: scale(1.025);
+    border-color: var(--accent);
+
+    box-shadow:
+      0 0 20px rgba(255,255,255,.08),
+      0 0 45px color-mix(
+        in srgb,
+        var(--accent) 28%,
+        transparent
+      );
+
+    z-index: 5;
+  }
+
+  .mission-grid.has-active .mcard:not(.is-active) {
+    opacity: .45;
+    filter: brightness(.65);
+    transform: scale(.985);
+  }
+
+  .mcard.is-active .scene {
+    transform: scale(1.06);
+    filter: brightness(1.12);
+  }
+
+  .mcard.is-active .badge {
+    transform: scale(1.12) rotate(6deg);
+    filter:
+      drop-shadow(0 0 5px var(--accent))
+      drop-shadow(0 0 12px var(--accent));
+  }
+
+  .mcard.is-active .content {
+    transform: translateY(-4px);
+  }
+}
+
+
+/* ================================
+   TOUCH FEEDBACK
+================================ */
+
+.mcard .scene {
+  transition:
+    transform .6s cubic-bezier(.22,1,.36,1),
+    filter .5s ease;
+}
+
+.mcard .badge {
+  transition:
+    transform .4s ease,
+    filter .4s ease;
+}
+
+.mcard .content {
+  transition:
+    transform .4s ease;
+}
+
+
+/* Fjern tap-highlight på mobil */
+.mcard {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* Mindre mobil */
+@media (max-width: 480px) {
+
+  .mission-grid {
+    gap: 12px;
+  }
+
+  .mcard {
+    min-height: 300px;
+  }
+
+  .mcard.is-active {
+    transform: scale(1.015);
+  }
+}
+
+
+/* Respektér reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+  .mcard,
+  .mcard .scene,
+  .mcard .badge,
+  .mcard .content {
+    transition: none !important;
+  }
+}
   .mcard .scene{position:absolute;inset:0;z-index:0;}
   .mcard .scrim{position:absolute;inset:0;background:linear-gradient(180deg, rgba(5,5,6,0) 35%, rgba(5,5,6,0.92) 100%);z-index:1;}
   .mcard .content{position:relative;z-index:2;}
