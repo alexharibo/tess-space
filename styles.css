@@ -385,7 +385,7 @@
     position:relative;
     display:grid;
     grid-template-columns:minmax(0,1fr) minmax(0,1fr);
-    min-height:560px;
+    min-height:760px;
     align-items:center;
   }
   @media (max-width:860px){
@@ -393,7 +393,7 @@
   }
   .globe-canvas-holder{
     position:relative;
-    height:560px;
+    height:760px;
     margin-left:-8%;
   }
   @media (max-width:860px){

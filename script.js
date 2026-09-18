@@ -115,8 +115,7 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
     const g = ctx.createRadialGradient(cx,cy,R*0.96,cx,cy,R*1.28);
     g.addColorStop(0,'rgba(90,150,255,0.35)');
     g.addColorStop(1,'rgba(90,150,255,0)');
-    ctx.fillStyle=g;
-    ctx.beginPath(); ctx.arc(cx,cy,R*1.28,0,Math.PI*2); ctx.fill();
+
 
     // sphere body
     const bg = ctx.createRadialGradient(cx-R*0.35,cy-R*0.35,R*0.1,cx,cy,R*1.05);
