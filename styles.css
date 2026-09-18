@@ -180,6 +180,10 @@
   background-repeat: no-repeat;
 }
 
+.contentwrap {
+  height:120px;
+}
+
 
 .mission-grid {
   display: grid;
