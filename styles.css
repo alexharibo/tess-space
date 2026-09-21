@@ -244,6 +244,40 @@ nav.links a.active{color:var(--accent);}
   color:var(--ink-dim);
 }
 
+css
+/* ---------- DELIVERY MODEL ---------- */
+#delivery-model .section-head{margin-bottom:36px;}
+#delivery-model .section-head p{color:var(--ink-dim);font-size:14.5px;max-width:560px;margin-top:14px;}
+
+.delivery-compare{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  margin-bottom:26px;
+}
+@media (max-width:760px){
+  .delivery-compare{grid-template-columns:1fr;}
+}
+.delivery-panel{
+  background:#191a1c;
+  border:1px solid var(--line);
+  border-radius:3px;
+  padding:22px 24px 26px;
+}
+.delivery-tag{
+  font-family:var(--font-head);font-weight:700;font-size:10.5px;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--ink-faint);margin-bottom:16px;
+}
+.with-tess .delivery-tag{color:var(--accent);}
+.delivery-line{
+  font-family:var(--font-head);font-weight:700;font-size:16px;color:var(--ink);margin:0;
+}
+.delivery-line.strong{font-weight:800;}
+.delivery-line span{color:var(--accent);margin:0 2px;}
+.delivery-arrow{width:16px;height:16px;color:var(--ink-faint);margin:6px 0;}
+
+.delivery-note{font-size:13.5px;color:var(--ink-dim);margin-bottom:26px;}
+
 
 /* ---------- PRODUCT ARCHITECTURE ---------- */
 .arch-grid{
