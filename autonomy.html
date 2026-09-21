@@ -14,7 +14,7 @@
 
 <header id="siteHeader">
   <div class="wrap">
-    <a class="logo" href="#top">
+    <a class="logo" href="index.html">
     <img src="./assets/logo.png" alt="Tess Space Logo" width="200px" height="50px">
     </a>
 <nav class="links">
@@ -35,7 +35,7 @@
 <main id="top">
 
   <!-- HERO -->
-  <section class="hero">
+<section class="hero hero--photo-right">
     <!--
       COVER IMAGE:
       Put an image file named "hero-cover.jpg" next to this HTML file (same folder)
@@ -44,16 +44,16 @@
       Recommended: a wide photo, at least 1920×1080, JPG/WEBP, not too busy on the left
       third of the frame (that's where the headline text sits).
     -->
-    <div class="hero-bg">
-      <img src="assets/hero-cover.jpg" alt="Hero Banner" onerror="this.style.display='none'">
+    <div class="hero-bg" id="core">
+      <img src="assets/aicore.png" alt="Hero Banner" onerror="this.style.display='none'">
     </div>
     <div class="hero-scrim"></div>
     <div class="hero-noise"></div>
     <div class="wrap">
       <div class="hero-copy reveal">
         <div class="eyebrow">Defence-First Ground Autonomy</div>
-        <h1>Mission-ready<br><span class="accent">autonomous</span><br>UGV platform</h1>
-        <p class="lede">Ground autonomy for demanding environments. Tess AI GNC adds perception, localization, navigation and control to nearly any ground platform.</p>
+        <h1>AI<br><span class="accent">GNC.</span></h1>
+        <p class="lede">Perception, localization, navigation and control for compatible ground platforms.</p>
         <div class="btn-row">
           <a class="btn btn-solid" href="#footer">Request Brief</a>
           <a class="btn btn-outline" href="#footer">Request Demo</a>
@@ -62,6 +62,69 @@
     </div>
   </section>
 
+  <!-- AI GNC STACK -->
+<section class="dark section-pad" id="gnc-stack">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">The AI GNC Stack</div>
+      <h2>From sensing to action.</h2>
+    </div>
+
+    <div class="gnc-grid">
+      <div class="gnc-card">
+        <div class="gnc-media">
+          <img src="assets/perception.jpg" alt="Perception" onerror="this.style.display='none'">
+        </div>
+        <h4>Perception</h4>
+        <p>Interpret the surrounding environment.</p>
+      </div>
+
+      <div class="gnc-card">
+        <div class="gnc-media">
+          <img src="assets/localization.jpg" alt="Localization" onerror="this.style.display='none'">
+        </div>
+        <h4>Localization</h4>
+        <p>Estimate the platform's position.</p>
+      </div>
+
+      <div class="gnc-card">
+        <div class="gnc-media">
+          <img src="assets/navigation.jpg" alt="Navigation" onerror="this.style.display='none'">
+        </div>
+        <h4>Navigation</h4>
+        <p>Plan movement through the operating environment.</p>
+      </div>
+
+      <div class="gnc-card">
+        <div class="gnc-media">
+          <img src="assets/control.jpg" alt="Control" onerror="this.style.display='none'">
+        </div>
+        <h4>Control</h4>
+        <p>Translate navigation into vehicle commands.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- INVESTOR -->
+<section class="light investor" id="investor">
+  <div class="investor-book" aria-hidden="true"></div>
+
+  <div class="wrap">
+    <div class="eyebrow">Investor Pathway</div>
+    <h2>Scale the<br>autonomy layer.</h2>
+    <p>
+      Explore the technology, market opportunity and evidence behind Tess Space.
+      Cross-platform scale remains a strategic inflection until supported by approved proof.
+    </p>
+
+    <div class="btn-row">
+      <a class="btn btn-solid" href="#footer">Explore The Platform</a>
+      <a class="btn btn-outline-dark" href="#footer">Schedule A Briefing</a>
+    </div>
+  </div>
+</section>
+
 
 
   <!-- INVESTOR -->
@@ -69,7 +132,7 @@
   <div class="investor-book" aria-hidden="true"></div>
 
   <div class="wrap">
-    <div class="eyebrow">06 / Investor Pathway</div>
+    <div class="eyebrow">Investor Pathway</div>
     <h2>Scale the<br>autonomy layer.</h2>
     <p>
       Explore the technology, market opportunity and evidence behind Tess Space.

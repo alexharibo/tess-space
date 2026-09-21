@@ -147,6 +147,25 @@ nav.links a.active{color:var(--accent);}
 }
 
   /* ---------- HERO ---------- */
+/* Billedet fylder højre ~60% og toner ud mod teksten */
+.hero--photo-right .hero-bg{
+  inset:0 0 0 auto;
+  width:60%;
+}
+.hero--photo-right .hero-bg img{
+  -webkit-mask-image:linear-gradient(90deg, transparent 0%, #000 45%);
+          mask-image:linear-gradient(90deg, transparent 0%, #000 45%);
+}
+/* Fjern den tunge venstre-scrim, behold kun bundtonen */
+.hero--photo-right .hero-scrim{
+  background:linear-gradient(0deg, rgba(6,6,7,0.55) 0%, rgba(6,6,7,0) 40%);
+}
+
+@media (max-width:900px){
+  .hero--photo-right .hero-bg{ inset:0; width:100%; opacity:.4; }
+  .hero--photo-right .hero-bg img{ -webkit-mask-image:none; mask-image:none; }
+}
+
   .hero{
     position:relative;
     min-height:100svh;
@@ -186,6 +205,44 @@ nav.links a.active{color:var(--accent);}
   .section-head{max-width:640px;margin-bottom:48px;}
   .section-head h2{font-size:clamp(24px,3.4vw,36px);font-weight:800;line-height:1.12;}
   .light .section-head h2{color:var(--paper-ink);}
+
+  /* ---------- GNC STACK (image cards) ---------- */
+.gnc-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+}
+@media (max-width:760px){
+  .gnc-grid{grid-template-columns:1fr;}
+}
+.gnc-card{background:var(--bg-panel);padding-bottom:26px;}
+.gnc-media{
+  aspect-ratio:16/10;
+  overflow:hidden;
+  position:relative;
+  background:linear-gradient(160deg,#232427,#0c0d10 70%);
+}
+.gnc-media img{
+  width:100%;height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .5s ease;
+}
+.gnc-card:hover .gnc-media img{transform:scale(1.04);}
+.gnc-card h4{
+  margin:22px 26px 8px;
+  font-family:var(--font-head);
+  font-size:17px;
+  font-weight:700;
+  letter-spacing:-0.01em;
+}
+.gnc-card p{
+  margin:0 26px;
+  font-size:13.5px;
+  color:var(--ink-dim);
+}
 
   /* contour texture */
   .contours{position:absolute;inset:0;opacity:.35;pointer-events:none;}
