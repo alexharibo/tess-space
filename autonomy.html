@@ -115,81 +115,82 @@
   </div>
 </section>
 
-<section class="darker section-pad" id="architecture">
+ <section class="dark section-pad" id="product-architecture-visual">
   <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">04 / How It Fits Together</div>
-      <h2>Our product architecture</h2>
-    </div>
+    <div class="globe-copy reveal">
+      <div class="eyebrow">Our product architecture</div>
 
-    <div class="arch-grid">
-      <div class="arch-card">
-        <div class="arch-tag">01 / The Intelligence</div>
-        <h4>AI GNC Core</h4>
-        <ul>
-          <li>Perception</li>
-          <li>Localization</li>
-          <li>Navigation</li>
-          <li>Control</li>
-        </ul>
-      </div>
+    <svg class="contours" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" fill="none">
+      <g stroke="rgba(255,255,255,0.18)" stroke-width="1">
+        <path d="M-50,120 C 200,40 350,220 600,140 S 1000,60 1250,160"/>
+        <path d="M-50,220 C 220,120 380,320 620,240 S 980,160 1250,260"/>
+        <path d="M-50,320 C 240,200 400,420 640,340 S 960,260 1250,360"/>
+        <path d="M-50,420 C 260,300 420,520 660,440 S 940,360 1250,460"/>
+        <path d="M-50,520 C 280,400 440,600 680,540 S 920,460 1250,560"/>
+      </g>
+    </svg>
+      
+    <div class="platform-flow">
 
-      <div class="arch-arrow" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M3 12h18M14 5l7 7-7 7" stroke="currentColor" stroke-width="1.8"/></svg>
-      </div>
-
-      <div class="arch-card">
-        <div class="arch-tag">02 / The Delivery Model</div>
-        <h4>Autonomy Retrofit</h4>
-        <ul>
-          <li>Cameras / sensors</li>
-          <li>Vehicle adapter layer</li>
-          <li>Command interface</li>
-          <li>Configuration</li>
-        </ul>
-      </div>
-
-      <div class="arch-arrow" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M3 12h18M14 5l7 7-7 7" stroke="currentColor" stroke-width="1.8"/></svg>
-      </div>
-
-      <div class="arch-card">
-        <div class="arch-tag">03 / Existing UGV</div>
-        <h4>Vehicle / Platform</h4>
-        <ul>
-          <li>Low-level controls remain</li>
-          <li>Drivetrain remains</li>
-          <li>Controller remains</li>
-        </ul>
-      </div>
-
-      <div class="arch-arrow" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M3 12h18M14 5l7 7-7 7" stroke="currentColor" stroke-width="1.8"/></svg>
-      </div>
-
-      <div class="arch-card">
-        <div class="arch-tag">04 / Operational Value</div>
-        <h4>Mission</h4>
-        <ul>
-          <li>ISR</li>
-          <li>Logistics</li>
-          <li>Follow</li>
-          <li>Drone deployment</li>
-        </ul>
-      </div>
-    </div>
-
-    <p class="arch-statement">One autonomy core. Multiple platforms. Multiple missions.</p>
-
-    <div class="arch-cta">
-      <div class="arch-cta-left">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M6 4l14 8-14 8V4Z" fill="var(--accent)"/></svg>
-        <div>
-          <h4>Discuss your platform</h4>
-          <p>Explore AI GNC for your ground platform.</p>
+      <div class="platform-step">
+        <div class="step-media">
+          <img src="assets/aicore.png" alt="AI GNC Core">
         </div>
+        <h4><span class="step-num"></span> AI GNC Core</h4>
+        <div class="step-sub">The Intelligence</div>
+        <ul class="step-list">
+          <li><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="currentColor" stroke-width="1.4"/><path d="M6.5 10.2l2.3 2.3L14 7.8" stroke="currentColor" stroke-width="1.6"/></svg>Perception &amp; sensor fusion</li>
+          <li><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="currentColor" stroke-width="1.4"/><path d="M6.5 10.2l2.3 2.3L14 7.8" stroke="currentColor" stroke-width="1.6"/></svg>Localization (GNSS-denied)</li>
+          <li><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="currentColor" stroke-width="1.4"/><path d="M6.5 10.2l2.3 2.3L14 7.8" stroke="currentColor" stroke-width="1.6"/></svg>Path planning &amp; navigation</li>
+          <li><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="currentColor" stroke-width="1.4"/><path d="M6.5 10.2l2.3 2.3L14 7.8" stroke="currentColor" stroke-width="1.6"/></svg>Control &amp; system management</li>
+        </ul>
       </div>
-      <a class="btn btn-solid" href="#footer">Discuss Your Platform <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg></a>
+
+      <div class="platform-arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M2 12h18M14 5l7 7-7 7" stroke="currentColor" stroke-width="1.8"/></svg></div>
+
+      <div class="platform-step">
+        <div class="step-media">
+          <img src="assets/ugv.png" alt="Tess UGV">
+        </div>
+        <h4><span class="step-num"></span> Tess UGV</h4>
+        <div class="step-sub">Proof Platform</div>
+        <ul class="step-list">
+          <li><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="currentColor" stroke-width="1.4"/><path d="M6.5 10.2l2.3 2.3L14 7.8" stroke="currentColor" stroke-width="1.6"/></svg>High mobility &amp; endurance</li>
+          <li><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="currentColor" stroke-width="1.4"/><path d="M6.5 10.2l2.3 2.3L14 7.8" stroke="currentColor" stroke-width="1.6"/></svg>Sensor &amp; payload integration</li>
+          <li><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="currentColor" stroke-width="1.4"/><path d="M6.5 10.2l2.3 2.3L14 7.8" stroke="currentColor" stroke-width="1.6"/></svg>Field tested &amp; mission proven</li>
+        </ul>
+      </div>
+
+      <div class="platform-arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M2 12h18M14 5l7 7-7 7" stroke="currentColor" stroke-width="1.8"/></svg></div>
+
+      <div class="platform-step">
+        <div class="step-media">
+          <img src="assets/controller.png" alt="Mission Software">
+        </div>
+        <h4><span class="step-num"></span> Mission Software</h4>
+        <div class="step-sub">Operator Layer</div>
+        <ul class="step-list">
+          <li><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="currentColor" stroke-width="1.4"/><path d="M6.5 10.2l2.3 2.3L14 7.8" stroke="currentColor" stroke-width="1.6"/></svg>Mission planning</li>
+          <li><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="currentColor" stroke-width="1.4"/><path d="M6.5 10.2l2.3 2.3L14 7.8" stroke="currentColor" stroke-width="1.6"/></svg>Monitoring &amp; control</li>
+          <li><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="currentColor" stroke-width="1.4"/><path d="M6.5 10.2l2.3 2.3L14 7.8" stroke="currentColor" stroke-width="1.6"/></svg>Data, logs &amp; analytics</li>
+        </ul>
+      </div>
+
+      <div class="platform-arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M2 12h18M14 5l7 7-7 7" stroke="currentColor" stroke-width="1.8"/></svg></div>
+
+      <div class="platform-step">
+        <div class="step-media">
+          <img src="assets/yourplatform.png" alt="Your Platform">
+        </div>
+        <h4><span class="step-num"></span> Your Platform</h4>
+        <div class="step-sub">Future Integration</div>
+        <ul class="step-list">
+          <li><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="currentColor" stroke-width="1.4"/><path d="M6.5 10.2l2.3 2.3L14 7.8" stroke="currentColor" stroke-width="1.6"/></svg>Rapid integration</li>
+          <li><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="currentColor" stroke-width="1.4"/><path d="M6.5 10.2l2.3 2.3L14 7.8" stroke="currentColor" stroke-width="1.6"/></svg>Standard interfaces</li>
+          <li><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="currentColor" stroke-width="1.4"/><path d="M6.5 10.2l2.3 2.3L14 7.8" stroke="currentColor" stroke-width="1.6"/></svg>Works with your fleet</li>
+        </ul>
+      </div>
+
     </div>
   </div>
 </section>
