@@ -149,7 +149,6 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
     }
 
 
-    // partners
 
     
     // satellites + orbit rings

@@ -885,6 +885,8 @@ css
 .intro-copy h2{font-size:clamp(20px,2.4vw,28px);font-weight:800;line-height:1.15;}
 .intro-desc p{font-size:14px;color:var(--ink-dim);margin:0 0 16px;}
 
+
+
 /* ---------- SECTIONS 2 & 4: centered product media ---------- */
 .centered-media{
   max-width:340px;margin:32px auto 28px;
