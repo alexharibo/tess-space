@@ -859,7 +859,7 @@ css
 
   /* ---------- INVESTOR (light) ---------- */
   .investor{padding:110px 0;}
-  .investor h2{font-size:100px;font-weight:800;line-height:1.05;margin-bottom:50px; color:black}
+  .investor h2{font-size:75px;font-weight:800;line-height:1.05;margin-bottom:50px; color:black}
   .investor p{color:var(--paper-dim);max-width:440px;margin-bottom:50px;font-size:15.5px;}
 
   .investor {
