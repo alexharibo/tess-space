@@ -857,6 +857,76 @@ css
   font-size: 15px;
 }
 
+/* ---------- MISSION CONCEPT PANELS ---------- */
+.mission-panel{
+  position:relative;
+  min-height:560px;
+  display:flex;
+  align-items:flex-end;
+  overflow:hidden;
+  border-bottom:1px solid var(--line);
+}
+.mission-media{position:absolute;inset:0;}
+.mission-media img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transform:scale(1);
+  transition:transform .9s cubic-bezier(.19,1,.22,1), filter .5s ease;
+}
+.mission-panel:hover .mission-media img{
+  transform:scale(1.06);
+  filter:brightness(0.82) saturate(1.1);
+}
+.mission-scrim{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(5,5,6,0) 25%, rgba(5,5,6,0.95) 100%);
+  transition:background .45s ease;
+}
+.mission-panel:hover .mission-scrim{
+  background:linear-gradient(180deg, rgba(5,5,6,0.1) 15%, rgba(5,5,6,0.97) 100%);
+}
+
+.mission-content{position:relative;z-index:2;padding-bottom:0;width:100%;}
+.mission-content h3{
+  font-family:var(--font-head);font-weight:800;
+  font-size:clamp(24px,4vw,40px);line-height:1.08;
+  margin-bottom:10px;
+  transition:color .3s ease;
+}
+.mission-panel:hover .mission-content h3{color:var(--accent);}
+.mission-content p{
+  color:var(--ink-dim);font-size:14.5px;margin:0 0 18px;
+}
+
+.mission-link{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--font-head);font-weight:700;font-size:12px;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--ink);
+}
+.mission-link svg{width:14px;height:14px;transition:transform .3s ease;}
+.mission-panel:hover .mission-link svg{transform:translateX(6px);}
+
+.mission-meta{
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  margin-top:28px;padding:18px 0 30px;
+  border-top:1px solid rgba(255,255,255,0.14);
+}
+.mission-meta span{color:var(--ink-faint);font-size:12px;}
+.mission-meta a{
+  position:relative;
+  font-family:var(--font-head);font-weight:700;font-size:11px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--accent);
+  padding-bottom:2px;
+}
+.mission-meta a::after{
+  content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;
+  background:var(--accent);transition:right .3s ease;
+}
+.mission-meta a:hover::after{right:0;}
+
+@media (max-width:640px){
+  .mission-panel{min-height:440px;}
+}
+
   /* ---------- INVESTOR (light) ---------- */
   .investor{padding:110px 0;}
   .investor h2{font-size:75px;font-weight:800;line-height:1.05;margin-bottom:50px; color:black}
