@@ -868,16 +868,17 @@ css
   isolation: isolate;
 }
 
+  @media (max-width:1020px){ .investor-book {display:none;} }
 .investor-book {
   position: absolute;
   z-index: -1;
 
   /* Placering */
   right: 10%;
-  bottom: -5%;
+  bottom: -8%;
   
   /* Størrelse */
-  width: 620px;
+  width: 40%;
   height: 820px;
 
   background-image: url("assets/investorbook.png");
