@@ -199,7 +199,7 @@ nav.links a.active{color:var(--accent);}
   section{position:relative;}
   .section-pad{padding:96px 0;}
   .section-pad-sm{padding:64px 0;}
-  .dark{background:var(--bg-panel);}
+  .dark{background:#171717;}
   .darker{background:#050506;}
   .light{background:var(--paper);color:var(--paper-ink);}
   .section-head{max-width:640px;margin-bottom:48px;}
