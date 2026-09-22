@@ -51,7 +51,7 @@
     margin-bottom:16px;
   }
 
-  /* Gradient Camo Image */
+  /* Gradient Camo  */
 #missions {
   background-size:cover;
   background:
@@ -589,7 +589,7 @@ css
   }
 
   .mission-grid:has(.mcard:hover) .mcard:not(:hover) {
-    opacity: .45;
+    opacity: .95;
     filter: brightness(.65);
     transform: scale(.97);
   }
