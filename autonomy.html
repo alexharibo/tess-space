@@ -63,54 +63,69 @@
   </section>
 
   <!-- AI GNC STACK -->
-<section class="dark section-pad" id="gnc-stack">
-       <svg class="contours" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" fill="none">
-      <g stroke="rgba(255,255,255,0.18)" stroke-width="1">
-        <path d="M-50,120 C 200,40 350,220 600,140 S 1000,60 1250,160"/>
-        <path d="M-50,220 C 220,120 380,320 620,240 S 980,160 1250,260"/>
-        <path d="M-50,320 C 240,200 400,420 640,340 S 960,260 1250,360"/>
-        <path d="M-50,420 C 260,300 420,520 660,440 S 940,360 1250,460"/>
-        <path d="M-50,520 C 280,400 440,600 680,540 S 920,460 1250,560"/>
-      </g>
-    </svg>
-  <div class="wrap">
+<section class="darker section-pad" id="gnc-stack">
+  <svg class="sensing-map" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" fill="none">
+    <path d="M180 40 L340 20 L420 90 L520 70 L640 140 L760 110 L880 180 L860 320 L940 380 L900 480 L780 540 L680 620 L520 640 L420 560 L300 580 L220 480 L260 380 L160 320 L200 220 Z"
+          stroke="rgba(255,255,255,0.16)" stroke-width="1.4"/>
+    <g stroke="rgba(255,255,255,0.05)" stroke-width="1">
+      <path d="M0 100h1200M0 220h1200M0 340h1200M0 460h1200M0 580h1200"/>
+      <path d="M150 0v700M350 0v700M550 0v700M750 0v700M950 0v700M1150 0v700"/>
+    </g>
+  </svg>
+
+  <div class="wrap" style="position:relative;">
     <div class="section-head">
-      <div class="eyebrow">The AI GNC Stack</div>
+      <div class="eyebrow">Defence-First Ground Autonomy</div>
       <h2>From sensing to action.</h2>
     </div>
 
-    <div class="gnc-grid">
-      <div class="gnc-card">
-        <div class="gnc-media">
+    <div class="sensing-carousel">
+      <div class="sensing-track" id="sensingTrack">
+
+        <div class="sensing-card">
           <img src="assets/perception.jpg" alt="Perception" onerror="this.style.display='none'">
+          <div class="sensing-scrim"></div>
+          <div class="sensing-content">
+            <h4>Perception</h4>
+            <p>Interpret the surrounding environment.</p>
+          </div>
         </div>
-        <h4>Perception</h4>
-        <p>Interpret the surrounding environment.</p>
-      </div>
 
-      <div class="gnc-card">
-        <div class="gnc-media">
-          <img src="assets/perception.jpg" alt="Localization" onerror="this.style.display='none'">
+        <div class="sensing-card">
+          <img src="assets/localization.jpg" alt="Localization" onerror="this.style.display='none'">
+          <div class="sensing-scrim"></div>
+          <div class="sensing-content">
+            <h4>Localization</h4>
+            <p>Estimate the platform's position.</p>
+          </div>
         </div>
-        <h4>Localization</h4>
-        <p>Estimate the platform's position.</p>
-      </div>
 
-      <div class="gnc-card">
-        <div class="gnc-media">
-          <img src="assets/perception.jpg" alt="Navigation" onerror="this.style.display='none'">
+        <div class="sensing-card">
+          <img src="assets/navigation.jpg" alt="Navigation" onerror="this.style.display='none'">
+          <div class="sensing-scrim"></div>
+          <div class="sensing-content">
+            <h4>Navigation</h4>
+            <p>Plan movements through the operating environment.</p>
+          </div>
         </div>
-        <h4>Navigation</h4>
-        <p>Plan movement through the operating environment.</p>
-      </div>
 
-      <div class="gnc-card">
-        <div class="gnc-media">
-          <img src="assets/perception.jpg" alt="Control" onerror="this.style.display='none'">
+        <div class="sensing-card">
+          <img src="assets/control.jpg" alt="Control" onerror="this.style.display='none'">
+          <div class="sensing-scrim"></div>
+          <div class="sensing-content">
+            <h4>Control</h4>
+            <p>Translate navigation into vehicle commands.</p>
+          </div>
         </div>
-        <h4>Control</h4>
-        <p>Translate navigation into vehicle commands.</p>
+
       </div>
+    </div>
+
+    <div class="sensing-dots" id="sensingDots">
+      <span class="sensing-dot active" data-i="0"></span>
+      <span class="sensing-dot" data-i="1"></span>
+      <span class="sensing-dot" data-i="2"></span>
+      <span class="sensing-dot" data-i="3"></span>
     </div>
   </div>
 </section>
