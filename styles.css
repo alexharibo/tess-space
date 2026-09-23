@@ -277,7 +277,7 @@ nav.links a.active{color:var(--accent);}
 @media (max-width:700px){
   .sensing-card{width:82vw;}
 }ar(--ink-dim);
-}
+
 
 css
 /* ---------- DELIVERY MODEL ---------- */
