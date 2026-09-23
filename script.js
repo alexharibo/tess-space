@@ -171,32 +171,3 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   requestAnimationFrame(draw);
 })();
 
-(function(){
-  const track = document.getElementById('sensingTrack');
-  const dots = document.querySelectorAll('#sensingDots .sensing-dot');
-  if(!track || !dots.length) return;
-
-  dots.forEach(dot => {
-    dot.addEventListener('click', () => {
-      const i = parseInt(dot.dataset.i, 10);
-      const card = track.children[i];
-      if(card) track.scrollTo({ left: card.offsetLeft - 0, behavior: 'smooth' });
-    });
-  });
-
-  let ticking = false;
-  track.addEventListener('scroll', () => {
-    if(ticking) return;
-    ticking = true;
-    requestAnimationFrame(() => {
-      const cards = Array.from(track.children);
-      let closest = 0, minDist = Infinity;
-      cards.forEach((card, i) => {
-        const dist = Math.abs(card.offsetLeft - track.scrollLeft);
-        if(dist < minDist){ minDist = dist; closest = i; }
-      });
-      dots.forEach((d, i) => d.classList.toggle('active', i === closest));
-      ticking = false;
-    });
-  }, {passive:true});
-})();

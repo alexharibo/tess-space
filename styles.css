@@ -277,6 +277,8 @@ nav.links a.active{color:var(--accent);}
 @media (max-width:700px){
   .sensing-card{width:82vw;}
 }
+
+
 /* ---------- DELIVERY MODEL ---------- */
 #delivery-model .section-head{margin-bottom:40px;}
 #delivery-model .section-head p{color:var(--ink-dim);font-size:14.5px;max-width:560px;margin-top:14px;}
