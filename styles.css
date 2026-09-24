@@ -1251,7 +1251,7 @@ background: linear-gradient(rgba(24, 24, 24, 0.5), rgba(0, 0, 0, 0.5)), url(asse
 .mm-panel{
   position:relative;z-index:1;
   width:min(1000px, 88vw);
-  max-height:82vh;
+  height:60vh;
   display:grid;
   grid-template-columns:1fr 1fr;
   border:1px solid var(--line);
