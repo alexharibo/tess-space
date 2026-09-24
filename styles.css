@@ -1286,10 +1286,12 @@ background: linear-gradient(rgba(24, 24, 24, 0.5), rgba(0, 0, 0, 0.5)), url(asse
   margin-bottom:22px;
 }
 .mm-desc{font-size:14.5px;color:var(--ink-dim);line-height:1.6;margin-bottom:30px;}
-.mm-meta{display:flex;flex-wrap:wrap;gap:14px;padding-top:22px;border-top:1px solid var(--line);}
+.mm-meta{display:flex;flex-wrap:wrap;gap:14px;padding-top:22px;border-top:1px solid var(--line);  position:absolute;
+  bottom: 10px;}
 .mm-meta a{
   font-family:var(--font-head);font-weight:700;font-size:11px;letter-spacing:.1em;
   text-transform:uppercase;color:var(--accent);
+
 }
 .mm-meta span{color:var(--ink-faint);}
 
