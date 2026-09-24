@@ -878,7 +878,7 @@ nav.links a.active{color:var(--accent);}
 
 #evidence  {
 
-background: linear-gradient(rgba(69, 68, 68, 0.5), rgba(0, 0, 0, 0.5)), url(assets/darkterrarin.jpg) center / cover no-repeat;
+background: linear-gradient(rgba(24, 24, 24, 0.5), rgba(0, 0, 0, 0.5)), url(assets/darkterrain.jpg) center / cover no-repeat;
 }
 @media (max-width:820px){
   .evidence-fan{flex-direction:column;align-items:center;gap:24px;padding:0;}
