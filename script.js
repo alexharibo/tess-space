@@ -10,9 +10,71 @@ const io = new IntersectionObserver((entries) => {
 }, {threshold:0.15});
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
+/* ---------- mission detail modal ---------- */
+(function(){
+  const panels = Array.from(document.querySelectorAll('.mission-panel'));
+  const modal = document.getElementById('missionModal');
+  if(!panels.length || !modal) return;
+
+  const mmImg   = modal.querySelector('.mm-media img');
+  const mmEye   = modal.querySelector('.mm-eyebrow');
+  const mmTitle = modal.querySelector('.mm-title');
+  const mmTag   = modal.querySelector('.mm-tagline');
+  const mmDesc  = modal.querySelector('.mm-desc');
+  const mmMeta  = modal.querySelector('.mm-meta');
+  
+
+  let current = 0;
+
+  function render(i){
+    current = (i + panels.length) % panels.length;
+    const p = panels[current];
+    const img = p.querySelector('.mission-media img');
+    mmImg.src = img ? img.src : '';
+    mmImg.alt = img ? img.alt : '';
+    mmEye.textContent = p.querySelector('.eyebrow').textContent;
+    mmTitle.textContent = p.querySelector('h3').textContent;
+    mmTag.textContent = p.querySelector('.mission-content p').textContent;
+    mmDesc.textContent = p.querySelector('.mission-detail').textContent;
+    mmMeta.innerHTML = p.querySelector('.mission-meta').innerHTML;
+  }
+
+  function open(i){
+    render(i);
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function close(){
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  panels.forEach((panel, i) => {
+    panel.addEventListener('click', (e) => {
+      if(e.target.closest('.mission-meta')) return;
+      e.preventDefault();
+      open(i);
+    });
+  });
+
+  modal.querySelector('.mm-prev').addEventListener('click', () => render(current - 1));
+  modal.querySelector('.mm-next').addEventListener('click', () => render(current + 1));
+  modal.querySelector('.mm-close').addEventListener('click', close);
+  modal.querySelector('.mm-backdrop').addEventListener('click', close);
+
+  document.addEventListener('keydown', (e) => {
+    if(!modal.classList.contains('open')) return;
+    if(e.key === 'Escape') close();
+    if(e.key === 'ArrowRight') render(current + 1);
+    if(e.key === 'ArrowLeft') render(current - 1);
+  });
+})();
+
+
 /* ---------- GLOBE ---------- */
 (function(){
   const canvas = document.getElementById('globeCanvas');
+  if(!canvas) return;
   const ctx = canvas.getContext('2d');
   let W=0,H=0,DPR=Math.min(window.devicePixelRatio||1,2);
 
@@ -170,4 +232,65 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   }
   requestAnimationFrame(draw);
 })();
+
+
+/* ---------- mission detail modal ---------- */
+(function(){
+  const panels = Array.from(document.querySelectorAll('.mission-panel'));
+  const modal = document.getElementById('missionModal');
+  if(!panels.length || !modal) return;
+
+  const mmImg   = modal.querySelector('.mm-media img');
+  const mmEye   = modal.querySelector('.mm-eyebrow');
+  const mmTitle = modal.querySelector('.mm-title');
+  const mmTag   = modal.querySelector('.mm-tagline');
+  const mmDesc  = modal.querySelector('.mm-desc');
+  const mmMeta  = modal.querySelector('.mm-meta');
+
+  let current = 0;
+
+  function render(i){
+    current = (i + panels.length) % panels.length;
+    const p = panels[current];
+    const img = p.querySelector('.mission-media img');
+    mmImg.src = img ? img.src : '';
+    mmImg.alt = img ? img.alt : '';
+    mmEye.textContent = p.querySelector('.eyebrow').textContent;
+    mmTitle.textContent = p.querySelector('h3').textContent;
+    mmTag.textContent = p.querySelector('.mission-content p').textContent;
+    mmDesc.textContent = p.querySelector('.mission-detail').textContent;
+    mmMeta.innerHTML = p.querySelector('.mission-meta').innerHTML;
+  }
+
+  function open(i){
+    render(i);
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function close(){
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  panels.forEach((panel, i) => {
+    panel.addEventListener('click', (e) => {
+      if(e.target.closest('.mission-meta')) return;
+      e.preventDefault();
+      open(i);
+    });
+  });
+
+  modal.querySelector('.mm-prev').addEventListener('click', () => render(current - 1));
+  modal.querySelector('.mm-next').addEventListener('click', () => render(current + 1));
+  modal.querySelector('.mm-close').addEventListener('click', close);
+  modal.querySelector('.mm-backdrop').addEventListener('click', close);
+
+  document.addEventListener('keydown', (e) => {
+    if(!modal.classList.contains('open')) return;
+    if(e.key === 'Escape') close();
+    if(e.key === 'ArrowRight') render(current + 1);
+    if(e.key === 'ArrowLeft') render(current - 1);
+  });
+})();
+
 

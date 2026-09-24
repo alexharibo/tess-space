@@ -1213,7 +1213,93 @@ background: linear-gradient(rgba(24, 24, 24, 0.5), rgba(0, 0, 0, 0.5)), url(asse
   font-size: 15px;
 }
 
-/* ---------- MISSION CONCEPT PANELS ---------- */
+
+/* ---------- MISSION DETAIL MODAL ---------- */
+.mission-panel{cursor:pointer;}
+
+.mission-modal{
+  position:fixed;inset:0;z-index:300;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;visibility:hidden;
+  transition:opacity .35s ease, visibility 0s linear .35s;
+}
+.mission-modal.open{opacity:1;visibility:visible;transition:opacity .35s ease;}
+.mm-backdrop{position:absolute;inset:0;background:rgba(5,5,6,0.92);backdrop-filter:blur(10px);}
+
+.mm-close{
+  position:absolute;top:28px;right:32px;z-index:2;
+  width:42px;height:42px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:transparent;border:1px solid var(--line);color:var(--ink);
+  cursor:pointer;transition:border-color .2s ease, transform .2s ease;
+}
+.mm-close:hover{border-color:var(--accent);color:var(--accent);transform:rotate(90deg);}
+.mm-close svg{width:18px;height:18px;}
+
+.mm-nav{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:2;
+  width:52px;height:52px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:transparent;border:1px solid var(--line);color:var(--ink-dim);
+  cursor:pointer;transition:border-color .2s ease, color .2s ease, transform .2s ease;
+}
+.mm-nav:hover{border-color:var(--accent);color:var(--accent);}
+.mm-nav svg{width:22px;height:22px;}
+.mm-prev{left:36px;}
+.mm-next{right:36px;}
+
+.mm-panel{
+  position:relative;z-index:1;
+  width:min(1000px, 88vw);
+  max-height:82vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  border:1px solid var(--line);
+  border-radius:6px;
+  overflow:hidden;
+  background:#0e0e10;
+  transform:translateY(14px) scale(.97);
+  opacity:0;
+  transition:transform .4s cubic-bezier(.19,1,.22,1), opacity .4s ease;
+}
+.mission-modal.open .mm-panel{transform:translateY(0) scale(1);opacity:1;}
+
+.mm-media{position:relative;min-height:280px;}
+.mm-media img{width:100%;height:100%;object-fit:cover;display:block;}
+.mm-media::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg, rgba(14,14,16,0) 60%, rgba(14,14,16,0.9) 100%);
+}
+@media (max-width:820px){ .mm-media::after{display:none;} }
+
+.mm-body{padding:44px 40px;overflow-y:auto;}
+.mm-eyebrow{
+  font-family:var(--font-head);font-weight:700;font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:16px;
+}
+.mm-title{
+  font-family:var(--font-head);font-weight:800;font-size:clamp(22px,2.6vw,32px);
+  line-height:1.12;margin-bottom:10px;color:var(--ink);
+}
+.mm-tagline{
+  font-family:var(--font-head);font-weight:700;font-size:13px;color:var(--ink-dim);
+  margin-bottom:22px;
+}
+.mm-desc{font-size:14.5px;color:var(--ink-dim);line-height:1.6;margin-bottom:30px;}
+.mm-meta{display:flex;flex-wrap:wrap;gap:14px;padding-top:22px;border-top:1px solid var(--line);}
+.mm-meta a{
+  font-family:var(--font-head);font-weight:700;font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--accent);
+}
+.mm-meta span{color:var(--ink-faint);}
+
+@media (max-width:820px){
+  .mm-panel{grid-template-columns:1fr;max-height:88vh;}
+  .mm-media{min-height:200px;}
+  .mm-body{padding:32px 26px;}
+}
+/* mission panels: signal they're clickable */
+.mission-panel{cursor:pointer;}
 .mission-panel{
   position:relative;
   min-height:560px;
@@ -1282,6 +1368,8 @@ background: linear-gradient(rgba(24, 24, 24, 0.5), rgba(0, 0, 0, 0.5)), url(asse
 @media (max-width:640px){
   .mission-panel{min-height:440px;}
 }
+
+
 
 
 
