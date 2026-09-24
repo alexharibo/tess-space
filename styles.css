@@ -268,7 +268,9 @@ nav.links a.active{color:var(--accent);}
   .light .section-head h2{color:var(--paper-ink);}
 
   /* ---------- GNC STACK (image cards) ---------- */
-#gnc-stack{position:relative;overflow:hidden;}
+#gnc-stack{position:relative;overflow:hidden;  background:
+    linear-gradient(rgba(69, 68, 68, 0.5), rgba(0, 0, 0, 0.5)),
+    url("assets/europe.jpg") center / cover no-repeat;}
 .contours{position:absolute;inset:0;opacity:.35;pointer-events:none;}
 
 .sensing-grid{
