@@ -1299,7 +1299,8 @@ background: linear-gradient(rgba(24, 24, 24, 0.5), rgba(0, 0, 0, 0.5)), url(asse
   .mm-panel{grid-template-columns:1fr;max-height:88vh;}
   .mm-media{min-height:200px;}
   .mm-body{padding:32px 26px;}
-  .mm-meta{display:flex;flex-wrap:wrap;gap:14px;padding-top:22px;border-top:1px solid var(--line);position:relative;
+  .mm-meta{display:none;flex-wrap:wrap;gap:14px;padding-top:22px;border-top:1px solid var(--line);  position:absolute;
+  bottom: 5px;}
 }
 /* mission panels: signal they're clickable */
 .mission-panel{cursor:pointer;}
