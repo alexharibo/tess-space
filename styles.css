@@ -749,6 +749,8 @@ nav.links a.active{color:var(--accent);}
     min-height:760px;
     align-items:center;
   }
+
+
   @media (max-width:860px){
     .globe-inner{grid-template-columns:1fr;min-height:auto;}
   }
@@ -763,8 +765,8 @@ nav.links a.active{color:var(--accent);}
   #globeCanvas{position:absolute;inset:0;width:100%;height:100%;}
   .globe-copy{padding:40px 32px 40px 0;min-width:0;}
   @media (max-width:860px){ .globe-copy{padding:0 24px 56px;} }
-  .globe-copy h3{font-size:clamp(20px,2.3vw,32px);font-weight:800;line-height:1.14;margin-bottom:22px;}
-  .stat{font-family:var(--font-head);font-weight:800;font-size:clamp(36px,3.6vw,68px);color:var(--accent);line-height:1;margin:6px 0 18px;white-space:nowrap;}
+  .globe-copy h3{font-size:clamp(40px,2.3vw,32px);font-weight:300;line-height:1.14;margin-bottom:22px;}
+  .stat{font-family:var(--font-head);font-weight:800;font-size:clamp(90px,3.6vw,68px);color:var(--accent);line-height:1;margin:6px 0 18px;white-space:nowrap;}
   .globe-copy p.body{color:#c7c6c3;max-width:420px;margin-bottom:26px;font-size:15px;}
 
   /* ---------- GNC PRODUCT ---------- */
