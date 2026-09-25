@@ -1,3 +1,6 @@
+
+
+
 /* ---------- nav scroll state ---------- */
 const header = document.getElementById('siteHeader');
 window.addEventListener('scroll', () => {

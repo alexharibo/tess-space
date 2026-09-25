@@ -19,7 +19,97 @@
     :root:not([data-theme="dark"]){ /* brand is intentionally dark regardless of system theme */ }
   }
 
+/* ---------- MINIMAL IMAGE-GRID INTRO ---------- */
+.site-intro{
+  position:fixed;inset:0;z-index:9999;
+  background:#050506;
+  overflow:hidden;
+}
 
+.si-grid{
+  position:absolute;inset:0;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  grid-template-rows:repeat(2,1fr);
+}
+@media (max-width:700px){
+  .si-grid{grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(4,1fr);}
+}
+
+.si-cell{
+  position:relative;
+  overflow:hidden;
+  background:#0a0a0b;
+  opacity:0;
+  transform:scale(1.08);
+  animation:siCellIn 0.6s cubic-bezier(.2,.8,.2,1) forwards;
+}
+.si-cell img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  filter:grayscale(1) contrast(1.05) brightness(0.75);
+}
+.si-cell:nth-child(1){animation-delay:0.00s;}
+.si-cell:nth-child(2){animation-delay:0.07s;}
+.si-cell:nth-child(3){animation-delay:0.14s;}
+.si-cell:nth-child(4){animation-delay:0.21s;}
+.si-cell:nth-child(5){animation-delay:0.28s;}
+.si-cell:nth-child(6){animation-delay:0.35s;}
+.si-cell:nth-child(7){animation-delay:0.42s;}
+.si-cell:nth-child(8){animation-delay:0.49s;}
+
+@keyframes siCellIn{
+  to{opacity:1;transform:scale(1);}
+}
+
+/* Efter grid'et er bygget op, dæmpes det for at give plads til ordmærket */
+.si-grid{
+  animation:siGridDim 0.5s ease 1.05s forwards;
+}
+@keyframes siGridDim{
+  to{filter:brightness(0.35);}
+}
+
+.si-wordmark{
+  position:absolute;inset:0;z-index:2;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:16px;
+  color:#fff;
+  opacity:0;
+  animation:siWordIn 0.6s cubic-bezier(.2,.8,.2,1) 1.1s forwards;
+}
+.si-wordmark svg{
+  width:40px;height:40px;
+  color:var(--accent);
+}
+.si-wordmark span{
+  font-family:var(--font-head);font-weight:700;font-size:20px;
+  letter-spacing:0.32em;
+  padding-left:0.32em; /* balancerer letter-spacing visuelt */
+}
+.si-line{
+  width:0;height:1px;background:var(--accent);
+  animation:siLineIn 0.5s ease 1.5s forwards;
+}
+
+@keyframes siWordIn{
+  from{opacity:0;transform:translateY(8px) scale(0.96);}
+  to{opacity:1;transform:translateY(0) scale(1);}
+}
+@keyframes siLineIn{
+  to{width:64px;}
+}
+
+/* Hele intro'en toner ud og fjernes */
+.site-intro.si-done{
+  animation:siFadeOut 0.5s ease forwards;
+}
+@keyframes siFadeOut{
+  to{opacity:0;visibility:hidden;}
+}
+
+@media (prefers-reduced-motion: reduce){
+  .site-intro{display:none;}
+}
 
   /* Gradient Camo  */
 #missions {
