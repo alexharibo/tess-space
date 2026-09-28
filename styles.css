@@ -19,8 +19,1346 @@
     :root:not([data-theme="dark"]){ /* brand is intentionally dark regardless of system theme */ }
   }
 
-  
+ 
+/* INVESTORS */
+/* Hovedsektion i 100% bredde */
+.autonomy-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  box-sizing: border-box;
+}
 
+/* Baggrundslag (Bredde 100%) */
+.autonomy-bg-split {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Den lyse baggrund i venstre side dækker nu 100% i bredden bagved, 
+   så eventuelle gab dækkes naturligt af den sandfarvede baggrund i stedet for sort */
+.autonomy-bg-split .bg-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f2efe9; /* Varm råhvid farve som på eksemplet */
+}
+
+/* Approch Section */
+.approach-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  box-sizing: border-box;
+  background-color: #080707; /* Mørk baggrund som i eksemplet */
+}
+
+/* Baggrundslag med guld/orange netværksgrafik i højre side */
+.approach-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: radial-gradient(circle at 80% 50%, rgba(226, 97, 18, 0.15) 0%, transparent 60%),
+              linear-gradient(to right, #080707 40%, rgba(8, 7, 7, 0.8) 100%);
+}
+
+/* Jeres wrap styrer bredden og centrerer indholdet */
+.approach-section .wrap {
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+}
+
+/* Grid layout med luft og tilpasset højde */
+.approach-content-grid {
+  display: flex;
+  align-items: center;
+  min-height: 560px;
+  padding: 60px 0;
+  gap: 40px;
+}
+
+/* Venstre kolonne - Tekst og 4-søjlet grid */
+.approach-left-col {
+  flex: 1.2;
+  color: #ffffff;
+}
+
+.approach-left-col .subtitle {
+  color: #e26112;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.approach-left-col .main-title {
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1.02;
+  letter-spacing: -0.5px;
+  margin: 0 0 25px 0;
+  color: #ffffff;
+}
+
+.approach-left-col .main-title .dot {
+  color: #e26112;
+}
+
+.approach-left-col .description {
+  color: #b0b0b0;
+  font-size: 15px;
+  line-height: 1.55;
+  margin: 0 0 45px 0;
+  max-width: 90%;
+}
+
+/* 4 Søjler i bunden af venstre side */
+.workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 25px;
+}
+
+.workflow-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.workflow-item .icon-wrap {
+  width: 28px;
+  height: 28px;
+  color: #e26112;
+  margin-bottom: 12px;
+}
+
+.workflow-item .icon-wrap svg {
+  width: 100%;
+  height: 100%;
+}
+
+.workflow-title {
+  font-size: 12px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.workflow-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.workflow-list li {
+  font-size: 11.5px;
+  color: #888888;
+  line-height: 1.4;
+  position: relative;
+  margin-bottom: 3px;
+}
+
+.workflow-list li::before {
+  content: "- ";
+  color: #e26112;
+}
+
+/* Højre kolonne - Hardware billedvisning */
+.approach-right-col {
+  flex: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.approach-right-col .hardware-img {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0px 10px 30px rgba(0, 0, 0, 0.7));
+}
+
+/* Responsiv tilpasning til mindre skærme */
+@media (max-width: 992px) {
+  .approach-content-grid {
+    flex-direction: column;
+    padding: 40px 0;
+  }
+
+  .workflow-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .approach-right-col {
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 550px) {
+  .workflow-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Validated Core */
+/* Hovedsektion 03 i 100% bredde */
+.core-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Baggrundslag (100% bredde) */
+.core-bg-split {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Lys baggrund i venstre side */
+.core-bg-split .bg-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f2efe9;
+}
+
+/* Højre mørke side med kortbaggrund og skrå linje */
+.core-bg-split .bg-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: calc(40% + 120px);
+  height: 100%;
+  /* Indsæt jeres europakort som baggrundsbillede her */
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), 
+              url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+  clip-path: polygon(140px 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+/* Hovedsektion 04 i 100% bredde */
+.progress-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  box-sizing: border-box;
+  background-color: #080707;
+}
+
+/* Baggrund med subtil vertikal adskillelse */
+.progress-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: radial-gradient(circle at 10% 50%, rgba(226, 97, 18, 0.05) 0%, transparent 50%), #080707;
+}
+
+/* Jeres wrap centrerer indholdet */
+.progress-section .wrap {
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+}
+
+/* Grid-struktur */
+.progress-content-grid {
+  display: flex;
+  align-items: flex-start;
+  min-height: 540px;
+  padding: 60px 0;
+  gap: 50px;
+}
+
+/* Venstre kolonne */
+.progress-left-col {
+  flex: 0.9;
+  color: #ffffff;
+}
+
+.progress-left-col .subtitle {
+  color: #e26112;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.progress-left-col .main-title {
+  font-size: 46px;
+  font-weight: 900;
+  line-height: 1.02;
+  letter-spacing: -0.5px;
+  margin: 0 0 20px 0;
+  color: #ffffff;
+}
+
+.progress-left-col .main-title .dot {
+  color: #e26112;
+}
+
+.progress-left-col .description {
+  color: #a0a0a0;
+  font-size: 15px;
+  line-height: 1.55;
+  margin: 0 0 35px 0;
+  max-width: 90%;
+}
+
+/* Knap styling */
+.pdf-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #e26112;
+  color: #ffffff;
+  padding: 14px 24px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.pdf-button:hover {
+  background-color: #f36d1b;
+  transform: translateY(-2px);
+}
+
+.pdf-button .pdf-icon, 
+.pdf-button .arrow-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Højre kolonne - Tidslinje */
+.progress-right-col {
+  flex: 1.3;
+  padding-left: 20px;
+  border-left: 1px solid rgba(255, 255, 255, 0.08); /* Lodret tynd adskiller som på billedet */
+}
+
+.timeline-container {
+  position: relative;
+  width: 100%;
+}
+
+/* Den gennemgående orange linje */
+.timeline-line {
+  position: absolute;
+  top: 9px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #e26112;
+  z-index: 1;
+}
+
+.timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.timeline-item {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Orange cirkler på tidslinjen */
+.timeline-node {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #080707;
+  border: 3px solid #e26112;
+  margin-bottom: 20px;
+}
+
+.timeline-year {
+  color: #e26112;
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.timeline-title {
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.timeline-desc {
+  color: #888888;
+  font-size: 12px;
+  line-height: 1.45;
+  margin: 0 0 20px 0;
+  min-height: 50px; /* Sikrer at billederne flugter i bunden */
+}
+
+/* Billeder i tidslinjen */
+.timeline-img-wrap {
+  width: 100%;
+  height: 100px;
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.timeline-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsiv tilpasning til mindre skærme */
+@media (max-width: 992px) {
+  .progress-content-grid {
+    flex-direction: column;
+    padding: 40px 0;
+  }
+
+  .progress-right-col {
+    padding-left: 0;
+    border-left: none;
+    width: 100%;
+  }
+
+  .timeline-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .timeline-line {
+    display: none;
+  }
+}
+
+/* Hovedsektion 05 i 100% bredde */
+.people-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Baggrundslag (100% bredde) */
+.people-bg-split {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Venstre side dækker med teambilledet */
+.people-bg-split .bg-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Erstat med jeres eget foto af teamet mod skærmen */
+  background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+}
+
+/* Højre mørke side med den skrå linje mod venstre */
+.people-bg-split .bg-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  /* Justeret så den skrå linje ikke rammer teksten */
+  width: calc(50% + 100px);
+  height: 100%;
+  background: radial-gradient(circle at 80% 50%, rgba(226, 97, 18, 0.08) 0%, transparent 60%),
+              linear-gradient(to right, #080707 20%, #0d0c0c 100%);
+  /* Skrå vinkel der flugter sikkert fra venstre mod højre */
+  clip-path: polygon(120px 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+/* Jeres wrap centrerer indholdet */
+.people-section .wrap {
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+}
+
+/* Grid med samme højde og tilpasning */
+.people-content-grid {
+  display: flex;
+  align-items: center;
+  min-height: 520px;
+  padding: 60px 0;
+}
+
+/* Tom venstre kolonne til billede-visning */
+.people-left-col {
+  flex: 1.1;
+}
+
+/* Højre kolonne med tekst */
+.people-right-col {
+  flex: 0.9;
+  padding-left: 50px;
+  color: #ffffff;
+}
+
+.people-right-col .subtitle {
+  color: #e26112;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.people-right-col .main-title {
+  font-size: 46px;
+  font-weight: 900;
+  line-height: 1.02;
+  letter-spacing: -0.5px;
+  margin: 0 0 25px 0;
+  color: #ffffff;
+}
+
+.people-right-col .main-title .dot {
+  color: #e26112;
+}
+
+.people-right-col .description {
+  color: #b0b0b0;
+  font-size: 15.5px;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 95%;
+}
+
+/* Responsiv tilpasning til mindre skærme */
+@media (max-width: 992px) {
+  .people-bg-split .bg-left {
+    position: relative;
+    width: 100%;
+    height: 300px;
+  }
+
+  .people-bg-split .bg-right {
+    position: relative;
+    width: 100%;
+    height: auto;
+    clip-path: none;
+  }
+
+  .people-content-grid {
+    flex-direction: column;
+    padding: 40px 0;
+  }
+
+  .people-left-col {
+    display: none; /* Billedet tages over af bg-left på mobil */
+  }
+
+  .people-right-col {
+    padding-left: 0;
+    width: 100%;
+  }
+}
+
+/* Hovedsektion 06 i 100% bredde */
+.investment-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  box-sizing: border-box;
+  background-color: #060606;
+}
+
+/* Baggrund med netværks/mesh-effekt i bunden */
+.investment-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: radial-gradient(ellipse at 80% 90%, rgba(226, 97, 18, 0.08) 0%, transparent 60%), #060606;
+}
+
+/* Jeres wrap centrerer indholdet */
+.investment-section .wrap {
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+}
+
+/* Grid layout opdelt i 3 hovedområder */
+.investment-content-grid {
+  display: flex;
+  align-items: center;
+  min-height: 540px;
+  padding: 60px 0;
+  gap: 30px;
+}
+
+/* Venstre kolonne */
+.investment-left-col {
+  flex: 1.1;
+  color: #ffffff;
+}
+
+.investment-left-col .subtitle {
+  color: #e26112;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.investment-left-col .main-title {
+  font-size: 42px;
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.5px;
+  margin: 0 0 20px 0;
+  color: #ffffff;
+}
+
+.investment-left-col .main-title .dot {
+  color: #e26112;
+}
+
+.investment-left-col .description {
+  color: #a0a0a0;
+  font-size: 14.5px;
+  line-height: 1.55;
+  margin: 0 0 35px 0;
+  max-width: 90%;
+}
+
+/* Knap styling */
+.investment-left-col .pdf-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #e26112;
+  color: #ffffff;
+  padding: 14px 22px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.investment-left-col .pdf-button:hover {
+  background-color: #f36d1b;
+  transform: translateY(-2px);
+}
+
+.investment-left-col .pdf-icon, 
+.investment-left-col .arrow-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Midterste kolonne: Kortbrikker */
+.investment-mid-col {
+  flex: 0.9;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 16px 20px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #dddddd;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.feature-card .card-icon {
+  width: 22px;
+  height: 22px;
+  color: #e26112;
+  flex-shrink: 0;
+}
+
+.feature-card .card-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Højre kolonne: Highlights Panel */
+.investment-right-col {
+  flex: 1;
+}
+
+.highlights-panel {
+  background: rgba(18, 18, 18, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 30px;
+  border-radius: 4px;
+}
+
+.highlights-panel .panel-header {
+  font-size: 13px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 1.5px;
+  margin-bottom: 25px;
+}
+
+.highlights-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.highlights-list li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #cccccc;
+  font-size: 13.5px;
+  font-weight: 500;
+}
+
+.highlights-list .list-icon {
+  width: 18px;
+  height: 18px;
+  color: #e26112;
+  flex-shrink: 0;
+}
+
+.highlights-list .list-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsiv tilpasning til mindre skærme */
+@media (max-width: 992px) {
+  .investment-content-grid {
+    flex-direction: column;
+    padding: 40px 0;
+  }
+
+  .investment-left-col,
+  .investment-mid-col,
+  .investment-right-col {
+    width: 100%;
+  }
+}
+
+/* Hovedsektion 07 i 100% bredde */
+.investor-contact-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  box-sizing: border-box;
+  background-color: #f2efe9;
+}
+
+/* Lys baggrund */
+.investor-contact-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: #f2efe9;
+}
+
+/* Jeres wrap centrerer indholdet */
+.investor-contact-section .wrap {
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+}
+
+/* Grid layout opdelt i 3 lige søjler med lodrette skilnelinjer */
+.investor-contact-grid {
+  display: flex;
+  align-items: center;
+  min-height: 480px;
+  padding: 60px 0;
+}
+
+/* Venstre kolonne */
+.contact-col-left {
+  flex: 1.2;
+  padding-right: 45px;
+  color: #111111;
+}
+
+.contact-col-left .subtitle {
+  color: #e26112;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.contact-col-left .main-title {
+  font-size: 44px;
+  font-weight: 900;
+  line-height: 1.02;
+  letter-spacing: -0.5px;
+  margin: 0 0 20px 0;
+  color: #111518;
+}
+
+.contact-col-left .main-title .dot {
+  color: #e26112;
+}
+
+.contact-col-left .description {
+  color: #555555;
+  font-size: 14.5px;
+  line-height: 1.55;
+  margin: 0 0 35px 0;
+  max-width: 95%;
+}
+
+/* Orange kontaktknap */
+.contact-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #e26112;
+  color: #ffffff;
+  padding: 14px 22px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-button:hover {
+  background-color: #f36d1b;
+  transform: translateY(-2px);
+}
+
+.contact-button .arrow-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Midterste kolonne: Kontaktoplysninger */
+.contact-col-mid {
+  flex: 1;
+  padding: 0 45px;
+  border-left: 1px solid #dcd8d0;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.info-icon {
+  width: 24px;
+  height: 24px;
+  color: #e26112;
+  flex-shrink: 0;
+}
+
+.info-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.info-text {
+  font-size: 14px;
+  color: #222222;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.info-text.link:hover {
+  color: #e26112;
+}
+
+/* Højre kolonne: Downloads */
+.contact-col-right {
+  flex: 1;
+  padding-left: 45px;
+  border-left: 1px solid #dcd8d0;
+}
+
+.downloads-header {
+  font-size: 13px;
+  font-weight: 800;
+  color: #111518;
+  letter-spacing: 1.5px;
+  margin-bottom: 25px;
+}
+
+.downloads-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.download-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #333333;
+  font-size: 13.5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.download-item:hover {
+  color: #e26112;
+}
+
+.download-icon {
+  width: 20px;
+  height: 20px;
+  color: #e26112;
+  flex-shrink: 0;
+}
+
+.download-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsiv tilpasning til mindre skærme */
+@media (max-width: 992px) {
+  .investor-contact-grid {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 0;
+    gap: 40px;
+  }
+
+  .contact-col-left,
+  .contact-col-mid,
+  .contact-col-right {
+    width: 100%;
+    padding: 0;
+    border-left: none;
+  }
+
+  .contact-col-mid,
+  .contact-col-right {
+    border-top: 1px solid #dcd8d0;
+    padding-top: 30px;
+  }
+}
+
+/* Jeres wrap centrerer indholdet */
+.core-section .wrap {
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+}
+
+/* Grid med samme højde og afstand som tidligere sektioner */
+.core-content-grid {
+  display: flex;
+  align-items: center;
+  min-height: 560px;
+  padding: 60px 0;
+}
+
+/* Venstre kolonne */
+.core-left-col {
+  flex: 1.2;
+  padding-right: 60px;
+  color: #111111;
+}
+
+.core-left-col .subtitle {
+  color: #e26112;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.core-left-col .main-title {
+  font-size: 46px;
+  font-weight: 900;
+  line-height: 1.02;
+  letter-spacing: -0.5px;
+  margin: 0 0 20px 0;
+  color: #111518;
+}
+
+.core-left-col .main-title .dot {
+  color: #e26112;
+}
+
+.core-left-col .description {
+  color: #555555;
+  font-size: 15px;
+  line-height: 1.55;
+  margin: 0 0 30px 0;
+  max-width: 95%;
+}
+
+/* Tjekliste styling */
+.core-left-col .checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 35px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.core-left-col .checklist li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #222222;
+}
+
+.core-left-col .check-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1.5px solid #e26112;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e26112;
+  flex-shrink: 0;
+}
+
+.core-left-col .check-icon svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* Nøgletal i bunden */
+.core-left-col .stats-grid {
+  display: flex;
+  gap: 25px;
+  border-top: 1px solid #dcd8d0;
+  padding-top: 25px;
+}
+
+.core-left-col .stat-item {
+  flex: 1;
+}
+
+.core-left-col .stat-item.highlight {
+  border-left: 3.5px solid #e26112;
+  padding-left: 12px;
+}
+
+.core-left-col .stat-number {
+  font-size: 26px;
+  font-weight: 800;
+  color: #111518;
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+}
+
+.core-left-col .stat-label {
+  font-size: 10.5px;
+  color: #666666;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: 0.8px;
+}
+
+/* Højre kolonne - Signaturforklaring og kort */
+.core-right-col {
+  flex: 0.8;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.map-legend {
+  background: rgba(15, 15, 15, 0.7);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 12px 18px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11.5px;
+  color: #dddddd;
+  font-weight: 500;
+}
+
+.legend-item .dot-icon.nordjylland {
+  width: 8px;
+  height: 8px;
+  background-color: #e26112;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #e26112;
+}
+
+.legend-item .arrow-icon {
+  color: #e26112;
+  font-size: 12px;
+}
+
+/* Responsivt design */
+@media (max-width: 992px) {
+  .core-bg-split .bg-right {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    clip-path: none;
+  }
+
+  .core-content-grid {
+    flex-direction: column;
+    padding: 40px 0;
+  }
+
+  .core-left-col {
+    padding-right: 0;
+    padding-bottom: 40px;
+  }
+
+  .core-right-col {
+    width: 100%;
+    align-items: flex-start;
+  }
+}
+
+/* Højre side med skrå kant og billede */
+.autonomy-bg-split .bg-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  /* Vi lader den fylde mere end halvdelen og skærer den skråt */
+  width: 45%; 
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.4)), 
+              url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+  /* En mere præcis, glidende skrå kant der starter 120px inde fra venstre top og går til 0px i bunden */
+  clip-path: polygon(120px 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+/* Jeres wrap styrer indholdsbredden */
+.autonomy-section .wrap {
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+}
+
+/* Grid med større højde og luft */
+.autonomy-content-grid {
+  display: flex;
+  align-items: center;
+  min-height: 560px;
+  padding: 60px 0;
+}
+
+/* Venstre kolonne - Større tekst og elementer */
+.autonomy-left-col {
+  flex: 1.15;
+  padding-right: 80px;
+  color: #111111;
+}
+
+.autonomy-left-col .subtitle {
+  color: #e26112;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.autonomy-left-col .main-title {
+  font-size: 52px; /* Markant større overskrift */
+  font-weight: 900;
+  line-height: 0.98;
+  letter-spacing: -1px;
+  margin: 0 0 25px 0;
+  color: #111518;
+}
+
+.autonomy-left-col .main-title .dot {
+  color: #e26112;
+}
+
+.autonomy-left-col .description {
+  color: #4a4a4a;
+  font-size: 16px; /* Større brødtekst */
+  line-height: 1.55;
+  margin: 0 0 45px 0;
+  max-width: 90%;
+}
+
+.autonomy-left-col .stats-grid {
+  display: flex;
+  gap: 35px;
+  border-top: 1px solid #dcd8d0;
+  padding-top: 25px;
+}
+
+.autonomy-left-col .stat-item {
+  flex: 1;
+}
+
+.autonomy-left-col .stat-item.highlight {
+  border-left: 3.5px solid #e26112;
+  padding-left: 14px;
+}
+
+.autonomy-left-col .stat-number {
+  font-size: 26px; /* Større tal */
+  font-weight: 800;
+  color: #111518;
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+}
+
+.autonomy-left-col .stat-label {
+  font-size: 11px;
+  color: #666666;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: 0.8px;
+}
+
+/* Højre kolonne - Større ikonrækker */
+.autonomy-right-col {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding-left: 40px;
+}
+
+.autonomy-right-col .feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.autonomy-right-col .feature-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.autonomy-right-col .feature-item:last-child {
+  border-bottom: none;
+}
+
+.autonomy-right-col .feature-item .icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1.5px solid #e26112;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #e26112;
+}
+
+.autonomy-right-col .feature-item .icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Responsivt design */
+@media (max-width: 900px) {
+  .autonomy-bg-split .bg-right {
+    width: 100%;
+    clip-path: none;
+  }
+
+  .autonomy-content-grid {
+    flex-direction: column;
+    padding: 40px 0;
+  }
+
+  .autonomy-left-col {
+    padding-right: 0;
+    padding-bottom: 50px;
+  }
+
+  .autonomy-left-col .main-title {
+    font-size: 38px;
+  }
+
+  .autonomy-right-col {
+    padding-left: 0;
+    justify-content: flex-start;
+  }
+}
 /* ---------- MINIMAL IMAGE-GRID INTRO ---------- */
 .site-intro{
   position:fixed;inset:0;z-index:9999;
