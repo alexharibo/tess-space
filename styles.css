@@ -503,8 +503,7 @@
   /* Justeret så den skrå linje ikke rammer teksten */
   width: calc(50% + 100px);
   height: 100%;
-  background: radial-gradient(circle at 80% 50%, rgba(226, 97, 18, 0.08) 0%, transparent 60%),
-              linear-gradient(to right, #080707 20%, #0d0c0c 100%);
+  background: #f4f3f1;
   /* Skrå vinkel der flugter sikkert fra venstre mod højre */
   clip-path: polygon(120px 0, 100% 0, 100% 100%, 0% 100%);
 }
@@ -550,7 +549,7 @@
   line-height: 1.02;
   letter-spacing: -0.5px;
   margin: 0 0 25px 0;
-  color: #ffffff;
+  color: #050505;
 }
 
 .people-right-col .main-title .dot {
@@ -558,7 +557,7 @@
 }
 
 .people-right-col .description {
-  color: #b0b0b0;
+  color: #555555;
   font-size: 15.5px;
   line-height: 1.6;
   margin: 0;
