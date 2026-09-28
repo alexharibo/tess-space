@@ -19,6 +19,11 @@
     :root:not([data-theme="dark"]){ /* brand is intentionally dark regardless of system theme */ }
   }
 
+  /* Company */
+
+  .idea .accent {
+   color:#ff6b1a;
+    }
  
 /* INVESTORS */
 /* Hovedsektion i 100% bredde */
@@ -72,6 +77,8 @@
   background: radial-gradient(circle at 80% 50%, rgba(226, 97, 18, 0.15) 0%, transparent 60%),
               linear-gradient(to right, #080707 40%, rgba(8, 7, 7, 0.8) 100%);
 }
+
+
 
 /* Jeres wrap styrer bredden og centrerer indholdet */
 .approach-section .wrap {
