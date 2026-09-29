@@ -458,134 +458,10 @@
    OUR VALUES
 ========================================= */
 
-.our-values {
-  position: relative;
-  width: 100%;
-  min-height: 430px;
-  background: #060606;
-  color: #fff;
-  overflow: hidden;
 
-  display: flex;
-  align-items: center;
-}
-
-.values-content {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-
-  display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 70px;
-
-  padding: 70px 40px;
-}
-
-
-/* =========================================
-   LEFT INTRO
-========================================= */
-
-.values-intro {
-  align-self: center;
-  max-width: 245px;
-}
-
-.values-intro .eyebrow {
-  margin-bottom: 12px;
-
-  color: #ff7600;
-}
-
-.values-intro h2 {
-  margin: 0 0 26px;
-
-  font-size: 25px;
-  line-height: 1.15;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-
-  text-transform: uppercase;
-}
-
-.values-intro h2 .accent {
-  color: #ff7600;
-}
-
-.values-intro p {
-  margin: 0;
-
-  max-width: 235px;
-
-  color: rgba(255, 255, 255, 0.55);
-
-}
-
-
-/* =========================================
-   VALUES GRID
-========================================= */
-
-.values-system {
-  position: relative;
-
-  min-height: 290px;
-
-  display: grid;
-  grid-template-columns: 1fr 190px 1fr;
-  grid-template-rows: 1fr 1fr;
-
-  column-gap: 50px;
-  row-gap: 30px;
-
-  align-items: center;
-}
-
-
-/* =========================================
-   VALUE ITEMS
-========================================= */
-
-.value-item {
-  position: relative;
-  z-index: 2;
-}
-
-.value-number {
-  display: block;
-
-  margin-bottom: 6px;
-
-  color: #ff7600;
-
- 
-  
-}
-
-.value-item h3 {
-  margin: 0 0 8px;
-
-
-
-
-  white-space: nowrap;
-}
-
-.value-item h3 span {
-  color: #ff7600;
-}
-
-.value-item p {
-  margin: 0;
-
-  color: rgba(255, 255, 255, 0.55);
-
-
- 
-}
 
 /* Our Team Section */
+/* Base styles for Our Team */
 .our-team {
   position: relative;
   background-color: #0b0d0e;
@@ -607,7 +483,7 @@
 }
 
 .team-copy .eyebrow {
-  color: #ff5500; /* Accent-orange */
+  color: #ff5500;
   text-transform: uppercase;
   font-size: 0.85rem;
   font-weight: 700;
@@ -651,91 +527,29 @@
   color: #ffffff;
 }
 
-/* Navigations-knapper øverst til højre */
-/* Beholder til højre side (kort + knapper) */
+/* Højre side beholder (cards + knapper) */
 .team-right {
+  position: relative;
   flex: 1;
-  min-width: 0; /* Sikrer at flex-child kan scrolle internt */
+  min-width: 0; /* Vigtigt for at flex-children kan scrolle internt */
   display: flex;
   flex-direction: column;
 }
 
-/* Navigations-beholder under kortene */
-.team-nav-controls {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end; /* Ret til 'center' hvis de skal være centreret under kortene */
-  gap: 12px;
-  margin-top: 20px;
-}
-
-/* Knapperne selv */
-.team-nav {
-  position: relative; /* Fjernet position: absolute */
-  margin:auto;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  border: 1px solid #33373b;
-  background: transparent;
-  color: #ffffff;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.team-nav:hover {
-  border-color: #ff5500;
-  color: #ff5500;
-}
-
-.team-nav svg {
-  width: 20px;
-  height: 20px;
-}
-
-/* Mobil-tilpasning */
-@media (max-width: 600px) {
-  .team-nav-controls {
-    justify-content: center; /* Centrerer knapperne på mobil */
-    margin-top: 16px;
-  }
-}
-
-/* Opdateret kort-række med fading mask i højre side */
+/* Kort-række med fading mask */
 .team-cards {
   display: flex;
   gap: 16px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding: 10px 40px 20px 0px; /* Tilføjet padding for at give luft til masken */
-  
-  /* Skjul scrollbar */
-  scrollbar-width: none;
-  
-  /* Gradvis udtoning (fade) mod højre */
-  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0) 100%);
-  mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0) 100%);
-}
-
-/* Skjul scrollbar for Webkit-browsere (Chrome/Safari) */
-.team-cards::-webkit-scrollbar {
-  display: none;
-}
-
-/* Beholderen omkring skal have plads til at udtone */
-.team-right {
-  position: relative;
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
+  padding: 10px 40px 20px 0px;
+  scrollbar-width: none; /* Skjul scrollbar på Firefox */
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
 }
 
 .team-cards::-webkit-scrollbar {
-  display: none;
+  display: none; /* Skjul scrollbar på Chrome/Safari */
 }
 
 /* Enkelt team-kort */
@@ -747,11 +561,9 @@
   padding: 16px;
   display: flex;
   flex-direction: column;
-  position: relative;
   transition: border-color 0.3s ease;
 }
 
-/* Fremhævet kort (Active) */
 .team-card.active {
   border-color: #ff5500;
   box-shadow: 0 0 15px rgba(255, 85, 0, 0.15);
@@ -792,8 +604,6 @@
   padding: 2px 4px;
   border-radius: 2px;
   text-decoration: none;
-  width:25px;
-  text-align:center;
 }
 
 .team-card.active .role {
@@ -814,7 +624,6 @@
   line-height: 1.4;
 }
 
-/* Ledig stilling kort */
 .team-card.open-position .member-img {
   display: flex;
   align-items: center;
@@ -834,7 +643,103 @@
   justify-content: center;
 }
 
+/* Navigations-knapper placeret under kortene */
+.team-nav-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
 
+.team-nav {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid #33373b;
+  background: transparent;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.team-nav:hover {
+  border-color: #ff5500;
+  color: #ff5500;
+}
+
+.team-nav svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ----------------------------------
+   RESPONSIVE (MOBIL OG TABLET)
+------------------------------------- */
+
+/* Tablet & bærbare skærme (under 992px) */
+@media (max-width: 992px) {
+  .team-content {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .team-copy {
+    flex: none;
+    width: 100%;
+  }
+
+  .team-right {
+    width: 100%;
+  }
+}
+
+/* Mobilskærme (under 600px) */
+@media (max-width: 600px) {
+  .our-team {
+    padding: 40px 0;
+  }
+
+  .team-copy h2 {
+    font-size: 1.75rem;
+  }
+
+  .team-copy p {
+    font-size: 0.875rem;
+    margin-bottom: 20px;
+  }
+
+  .btn-team {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+
+  /* Juster kortstørrelsen til mobil, så næste kort titter frem i højre side */
+  .team-card {
+    flex: 0 0 75vw; /* Fylder 75% af skærmbredden */
+  }
+
+  .member-img {
+    height: 220px;
+  }
+
+  /* Juster masken til mobil for et lidt tydeligere "kig" til næste kort */
+  .team-cards {
+    padding-right: 20px;
+    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%);
+  }
+
+  /* Centrer navigationsknapperne på mobil */
+  .team-nav-controls {
+    justify-content: center;
+    margin-top: 16px;
+  }
+}
 
 
 /* =========================================
