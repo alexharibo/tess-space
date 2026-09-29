@@ -652,25 +652,39 @@
 }
 
 /* Navigations-knapper øverst til højre */
+/* Beholder til højre side (kort + knapper) */
+.team-right {
+  flex: 1;
+  min-width: 0; /* Sikrer at flex-child kan scrolle internt */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navigations-beholder under kortene */
+.team-nav-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Ret til 'center' hvis de skal være centreret under kortene */
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* Knapperne selv */
 .team-nav {
-  position: absolute;
-  top: 40px;
-  width: 40px;
-  height: 40px;
+  position: relative; /* Fjernet position: absolute */
+  margin:auto;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   border: 1px solid #33373b;
   background: transparent;
   color: #ffffff;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: border-color 0.3s, color 0.3s;
-  z-index: 10;
+  transition: all 0.3s ease;
 }
-
-.team-prev { right: 90px; }
-.team-next { right: 40px; }
 
 .team-nav:hover {
   border-color: #ff5500;
@@ -682,15 +696,42 @@
   height: 20px;
 }
 
-/* Kort-række / Karusel */
+/* Mobil-tilpasning */
+@media (max-width: 600px) {
+  .team-nav-controls {
+    justify-content: center; /* Centrerer knapperne på mobil */
+    margin-top: 16px;
+  }
+}
+
+/* Opdateret kort-række med fading mask i højre side */
 .team-cards {
   display: flex;
   gap: 16px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding-bottom: 20px;
+  padding: 10px 40px 20px 0px; /* Tilføjet padding for at give luft til masken */
+  
   /* Skjul scrollbar */
   scrollbar-width: none;
+  
+  /* Gradvis udtoning (fade) mod højre */
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0) 100%);
+}
+
+/* Skjul scrollbar for Webkit-browsere (Chrome/Safari) */
+.team-cards::-webkit-scrollbar {
+  display: none;
+}
+
+/* Beholderen omkring skal have plads til at udtone */
+.team-right {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .team-cards::-webkit-scrollbar {

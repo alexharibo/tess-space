@@ -335,14 +335,8 @@ AUTONOMY LAYER.</span></h1>
 
 <!-- Our Team Section -->
 
+<!-- Our Team Section -->
 <section class="our-team" id="our-team">
-  <button class="team-nav team-prev" aria-label="Previous">
-    <svg viewBox="0 0 24 24" fill="none"><path d="M15 4L7 12l8 8" stroke="currentColor" stroke-width="1.8"/></svg>
-  </button>
-  <button class="team-nav team-next" aria-label="Next">
-    <svg viewBox="0 0 24 24" fill="none"><path d="M9 4l8 8-8 8" stroke="currentColor" stroke-width="1.8"/></svg>
-  </button>
-
   <div class="wrap team-content">
     <div class="team-copy">
       <div class="eyebrow">Our Team</div>
@@ -351,75 +345,87 @@ AUTONOMY LAYER.</span></h1>
       <a href="#full-team" class="btn-team">VIEW FULL TEAM <span class="arrow">&rarr;</span></a>
     </div>
 
-    <div class="team-cards" id="teamCards">
-      <!-- Member 1 -->
-      <div class="team-card">
-        <div class="member-img">
-          <img src="assets/simon-boghavn.jpg" alt="Simon Bøgh" onerror="this.style.display='none'">
+    <div class="team-right">
+      <div class="team-cards" id="teamCards">
+        <!-- Member 1 -->
+        <div class="team-card">
+          <div class="member-img">
+            <img src="assets/simon-boghavn.jpg" alt="Simon Bøgh" onerror="this.style.display='none'">
+          </div>
+          <div class="member-info">
+            <h3>SIMON BØGH <a href="https://linkedin.com" target="_blank" rel="noopener" class="li-link" aria-label="LinkedIn">in</a></h3>
+            <span class="role">CEO & Co-founder</span>
+            <p>Specialist in space robotics, AI & autonomous systems for extreme environments.</p>
+          </div>
         </div>
-        <div class="member-info">
-          <h3>SIMON BØGH <a href="https://linkedin.com" target="_blank" rel="noopener" class="li-link" aria-label="LinkedIn">in</a></h3>
-          <span class="role">CEO & Co-founder</span>
-          <p>Specialist in space robotics, AI & autonomous systems for extreme environments.</p>
+
+        <!-- Member 2 (Active) -->
+        <div class="team-card active">
+          <div class="member-img">
+            <img src="assets/anton-mortensen.jpg" alt="Anton Bjørndahl Mortensen" onerror="this.style.display='none'">
+          </div>
+          <div class="member-info">
+            <h3>ANTON BJØRNDAHL MORTENSEN <a href="https://linkedin.com" target="_blank" rel="noopener" class="li-link" aria-label="LinkedIn">in</a></h3>
+            <span class="role">CTO & Co-founder</span>
+            <p>PhD Researcher in Space Robotics and co-founder of Tess Space. Anton leads the development of off-road autonomy for extreme environments, combining deep technical research with real-world deployment.</p>
+          </div>
+        </div>
+
+        <!-- Member 3 -->
+        <div class="team-card">
+          <div class="member-img">
+            <img src="assets/jonas-thorhauge.jpg" alt="Jonas Thorhauge-Hansen" onerror="this.style.display='none'">
+          </div>
+          <div class="member-info">
+            <h3>JONAS THORHAUGE-HANSEN <a href="https://linkedin.com" target="_blank" rel="noopener" class="li-link" aria-label="LinkedIn">in</a></h3>
+            <span class="role">Robotics Engineer</span>
+            <p>Recently graduated MSc. in Robotics at Aalborg University. Robotics engineer at Tess Space.</p>
+          </div>
+        </div>
+
+        <!-- Member 4 -->
+        <div class="team-card">
+          <div class="member-img">
+            <img src="assets/christoffer-christiansen.jpg" alt="Christoffer Christiansen" onerror="this.style.display='none'">
+          </div>
+          <div class="member-info">
+            <h3>CHRISTOFFER CHRISTIANSEN <a href="https://linkedin.com" target="_blank" rel="noopener" class="li-link" aria-label="LinkedIn">in</a></h3>
+            <span class="role">Robotics Engineer</span>
+            <p>Robotics engineer.</p>
+          </div>
+        </div>
+
+        <!-- Member 5 -->
+        <div class="team-card">
+          <div class="member-img">
+            <img src="assets/artem-melnyk.jpg" alt="Artem Melnyk" onerror="this.style.display='none'">
+          </div>
+          <div class="member-info">
+            <h3>ARTEM MELNYK <a href="https://linkedin.com" target="_blank" rel="noopener" class="li-link" aria-label="LinkedIn">in</a></h3>
+            <span class="role">Robotteknologi ved Aalborg Universitet</span>
+          </div>
+        </div>
+
+        <!-- Open Position Card -->
+        <div class="team-card open-position">
+          <div class="member-img flex-center">
+            <span class="plus-icon">+</span>
+          </div>
+          <div class="member-info">
+            <h3>BUSINESS DEVELOPER</h3>
+            <span class="role">Open position</span>
+          </div>
         </div>
       </div>
 
-      <!-- Member 2 (Active/Highlighted) -->
-      <div class="team-card active">
-        <div class="member-img">
-          <img src="assets/anton-mortensen.jpg" alt="Anton Bjørndahl Mortensen" onerror="this.style.display='none'">
-        </div>
-        <div class="member-info">
-          <h3>ANTON BJØRNDAHL MORTENSEN <a href="https://linkedin.com" target="_blank" rel="noopener" class="li-link" aria-label="LinkedIn">in</a></h3>
-          <span class="role">CTO & Co-founder</span>
-          <p>PhD Researcher in Space Robotics and co-founder of Tess Space. Anton leads the development of off-road autonomy for extreme environments, combining deep technical research with real-world deployment.</p>
-        </div>
-      </div>
-
-      <!-- Member 3 -->
-      <div class="team-card">
-        <div class="member-img">
-          <img src="assets/jonas-thorhauge.jpg" alt="Jonas Thorhauge-Hansen" onerror="this.style.display='none'">
-        </div>
-        <div class="member-info">
-          <h3>JONAS THORHAUGE-HANSEN <a href="https://linkedin.com" target="_blank" rel="noopener" class="li-link" aria-label="LinkedIn">in</a></h3>
-          <span class="role">Robotics Engineer</span>
-          <p>Recently graduated MSc. in Robotics at Aalborg University. Robotics engineer at Tess Space.</p>
-        </div>
-      </div>
-
-      <!-- Member 4 -->
-      <div class="team-card">
-        <div class="member-img">
-          <img src="assets/christoffer-christiansen.jpg" alt="Christoffer Christiansen" onerror="this.style.display='none'">
-        </div>
-        <div class="member-info">
-          <h3>CHRISTOFFER CHRISTIANSEN <a href="https://linkedin.com" target="_blank" rel="noopener" class="li-link" aria-label="LinkedIn">in</a></h3>
-          <span class="role">Robotics Engineer</span>
-          <p>Robotics engineer.</p>
-        </div>
-      </div>
-
-      <!-- Member 5 -->
-      <div class="team-card">
-        <div class="member-img">
-          <img src="assets/artem-melnyk.jpg" alt="Artem Melnyk" onerror="this.style.display='none'">
-        </div>
-        <div class="member-info">
-          <h3>ARTEM MELNYK <a href="https://linkedin.com" target="_blank" rel="noopener" class="li-link" aria-label="LinkedIn">in</a></h3>
-          <span class="role">Robotteknologi ved Aalborg Universitet</span>
-        </div>
-      </div>
-
-      <!-- Open Position Card -->
-      <div class="team-card open-position">
-        <div class="member-img flex-center">
-          <span class="plus-icon">+</span>
-        </div>
-        <div class="member-info">
-          <h3>BUSINESS DEVELOPER</h3>
-          <span class="role">Open position</span>
-        </div>
+      <!-- Knapper under kortene -->
+      <div class="team-nav-controls">
+        <button class="team-nav team-prev" aria-label="Previous">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M15 4L7 12l8 8" stroke="currentColor" stroke-width="1.8"/></svg>
+        </button>
+        <button class="team-nav team-next" aria-label="Next">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M9 4l8 8-8 8" stroke="currentColor" stroke-width="1.8"/></svg>
+        </button>
       </div>
     </div>
   </div>
