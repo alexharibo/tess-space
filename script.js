@@ -297,3 +297,28 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 })();
 
 
+/* ---------- our story timeline ---------- */
+(function(){
+  const timeline = document.getElementById('storyTimeline');
+  const fill = document.getElementById('storyFill');
+  if(!timeline || !fill) return;
+
+  const steps = Array.from(timeline.querySelectorAll('.st-step'));
+  let current = 0;
+
+  function render(i){
+    current = (i + steps.length) % steps.length;
+    steps.forEach((s, idx) => s.classList.toggle('active', idx === current));
+    const pct = ((current + 0.5) / steps.length) * 100;
+    fill.style.width = pct + '%';
+  }
+
+  steps.forEach((step, i) => step.addEventListener('click', () => render(i)));
+
+  const prev = document.querySelector('.story-prev');
+  const next = document.querySelector('.story-next');
+  if(prev) prev.addEventListener('click', () => render(current - 1));
+  if(next) next.addEventListener('click', () => render(current + 1));
+
+  render(0);
+})();
