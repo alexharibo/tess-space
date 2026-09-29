@@ -458,7 +458,162 @@
    OUR VALUES
 ========================================= */
 
+/* Our Values Section */
+.our-values {
+  position: relative;
+  width: 100%;
+  background-color: #0b0d0e;
+  color: #ffffff;
+  padding: 80px 0;
+  overflow: hidden;
+  font-family: inherit;
+}
 
+.values-content {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Venstre intro-tekst */
+.values-intro {
+  display: flex;
+  flex-direction: column;
+}
+
+.values-intro .eyebrow {
+  color: #ff5500;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.values-intro h2 {
+  font-size: 2rem;
+  line-height: 1.15;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  letter-spacing: -0.5px;
+}
+
+.values-intro h2 .accent {
+  color: #ff5500;
+}
+
+.values-intro p {
+  color: #a0a5aa;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Højre Grid-system (Værdier + Logo) */
+.values-system {
+  display: grid;
+  grid-template-columns: 1fr 160px 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 40px;
+  row-gap: 36px;
+  align-items: center;
+}
+
+/* SVG Logo i midten */
+.values-logo {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.values-logo svg {
+  width: 100%;
+  max-width: 140px;
+  height: auto;
+  color: #ff5500;
+}
+
+/* Værdi-kort */
+.value-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.value-number {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ff5500;
+  margin-bottom: 6px;
+}
+
+.value-item h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+}
+
+.value-item h3 .accent {
+  color: #ff5500;
+}
+
+.value-item p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #a0a5aa;
+  line-height: 1.45;
+}
+
+/* ----------------------------------
+   RESPONSIVE (TABLET & MOBIL)
+------------------------------------- */
+
+/* Tablet (under 992px) */
+@media (max-width: 992px) {
+  .values-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .values-intro {
+    max-width: 100%;
+  }
+
+  .values-system {
+    grid-template-columns: 1fr 120px 1fr;
+    column-gap: 24px;
+  }
+}
+
+/* Mobilskærme (under 680px) */
+@media (max-width: 680px) {
+  .our-values {
+    padding: 40px 0;
+  }
+
+  .values-intro h2 {
+    font-size: 1.65rem;
+  }
+
+  /* På mobil skjuler vi midter-logoet og opstiller værdierne i 1 kolonne */
+  .values-system {
+    grid-template-columns: 1fr;
+    row-gap: 28px;
+  }
+
+  .values-logo {
+    display: none; /* Skjul SVG logoet på mobil for renere layout */
+  }
+
+  .value-item h3 {
+    font-size: 1.1rem;
+  }
+}
 
 /* Our Team Section */
 /* Base styles for Our Team */
