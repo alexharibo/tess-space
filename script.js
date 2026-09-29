@@ -322,3 +322,35 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
   render(0);
 })();
+
+document.addEventListener('DOMContentLoaded', () => {
+  const teamCards = document.getElementById('teamCards');
+  const prevBtn = document.querySelector('.team-prev');
+  const nextBtn = document.querySelector('.team-next');
+  const cards = document.querySelectorAll('.team-card');
+
+  if (!teamCards || !prevBtn || !nextBtn) return;
+
+  // Hvor meget der scrolles ved tryk på pilene (kort-bredde + gap)
+  const scrollAmount = 236; 
+
+  // Pil-navigation (Scroll til venstre / højre)
+  nextBtn.addEventListener('click', () => {
+    teamCards.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  });
+
+  prevBtn.addEventListener('click', () => {
+    teamCards.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  });
+
+  // Skift det aktive/fremhævede kort ved klik
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      // Fjern 'active' fra alle kort
+      cards.forEach(c => c.classList.remove('active'));
+      
+      // Tilføj 'active' til det valgte kort
+      card.classList.add('active');
+    });
+  });
+});

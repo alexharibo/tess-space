@@ -585,6 +585,212 @@
  
 }
 
+/* Our Team Section */
+.our-team {
+  position: relative;
+  background-color: #0b0d0e;
+  color: #ffffff;
+  padding: 80px 0;
+  overflow: hidden;
+  font-family: inherit;
+}
+
+.team-content {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* Venstre side (Copy & CTA) */
+.team-copy {
+  flex: 0 0 300px;
+}
+
+.team-copy .eyebrow {
+  color: #ff5500; /* Accent-orange */
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.team-copy h2 {
+  font-size: 2.2rem;
+  line-height: 1.1;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+
+.team-copy p {
+  color: #a0a5aa;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.btn-team {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #ff5500;
+  color: #ff5500;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.btn-team:hover {
+  background-color: #ff5500;
+  color: #ffffff;
+}
+
+/* Navigations-knapper øverst til højre */
+.team-nav {
+  position: absolute;
+  top: 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #33373b;
+  background: transparent;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.3s, color 0.3s;
+  z-index: 10;
+}
+
+.team-prev { right: 90px; }
+.team-next { right: 40px; }
+
+.team-nav:hover {
+  border-color: #ff5500;
+  color: #ff5500;
+}
+
+.team-nav svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Kort-række / Karusel */
+.team-cards {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 20px;
+  /* Skjul scrollbar */
+  scrollbar-width: none;
+}
+
+.team-cards::-webkit-scrollbar {
+  display: none;
+}
+
+/* Enkelt team-kort */
+.team-card {
+  flex: 0 0 220px;
+  background-color: #121517;
+  border: 1px solid #1e2226;
+  border-radius: 4px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: border-color 0.3s ease;
+}
+
+/* Fremhævet kort (Active) */
+.team-card.active {
+  border-color: #ff5500;
+  box-shadow: 0 0 15px rgba(255, 85, 0, 0.15);
+}
+
+.member-img {
+  width: 100%;
+  height: 260px;
+  background-color: #1a1d20;
+  margin-bottom: 16px;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.member-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.member-info h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.2;
+  margin-bottom: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.li-link {
+  color: #ffffff;
+  background: #22262a;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 4px;
+  border-radius: 2px;
+  text-decoration: none;
+}
+
+.team-card.active .role {
+  color: #ff5500;
+}
+
+.role {
+  display: block;
+  font-size: 0.8rem;
+  color: #8a9096;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.member-info p {
+  font-size: 0.75rem;
+  color: #a0a5aa;
+  line-height: 1.4;
+}
+
+/* Ledig stilling kort */
+.team-card.open-position .member-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, #1e2328 0%, #121517 100%);
+}
+
+.plus-icon {
+  font-size: 2rem;
+  color: #50565d;
+  border: 1px solid #33373b;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 /* =========================================
    POSITIONING
