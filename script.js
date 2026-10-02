@@ -354,3 +354,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+/* ---------- careers: role select + apply form ---------- */
+(function(){
+  const roleCards = document.querySelectorAll('.role-card');
+  const positionSelect = document.getElementById('applyPosition');
+
+  roleCards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      e.preventDefault();
+      roleCards.forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+      if(positionSelect) positionSelect.value = card.dataset.role;
+    });
+  });
+
+  const form = document.getElementById('applyForm');
+  if(form){
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // TODO: forbind til jeres rigtige backend/formular-service (fx Formspree, egen API osv.)
+      alert('Tak for din ansøgning! Vi vender tilbage hurtigst muligt.');
+      form.reset();
+    });
+  }
+})();

@@ -1,0 +1,113 @@
+.tess-infinite-hero{
+  position:relative;
+  width:100%;
+  height:100vh;
+  overflow:hidden;
+  background:#050506;
+  color:#f4f3f1;
+}
+
+.tess-hero-copy{
+  position:absolute;
+  top:120px;left:60px;
+  z-index:20;
+  max-width:480px;
+  pointer-events:none;
+}
+.tess-hero-copy span{
+  font-family:'Plus Jakarta Sans', sans-serif;
+  font-weight:700;
+  font-size:12px;
+  letter-spacing:0.14em;
+  color:#ff6b1a;
+  display:block;
+  margin-bottom:16px;
+}
+.tess-hero-copy h1{
+  font-family:'Plus Jakarta Sans', sans-serif;
+  font-weight:800;
+  font-size:clamp(34px,5vw,58px);
+  line-height:1.05;
+  margin:0 0 20px;
+}
+.tess-hero-copy h1 em{
+  font-style:normal;
+  color:#ff6b1a;
+}
+.tess-hero-copy p{
+  font-family:'Nunito', sans-serif;
+  font-size:15.5px;
+  color:#a3a2a0;
+  max-width:400px;
+}
+
+.tess-depth-stage{
+  position:absolute;
+  inset:0;
+  perspective:900px;
+  transform-style:preserve-3d;
+}
+
+.tess-depth-card{
+  position:absolute;
+  top:50%;left:50%;
+  width:560px;
+  height:360px;
+  margin:-180px 0 0 -280px;
+  border-radius:6px;
+  overflow:hidden;
+  will-change:transform, opacity, filter;
+  box-shadow:0 30px 60px rgba(0,0,0,0.5);
+}
+.tess-depth-card img{
+  width:100%;height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.tess-card-overlay{
+  position:absolute;
+  left:0;right:0;bottom:0;
+  padding:24px 28px;
+  background:linear-gradient(180deg, rgba(5,5,6,0) 40%, rgba(5,5,6,0.9) 100%);
+}
+.tess-card-overlay small{
+  display:block;
+  font-family:'Plus Jakarta Sans', sans-serif;
+  font-weight:700;
+  font-size:11px;
+  letter-spacing:0.1em;
+  color:#ff6b1a;
+  margin-bottom:6px;
+}
+.tess-card-overlay h2{
+  font-family:'Plus Jakarta Sans', sans-serif;
+  font-weight:800;
+  font-size:22px;
+  margin:0;
+  color:#fff;
+}
+
+.tess-scroll-indicator{
+  position:absolute;
+  bottom:36px;left:50%;
+  transform:translateX(-50%);
+  z-index:20;
+  font-family:'Plus Jakarta Sans', sans-serif;
+  font-weight:700;
+  font-size:11px;
+  letter-spacing:0.14em;
+  color:#6b6a68;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+}
+.tess-scroll-indicator span{
+  color:#ff6b1a;
+  animation:bounce 1.6s ease-in-out infinite;
+}
+@keyframes bounce{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(6px);}
+}
