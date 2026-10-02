@@ -93,6 +93,23 @@
   outline:none;
   transition:border-color .2s ease;
 }
+
+.apply-field textarea{
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--line);border-radius:2px;
+  padding:11px 12px;
+  font:600 13px var(--font-body);color:var(--ink);
+  outline:none;
+  resize:none;
+  overflow:hidden;
+  min-height:40px;
+  max-height:220px;
+  line-height:1.5;
+  font-family:inherit;
+  transition:border-color .2s ease, height .15s ease;
+}
+.apply-field textarea::placeholder{color:var(--ink-faint);}
+.apply-field textarea:focus{border-color:var(--accent);}
 .apply-field input::placeholder{color:var(--ink-faint);}
 .apply-field input:focus,.apply-field select:focus{border-color:var(--accent);}
 .apply-field select{appearance:none;cursor:pointer;}

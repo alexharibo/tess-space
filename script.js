@@ -373,9 +373,37 @@ document.addEventListener('DOMContentLoaded', () => {
   if(form){
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      // TODO: forbind til jeres rigtige backend/formular-service (fx Formspree, egen API osv.)
-      alert('Tak for din ansøgning! Vi vender tilbage hurtigst muligt.');
-      form.reset();
+
+      const name = document.getElementById('applyName').value.trim();
+      const email = document.getElementById('applyEmail').value.trim();
+      const position = document.getElementById('applyPosition').value;
+      const message = document.getElementById('applyMessage').value.trim();
+
+      const recipient = 'careers@tess-space.com'; // <-- ret til jeres rigtige ansøgnings-mail
+
+      const subject = `Job Application — ${position}`;
+      const body =
+`Name: ${name}
+Email: ${email}
+Position: ${position}
+
+Message:
+${message || '(no message provided)'}`;
+
+      const mailtoLink =
+        `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      window.location.href = mailtoLink;
     });
   }
 })();
+
+const messageField = document.getElementById('applyMessage');
+if(messageField){
+  const autoGrow = () => {
+    messageField.style.height = 'auto';
+    messageField.style.height = messageField.scrollHeight + 'px';
+  };
+  messageField.addEventListener('input', autoGrow);
+  autoGrow(); // sæt korrekt højde fra start
+}
