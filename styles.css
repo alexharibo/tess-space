@@ -4215,3 +4215,190 @@ footer{background:#0a0a0b;border-top:1px solid var(--line);padding:56px 0 28px;}
 .fc-content h2{font-size:clamp(26px,3.6vw,40px);font-weight:800;line-height:1.1;margin:14px 0 18px;}
 .fc-content h2 .accent{color:var(--accent);}
 .fc-content p{font-size:14.5px;color:var(--ink-dim);line-height:1.7;}
+
+
+/* General Utility & Variables */
+:root {
+  --accent-orange: #ff6b00;
+  --bg-card: #121417;
+  --border-card: #22262a;
+  --text-main: #ffffff;
+  --text-muted: #8a919a;
+}
+
+.accent-dot {
+  color: var(--accent-orange);
+}
+
+/* Section Header Eyebrow Styling */
+#operating-scope .eyebrow {
+  letter-spacing: 0.1em;
+  font-size: 0.8rem;
+  color: var(--accent-orange);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+#operating-scope h2 {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 2rem;
+}
+
+/* 2x2 Grid Layout */
+.scope-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+@media (max-width: 768px) {
+  .scope-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card Component */
+.scope-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #1a1d21;
+  overflow: hidden;
+}
+
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-body h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+
+.card-body p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.field-proof-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--accent-orange);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  transition: opacity 0.2s;
+}
+
+.field-proof-link svg {
+  width: 14px;
+  height: 14px;
+}
+
+.field-proof-link:hover {
+  opacity: 0.8;
+}
+
+.card-meta {
+  font-size: 0.75rem;
+  color: #5d646e;
+}
+
+/* See It In Action Banner */
+.action-banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+              url('assets/hero-bg.jpg') center/cover no-repeat;
+  padding: 4rem 0;
+  border-top: 1px solid var(--border-card);
+}
+
+.action-banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.action-info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.play-icon svg {
+  width: 48px;
+  height: 48px;
+}
+
+.action-text h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem 0;
+  text-transform: uppercase;
+}
+
+.action-text p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background-color: var(--accent-orange);
+  color: #ffffff;
+  padding: 0.8rem 1.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  transition: background-color 0.2s;
+}
+
+.btn-primary svg {
+  width: 14px;
+  height: 14px;
+}
+
+.btn-primary:hover {
+  background-color: #e05e00;
+}
+
+@media (max-width: 768px) {
+  .action-banner-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
