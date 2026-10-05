@@ -407,3 +407,12 @@ if(messageField){
   messageField.addEventListener('input', autoGrow);
   autoGrow(); // sæt korrekt højde fra start
 }
+
+/* ---------- send us a message: textarea auto-grow ---------- */
+(function(){
+  const msg = document.getElementById('smMessage');
+  if(!msg) return;
+  const grow = () => { msg.style.height='auto'; msg.style.height = msg.scrollHeight + 'px'; };
+  msg.addEventListener('input', grow);
+  grow();
+})();
