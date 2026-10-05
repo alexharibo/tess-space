@@ -3046,10 +3046,11 @@ nav.links a.active{color:var(--accent);}
   @media (max-width:560px){ .mission-grid{grid-template-columns:1fr;} }
   .mcard{
     position:relative;border-radius:3px;overflow:hidden;
-    aspect-ratio:3/3.6;
+    aspect-ratio:3/5;
     border:1px solid var(--line);
     display:flex;flex-direction:column;justify-content:flex-end;
     padding:18px;
+
   }
   /* ================================
    MISSION CARDS — DESKTOP
