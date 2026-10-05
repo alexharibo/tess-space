@@ -3526,8 +3526,8 @@ background: linear-gradient(rgba(24, 24, 24, 0.5), rgba(0, 0, 0, 0.5)), url(asse
   z-index:1;
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:1px; /* Bruger gap i stedet for negative margins til border-overlap */
-  background:var(--line); /* Skaber rammen mellem elementerne */
+  gap:1px;
+  background:var(--line);
   border:1px solid var(--line);
 }
 
@@ -3541,9 +3541,7 @@ background: linear-gradient(rgba(24, 24, 24, 0.5), rgba(0, 0, 0, 0.5)), url(asse
 .platform-step{
   background:var(--bg-panel);
   padding:28px 24px 30px;
-  transition:background .3s ease;
-  /* Forhindrer ubegrundede repaints på hele kortet */
-  contain: content; 
+  /* Ingen rendering-containment der forsinker indlæsning */
 }
 
 .step-media{
@@ -3555,19 +3553,11 @@ background: linear-gradient(rgba(24, 24, 24, 0.5), rgba(0, 0, 0, 0.5)), url(asse
 }
 
 .step-media img{
-  max-width:70%;
-  max-height:70%;
-  object-fit:contain;
-  
-  /* Tvinger GPU-acceleration, så billedet ikke genberegnes under scroll */
-  will-change: transform;
-  transform: translateZ(0);
-  
-  /* Drop-shadow kan stadig bruges med GPU-layer, men hvis det stadig lagger, 
-     kan det erstattes med box-shadow eller fjernes helt fra mobile enheder */
-  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.5));
-  transition: transform .4s cubic-bezier(.19,1,.22,1), filter .4s ease;
+ 
+  object-fit:cover;
 }
+
+
 
 .platform-step h4{
   font-family:var(--font-head);
