@@ -3049,16 +3049,24 @@ nav.links a.active{color:var(--accent);}
 
   /* ---------- MISSION CARDS ---------- */
   .mission-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
-  @media (max-width:920px){ .mission-grid{grid-template-columns:repeat(2,1fr);} }
-  @media (max-width:560px){ .mission-grid{grid-template-columns:1fr;} }
+
+
+  
   .mcard{
+
     position:relative;border-radius:3px;overflow:hidden;
     aspect-ratio:3/5;
     border:1px solid var(--line);
     display:flex;flex-direction:column;justify-content:flex-end;
     padding:18px;
-
   }
+        @media (max-width:560px){ .mcard{max-height:20px;width:100%;} }
+                @media (max-width:920px){ .mcard{max-height:20px;width:100%;} }
+                 @media (max-width:120px){ .mcard{max-height:50px;width:100%;} }
+             
+           
+   
+
   /* ================================
    MISSION CARDS — DESKTOP
 ================================ */
@@ -3179,6 +3187,8 @@ nav.links a.active{color:var(--accent);}
 
     z-index: 5;
   }
+
+  
 
   .mission-grid.has-active .mcard:not(.is-active) {
     opacity: .45;
