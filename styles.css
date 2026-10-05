@@ -89,6 +89,13 @@
   font:600 13px var(--font-body);color:var(--ink);
   outline:none;
   transition:border-color .2s ease;
+  color-scheme: dark;
+}
+
+.apply-field select option{
+  background: #121417;
+  color: var(--ascent);
+  border:solid;
 }
 
 .apply-field textarea{
@@ -4219,10 +4226,14 @@ footer{background:#0a0a0b;border-top:1px solid var(--line);padding:56px 0 28px;}
 .sm-field select{
   color-scheme: dark;
 }
+
+
 .sm-field select option{
-  background: #151517;
-  color: var(--ink);
+  background: #121417;
+  color: var(--ascent);
+  border:solid;
 }
+
 .sm-field textarea{resize:none;overflow:hidden;min-height:48px;max-height:220px;line-height:1.5;}
 
 .sm-check{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--ink-dim);cursor:pointer;}
