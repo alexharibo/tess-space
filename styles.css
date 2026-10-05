@@ -905,6 +905,8 @@
   padding: 2px 4px;
   border-radius: 2px;
   text-decoration: none;
+  width:25px;
+  text-align:center;
 }
 
 .team-card.active .role {
