@@ -4381,6 +4381,7 @@ footer{background:#0a0a0b;border-top:1px solid var(--line);padding:56px 0 28px;}
               url('assets/seeitaction.jpg') center/cover no-repeat;
   padding: 4rem 0;
   border-top: 1px solid var(--border-card);
+  height:40vh;
 }
 
 .action-banner-content {
@@ -4394,6 +4395,7 @@ footer{background:#0a0a0b;border-top:1px solid var(--line);padding:56px 0 28px;}
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  height:35vh;
 }
 
 .play-icon svg {
