@@ -359,3 +359,4 @@ if(messageField){
   msg.addEventListener('input', grow);
   grow();
 })();
+

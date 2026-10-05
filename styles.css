@@ -3510,17 +3510,27 @@ background: linear-gradient(rgba(24, 24, 24, 0.5), rgba(0, 0, 0, 0.5)), url(asse
 
 /* ---------- PRODUCT ARCHITECTURE VISUAL (4-step flow) ---------- */
 .pa-heading{
-  font-family:var(--font-head);font-weight:800;font-size:clamp(20px,2.6vw,28px);
-  letter-spacing:0.02em;text-transform:uppercase;color:var(--accent);
-  margin-bottom:40px;position:relative;z-index:1;
+  font-family:var(--font-head);
+  font-weight:800;
+  font-size:clamp(20px,2.6vw,28px);
+  letter-spacing:0.02em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:40px;
+  position:relative;
+  z-index:1;
 }
 
 .platform-flow{
-  position:relative;z-index:1;
+  position:relative;
+  z-index:1;
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:0;
+  gap:1px; /* Bruger gap i stedet for negative margins til border-overlap */
+  background:var(--line); /* Skaber rammen mellem elementerne */
+  border:1px solid var(--line);
 }
+
 @media (max-width:980px){
   .platform-flow{grid-template-columns:repeat(2,1fr);}
 }
@@ -3530,41 +3540,75 @@ background: linear-gradient(rgba(24, 24, 24, 0.5), rgba(0, 0, 0, 0.5)), url(asse
 
 .platform-step{
   background:var(--bg-panel);
-  border:1px solid var(--line);
-  margin-left:-1px;margin-top:-1px;
   padding:28px 24px 30px;
   transition:background .3s ease;
+  /* Forhindrer ubegrundede repaints på hele kortet */
+  contain: content; 
 }
-
 
 .step-media{
   aspect-ratio:4/3;
-  display:flex;align-items:center;justify-content:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   margin-bottom:24px;
 }
-.step-media img{
-  max-width:70%;max-height:70%;object-fit:contain;
-  filter:drop-shadow(0 8px 18px rgba(0,0,0,0.5));
-  transition:transform .4s cubic-bezier(.19,1,.22,1), filter .4s ease;
-}
 
+.step-media img{
+  max-width:70%;
+  max-height:70%;
+  object-fit:contain;
+  
+  /* Tvinger GPU-acceleration, så billedet ikke genberegnes under scroll */
+  will-change: transform;
+  transform: translateZ(0);
+  
+  /* Drop-shadow kan stadig bruges med GPU-layer, men hvis det stadig lagger, 
+     kan det erstattes med box-shadow eller fjernes helt fra mobile enheder */
+  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.5));
+  transition: transform .4s cubic-bezier(.19,1,.22,1), filter .4s ease;
+}
 
 .platform-step h4{
-  font-family:var(--font-head);font-weight:700;font-size:16px;
-  margin-bottom:4px;color:var(--ink);
-}
-.step-sub{
-  font-family:var(--font-head);font-weight:700;font-size:11px;letter-spacing:.08em;
-  text-transform:uppercase;color:var(--accent);margin-bottom:20px;
+  font-family:var(--font-head);
+  font-weight:700;
+  font-size:16px;
+  margin-bottom:4px;
+  color:var(--ink);
 }
 
-.step-list{list-style:none;margin:0;padding:0;}
+.step-sub{
+  font-family:var(--font-head);
+  font-weight:700;
+  font-size:11px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:20px;
+}
+
+.step-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
 .step-list li{
-  display:flex;align-items:center;gap:9px;
-  font-size:13px;color:var(--ink-dim);font-weight:600;
+  display:flex;
+  align-items:center;
+  gap:9px;
+  font-size:13px;
+  color:var(--ink-dim);
+  font-weight:600;
   padding:6px 0;
 }
-.step-list li svg{width:16px;height:16px;flex:none;color:var(--accent);}
+
+.step-list li svg{
+  width:16px;
+  height:16px;
+  flex:none;
+  color:var(--accent);
+}
 
   /* ---------- EVIDENCE ---------- */
   .evidence{background:#050506;padding-top:96px;padding-bottom:96px;}
@@ -4566,3 +4610,4 @@ footer{background:#0a0a0b;border-top:1px solid var(--line);padding:56px 0 28px;}
     grid-template-columns: 1fr;
   }
 }
+
