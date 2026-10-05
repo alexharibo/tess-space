@@ -60,13 +60,10 @@
 .role-body p{font-size:12px;color:var(--ink-dim);line-height:1.4;margin:0;}
 .role-arrow{
   position:absolute;top:16px;right:14px;
-  width:22px;height:22px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  border:1px solid var(--line);color:var(--ink-faint);
-  transition:background .2s ease, color .2s ease, border-color .2s ease;
+
 }
-.role-arrow svg{width:11px;height:11px;}
-.role-card.active .role-arrow{background:var(--accent);color:#140900;border-color:var(--accent);}
+
+
 
 .apply-bar{
   background:rgba(8,8,9,.85);
