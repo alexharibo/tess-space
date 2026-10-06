@@ -4395,6 +4395,36 @@ footer{background:#0a0a0b;border-top:1px solid var(--line);padding:56px 0 28px;}
   color: #5d646e;
 }
 
+/* ---------- VALUE PROPS ---------- */
+#value-props{padding:56px 0;}
+.vp-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+}
+@media (max-width:860px){ .vp-grid{grid-template-columns:repeat(2,1fr);row-gap:40px;} }
+@media (max-width:480px){ .vp-grid{grid-template-columns:1fr;} }
+
+.vp-item{
+  text-align:center;
+  padding:0 24px;
+  border-left:1px solid var(--line);
+}
+.vp-item:first-child{border-left:none;}
+@media (max-width:860px){
+  .vp-item:nth-child(2n+1){border-left:none;}
+}
+@media (max-width:480px){
+  .vp-item{border-left:none;}
+}
+
+.vp-icon{width:40px;height:40px;color:var(--accent);margin:0 auto 16px;}
+.vp-item h4{
+  font-family:var(--font-head);font-weight:800;font-size:14px;letter-spacing:.02em;
+  text-transform:uppercase;margin-bottom:10px;color:var(--ink);
+}
+.vp-item p{font-size:13px;color:var(--ink-dim);line-height:1.5;max-width:220px;margin:0 auto;}
+
 /* See It In Action Banner */
 .action-banner {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
