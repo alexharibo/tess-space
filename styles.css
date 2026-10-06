@@ -4402,6 +4402,7 @@ footer{background:#0a0a0b;border-top:1px solid var(--line);padding:56px 0 28px;}
   padding: 4rem 0;
   border-top: 1px solid var(--border-card);
   height:50vh;
+
 }
 
 .action-banner-content {
@@ -4415,7 +4416,7 @@ footer{background:#0a0a0b;border-top:1px solid var(--line);padding:56px 0 28px;}
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  height:35vh;
+  height:50vh;
 }
 
 .play-icon svg {
@@ -4424,8 +4425,8 @@ footer{background:#0a0a0b;border-top:1px solid var(--line);padding:56px 0 28px;}
 }
 
 .action-text h2 {
-  font-size: 1.75rem;
-  font-weight: 700;
+  font-size: 3rem;
+  font-weight: 1200;
   margin: 0 0 0.25rem 0;
   text-transform: uppercase;
 }
