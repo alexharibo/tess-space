@@ -4679,3 +4679,70 @@ footer{background:#0a0a0b;border-top:1px solid var(--line);padding:56px 0 28px;}
 .bc-btn-wrap:after{right:0;border-left:none;}
 .bc-btn-wrap .btn{gap:10px;}
 .bc-btn-wrap .btn svg{width:14px;height:14px;}
+
+.features-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #0d0d0d;
+  padding: 40px 20px;
+  color: #ffffff;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-item {
+  flex: 1;
+  text-align: center;
+  padding: 0 20px;
+  border-right: 1px solid #222222;
+}
+
+.feature-item:last-child {
+  border-right: none;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 16px auto;
+  color: #ff5500; /* Orange farve til ikonerne */
+}
+
+.icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.feature-item h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.feature-item p {
+  font-size: 0.9rem;
+  color: #b0b0b0;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Responsivt design til mindre skærme */
+@media (max-width: 768px) {
+  .features-section {
+    flex-direction: column;
+  }
+  
+  .feature-item {
+    border-right: none;
+    border-bottom: 1px solid #222222;
+    padding: 24px 0;
+    width: 100%;
+  }
+
+  .feature-item:last-child {
+    border-bottom: none;
+  }
+}
