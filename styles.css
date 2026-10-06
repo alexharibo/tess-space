@@ -3811,7 +3811,7 @@ background: linear-gradient(rgba(24, 24, 24, 0.5), rgba(0, 0, 0, 0.5)), url(asse
   background:linear-gradient(180deg, rgba(5,5,6,0.1) 15%, rgba(5,5,6,0.97) 100%);
 }
 
-.mission-content{position:relative;z-index:2;padding-bottom:0;width:100%;}
+.mission-content{position:relative;z-index:2;padding-bottom:1%;width:100%;}
 .mission-content h3{
   font-family:var(--font-head);font-weight:800;
   font-size:clamp(24px,4vw,40px);line-height:1.08;
