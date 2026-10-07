@@ -4834,3 +4834,50 @@ footer{background:#0a0a0b;border-top:1px solid var(--line);padding:56px 0 28px;}
 @media (max-width:560px){
   .sv-media{grid-template-columns:1fr 1fr;}
 }
+
+
+/* BUILDING THE INTELLIGENCE LAYER I INVESTORS */
+:root{--bg:#0e0e0e;--fg:#fff;--muted:#a3a3a3;--accent:#f26a1b;--line:#2a2a2a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:Barlow,"Helvetica Neue",Arial,sans-serif}
+
+.sec{max-width:1200px;margin:0 auto;padding:72px 40px;display:grid;grid-template-columns:1fr 1.25fr;gap:64px;align-items:center}
+.tag{display:flex;align-items:center;gap:14px;font-size:12px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-bottom:26px}
+.tag b{color:var(--accent);font-weight:500}
+.tag i{width:48px;height:1px;background:var(--line)}
+h2{font-family:"Barlow Condensed",Barlow,Arial,sans-serif;font-weight:700;font-size:clamp(40px,5.4vw,60px);line-height:1.05;margin:0 0 26px;text-transform:uppercase;letter-spacing:.01em}
+h2 span{color:var(--accent)}
+.lead{color:var(--muted);font-size:16px;line-height:1.55;max-width:34ch;margin:0 0 32px}
+
+.btn{display:inline-flex;align-items:center;gap:22px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:16px 22px;border-radius:3px}
+.btn:hover{background:#ff7a2b}
+.btn:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.btn svg{width:22px;height:14px}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.cell{padding:34px 26px}
+.cell:nth-child(3n+1){padding-left:0}
+.cell:nth-child(n+4){border-top:1px solid var(--line)}
+.cell:not(:nth-child(3n+1)){border-left:1px solid var(--line)}
+.cell svg{width:30px;height:30px;stroke:var(--accent);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;margin-bottom:22px;display:block}
+.cell h3{font-size:18px;line-height:1.25;font-weight:700;margin:0 0 10px}
+.cell p{margin:0;color:var(--muted);font-size:14px;line-height:1.5}
+
+@media(max-width:900px){
+  .sec{grid-template-columns:1fr;gap:40px;padding:48px 24px}
+  .lead{max-width:48ch}
+}
+@media(max-width:560px){
+  .grid{grid-template-columns:1fr 1fr}
+  .cell,.cell:nth-child(3n+1){padding:26px 16px}
+  .cell:nth-child(odd){padding-left:0;border-left:0}
+  .cell:nth-child(even){border-left:1px solid var(--line)}
+  .cell:nth-child(n+3){border-top:1px solid var(--line)}
+}
+
+
+/* FARVE PÅ BUILDING THE INTELLIGENCE LAYER INVESTORS */
+.sec .accent {
+  color:#ff7a2b;
+}
