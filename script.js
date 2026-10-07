@@ -360,3 +360,9 @@ if(messageField){
   grow();
 })();
 
+const burger = document.getElementById('burger');
+  const siteHeader = document.getElementById('siteHeader');
+
+  burger.addEventListener('click', () => {
+    siteHeader.classList.toggle('nav-open');
+  });
