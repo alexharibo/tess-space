@@ -655,7 +655,7 @@ padding-top:1%;
 }
 
 .values-intro .eyebrow {
-  color: #ff5500;
+  color: #f26a1b;
   text-transform: uppercase;
   font-size: 0.85rem;
   font-weight: 700;
@@ -673,7 +673,7 @@ padding-top:1%;
 }
 
 .values-intro h2 .accent {
-  color: #ff5500;
+  color: #f26a1b;
 }
 
 .values-intro p {
@@ -706,7 +706,7 @@ padding-top:1%;
   width: 100%;
   max-width: 140px;
   height: auto;
-  color: #ff5500;
+  color: #f26a1b;
 }
 
 /* Værdi-kort */
@@ -719,7 +719,7 @@ padding-top:1%;
   display: block;
   font-size: 0.85rem;
   font-weight: 700;
-  color: #ff5500;
+  color:#f26a1b;
   margin-bottom: 6px;
 }
 
@@ -731,7 +731,7 @@ padding-top:1%;
 }
 
 .value-item h3 .accent {
-  color: #ff5500;
+  color: #f26a1b;
 }
 
 .value-item p {
