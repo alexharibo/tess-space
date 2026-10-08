@@ -2418,10 +2418,14 @@ padding-top:1%;
   /* ---------- NAV ---------- */
   header{
     position:fixed;top:0;left:0;right:0;z-index:100;
-    padding:22px 0;
+    padding:18px 0;
     transition:background .3s ease, padding .3s ease, border-color .3s ease;
     border-bottom:1px solid transparent;
+    background-color:rgba(2, 2, 2, 0.827); 
   }
+
+
+
   header.scrolled{
     background:rgba(10,10,11,0.86);
     backdrop-filter:blur(10px);
@@ -2481,12 +2485,27 @@ nav.links a.active{color:var(--accent);}
   /* ---------- HERO ---------- */
 /* Billedet fylder højre ~60% og toner ud mod teksten */
 .hero--photo-right .hero-bg{
-  inset:0 0 0 auto;
-  width:60%;
+  inset:100px 0 0 auto;
+  width:50%;
+
 }
+
+.companyhero-bg {
+    width: 100%;    /* Sørg for at beholderen spænder over hele bredden */
+    height: 800px;  /* Eller den højde du ønsker */
+}
+
+.companyhero-bg img {
+    width: 100%;    /* Billedet skal fylde hele beholderens bredde */
+    height: 100%;   /* Billedet skal fylde hele beholderens højde */
+    object-fit: cover; 
+    object-position: center bottom; /* Skærer toppen af */
+    display: block; /* Fjerner evt. standard mellemrum under billedet */
+}
+/*STANDBY MED COVERBILLEDE
 .hero--photo-right .hero-bg img{
   -webkit-mask-image:linear-gradient(90deg, transparent 0%, #000 45%);
-          mask-image:linear-gradient(90deg, transparent 0%, #000 45%);
+          mask-image:linear-gradient(90deg, transparent 0%, #000 35%);
 }
 /* Fjern den tunge venstre-scrim, behold kun bundtonen */
 .hero--photo-right .hero-scrim{
@@ -2503,7 +2522,7 @@ nav.links a.active{color:var(--accent);}
     min-height:100svh;
     display:flex;
     align-items:center;
-    padding-top:120px;
+    
     padding-bottom:70px;
     background:
       radial-gradient(ellipse 90% 60% at 78% 40%, rgba(255,107,26,0.10), transparent 60%),
@@ -2522,7 +2541,7 @@ nav.links a.active{color:var(--accent);}
   .hero-noise{position:absolute;inset:0;z-index:1;opacity:.5;mix-blend-mode:overlay;background-image:
       repeating-linear-gradient(0deg, rgba(255,255,255,0.025) 0 1px, transparent 1px 3px);}
   .hero .wrap{position:relative;z-index:2;width:100%;}
-  .hero-copy{max-width:600px;}
+  .hero-copy{max-width:600px;padding-top:15%;}
   .hero h1{font-size:clamp(34px,5.2vw,58px);font-weight:800;line-height:1.04;}
   .hero h1 .accent{color:var(--accent);}
   .hero p.lede{color:var(--ink-dim);max-width:440px;margin:22px 0 32px;font-size:15.5px;}
