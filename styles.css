@@ -4879,6 +4879,10 @@ h2 span{color:var(--accent)}
   .cell:nth-child(n+3){border-top:1px solid var(--line)}
 }
 
+@media(max-width:660px){
+footer {display:none;}
+}
+
 
 /* FARVE PÅ BUILDING THE INTELLIGENCE LAYER INVESTORS */
 .sec .accent {
@@ -4963,3 +4967,4 @@ h2 span{color:var(--accent)}
 .sec .btn{display:inline-flex;align-items:center;gap:22px;background:var(--accent);color:#fff;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:16px 22px;border-radius:3px}
 .sec .btn:hover{background:#ff7a2b}
 .sec .btn svg{width:22px;height:14px}
+
