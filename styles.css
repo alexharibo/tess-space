@@ -2075,7 +2075,18 @@ padding-top:1%;
     width: 100%;
     height: 350px;
     clip-path: none;
+   
   }
+
+  .autonomy-bg-split .bg-right {
+    display:none;
+     }
+
+.autonomy-right-col .feature-item span{
+  
+    color: #181818;
+}
+
 
   .core-content-grid {
     flex-direction: column;
@@ -2091,6 +2102,7 @@ padding-top:1%;
     width: 100%;
     align-items: flex-start;
   }
+
 }
 
 /* Højre side med skrå kant og billede */
@@ -2249,6 +2261,9 @@ padding-top:1%;
     flex-direction: column;
     padding: 40px 0;
   }
+
+
+
 
   .autonomy-left-col {
     padding-right: 0;
