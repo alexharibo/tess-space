@@ -19,6 +19,12 @@
     :root:not([data-theme="dark"]){ /* brand is intentionally dark regardless of system theme */ }
   }
 
+
+  .logo  img {
+    width: 100%;
+    max-height:50px;
+    height: auto;
+  }
   /* Company */
 
   .idea .accent {
@@ -4889,7 +4895,7 @@ footer {display:none;}
   color:#ff7a2b;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 920px) {
   
   /* Gør burgermenuen synlig på mobil */
   .burger {
@@ -4955,11 +4961,17 @@ footer {display:none;}
 }
 
 /* Skjul burgermenuen på computer/store skærme */
-@media (min-width: 769px) {
+@media (max-width: 768px) {
   .burger {
-    display: none;
+    display: block;
   }
+
+  
 }
+
+
+
+
 
 .sec{--fg:#fff;--muted:#a3a3a3;--accent:#f26a1b;--line:#2a2a2a;}
 .sec h2{font-family:"Barlow Condensed",Barlow,Arial,sans-serif;font-weight:700;font-size:clamp(32px,5.4vw,60px);line-height:1.05;margin:0 0 26px;text-transform:uppercase;letter-spacing:.01em}
