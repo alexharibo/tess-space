@@ -4853,6 +4853,8 @@ h2 span{color:var(--accent)}
 .btn{display:inline-flex;align-items:center;gap:22px;color:#fff;text-decoration:none;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:16px 22px;border-radius:3px}
 .btn:hover{background:#ff7a2b}
 .btn-outline:hover{background:#2d2d2d3d}
+.btn-outline-dark {color:rgb(9, 9, 9);}
+.btn-outline-dark:hover {background:transparent;}
 .btn:focus-visible{outline:2px solid #fff;outline-offset:3px}
 .btn svg{width:22px;height:14px}
 
