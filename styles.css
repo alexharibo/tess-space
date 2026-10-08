@@ -36,6 +36,8 @@
 .careers-media{position:absolute;inset:0;}
 .careers-media img{width:100%;height:100%;object-fit:cover;display:block;  }
 
+
+
 .careers-scrim{
   position:absolute;inset:0;
   background:linear-gradient(100deg, rgba(6,6,7,.95) 0%, rgba(6,6,7,.72) 40%, rgba(6,6,7,.25) 75%);
@@ -45,7 +47,7 @@
 .careers-copy{max-width:600px;margin-bottom:40px;}
 .careers-copy h2{font-size:clamp(28px,4vw,44px);font-weight:800;line-height:1.05;margin-bottom:18px;}
 .careers-copy .accent{color:var(--accent);}
-.careers-copy p{font-size:14.5px;color:var(--ink-dim);line-height:1.7;}
+.careers-copy p{font-size:14.5px;color:#f4f3f1;line-height:1.7;}
 
 .role-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px;}
 .role-card{
@@ -2078,6 +2080,7 @@ padding-top:1%;
    
   }
 
+  
   .autonomy-bg-split .bg-right {
     display:none;
      }
@@ -2092,6 +2095,8 @@ padding-top:1%;
     flex-direction: column;
     padding: 40px 0;
   }
+
+
 
   .core-left-col {
     padding-right: 0;
