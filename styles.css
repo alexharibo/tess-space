@@ -3838,6 +3838,7 @@ background: linear-gradient(rgba(24, 24, 24, 0.5), rgba(0, 0, 0, 0.5)), url(asse
 #beforemissions {
 text-align: center;
 padding:5%;
+
   }
 
   #beforemissions .accent {
@@ -4739,14 +4740,15 @@ footer{background:#0a0a0b;border-top:1px solid var(--line);padding:56px 0 28px;}
 .bc-btn-wrap .btn{gap:10px;}
 .bc-btn-wrap .btn svg{width:14px;height:14px;}
 
-.features-section {
+
+#mission-features{
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  background-color: #0d0d0d;
+  
   padding: 40px 20px;
   color: #ffffff;
-  max-width: 1200px;
+
   margin: 0 auto;
 }
 
