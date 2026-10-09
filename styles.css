@@ -2492,7 +2492,9 @@ nav.links a.active{color:var(--accent);}
 
 .companyhero-bg {
     width: 100%;    /* Sørg for at beholderen spænder over hele bredden */
-    height: 800px;  /* Eller den højde du ønsker */
+    height: 950px;  /* Eller den højde du ønsker */
+    position:absolute;
+    top:0;
 }
 
 .companyhero-bg img {
