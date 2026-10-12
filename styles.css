@@ -5296,5 +5296,13 @@ footer {display:none;}
 #tess-plus {
 margin-right:2%;
 width:20px;
-background-color:#f26a1b;
+
+fill:#f26a1b
+}
+
+.changed p, .unchanged p {
+    color: #a0a5aa;
+  font-size: 0.95rem;
+  line-height: 2.5;
+  margin: 0;
 }
