@@ -2482,6 +2482,20 @@ nav.links a.active{color:var(--accent);}
   .burger{display:block;}
 }
 
+@media (max-width:520px){
+video {
+ position:absolute;
+ top:20%;
+}
+}
+
+@media (max-width:920px){
+video {
+ position:absolute;
+ top:20%;
+}
+}
+
   /* ---------- HERO ---------- */
 /* Billedet fylder højre ~60% og toner ud mod teksten */
 .hero--photo-right .hero-bg{
