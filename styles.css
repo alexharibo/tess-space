@@ -4176,7 +4176,7 @@ padding:5%;
     }
 
 /* ---------- PARTNERS STRIP ---------- */
-#partners-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+#partners-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-top:2%;}
 .partners-heading{
   font-family:var(--font-head);font-weight:800;font-size:clamp(18px,2.2vw,24px);
   color:var(--ink);margin-bottom:32px;
