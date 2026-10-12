@@ -5147,16 +5147,23 @@ footer {display:none;}
   --tess-charcoal: #171717;
   width: 100%;
   background-color:#050506;
-  overflow: hidden;
+  
   isolation: isolate;
   font-family: Arial, sans-serif;
 }
 .tess-fan__stage {
   position: relative;
-  width: min(100%, 1250px);
-  height: clamp(480px, 53vw, 720px);
+  width: 100%;           /* Gør at den som minimum fylder hele containeren */
+  max-width: 100%;       /* Fjern begrænsningen på 1250px, eller sæt den op til f.eks. 1600px */
+  height: clamp(550px, 65vw, 50px); /* Gør evt. også højden større, så boksen kan være der */
   margin: auto;
   perspective: 1400px;
+}
+
+.tess-fan__cards { 
+  position: absolute; 
+  inset: 0; 
+  width: 100%; /* Sørg for at kort-containeren fylder hele scenen ud */
 }
 .tess-fan__cards { position: absolute; inset: 0; }
 .tess-fan__card {
@@ -5164,7 +5171,7 @@ footer {display:none;}
   left: 50%;
   bottom: 115px;
   z-index: var(--order);
-  width: clamp(155px, 21vw, 275px);
+
   aspect-ratio: 0.66;
   padding: 0;
   display: block;
@@ -5221,7 +5228,7 @@ footer {display:none;}
 }
 .tess-fan__stage .tess-fan__card:is(:hover, :focus) {
   z-index: 30;
-  transform: translateX(-50%) rotate(var(--open-angle)) translateY(-50px) scale(1.06);
+  transform: translateX(-50%) rotate(var(--open-angle)) translateY(-50px) scale(1.02);
   border-color: var(--tess-orange);
   box-shadow: 0 26px 55px #000d, 0 0 0 1px #ff790066;
 }
@@ -5305,4 +5312,47 @@ fill:#f26a1b
   font-size: 0.95rem;
   line-height: 2.5;
   margin: 0;
+}
+
+/* ---------- CONTROL BOUNDARY (v2) ---------- */
+#control-boundary .section-head{
+  max-width:none;
+  margin-bottom:clamp(32px,5vw,56px);
+}
+
+.cb-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(240px,440px) minmax(0,1fr);
+  column-gap:clamp(24px,4vw,64px);
+  align-items:start;
+}
+
+.cb-col h3{
+  font-family:var(--font-head);font-weight:800;
+  font-size:clamp(17px,1.8vw,22px);
+  line-height:1.15;letter-spacing:-.01em;text-transform:uppercase;
+  color:var(--ink);
+  margin:0 0 22px;padding-bottom:14px;
+  border-bottom:1px solid var(--line);
+}
+.cb-col--accent h3{
+  color:var(--accent);
+  border-bottom-color:rgba(255,107,26,.35);
+}
+
+.cb-list{list-style:none;margin:0;padding:0;display:grid;gap:14px;}
+.cb-list li{
+  display:flex;align-items:flex-start;gap:12px;
+  font-size:14.5px;line-height:1.4;color:var(--ink-dim);
+}
+.cb-col--accent .cb-list li{color:var(--ink);}
+.cb-list svg{width:14px;height:14px;margin-top:3px;flex:none;color:var(--accent);}
+
+.cb-visual{display:flex;justify-content:center;align-items:flex-start;}
+.cb-visual img{width:100%;max-width:440px;height:auto;display:block;}
+
+@media (max-width:900px){
+  .cb-grid{grid-template-columns:1fr;row-gap:40px;}
+  .cb-visual{order:-1;}
+  .cb-visual img{max-width:min(380px,86vw);margin:0 auto;}
 }
