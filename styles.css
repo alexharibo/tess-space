@@ -5146,7 +5146,7 @@ footer {display:none;}
   --tess-black: #090a0b;
   --tess-charcoal: #171717;
   width: 100%;
-  background-color:#050506;
+  
   
   isolation: isolate;
   font-family: Arial, sans-serif;
@@ -5315,6 +5315,14 @@ fill:#f26a1b
 }
 
 /* ---------- CONTROL BOUNDARY (v2) ---------- */
+#control-boundary {
+  background-image:url(assets/autonomybackground.jpg);
+  background-size:cover;
+  background-blend-mode:darken;
+  padding-top:2%;
+  padding-bottom:2%;
+}
+
 #control-boundary .section-head{
   max-width:none;
   margin-bottom:clamp(32px,5vw,56px);
