@@ -2487,14 +2487,14 @@ nav.links a.active{color:var(--accent);}
 @media (max-width:520px){
 video {
  position:absolute;
- top:20%;
+ top:10%;
 }
 }
 
 @media (max-width:920px){
 video {
  position:absolute;
- top:20%;
+ top:10%;
 }
 }
 
