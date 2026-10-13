@@ -1356,7 +1356,12 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
 }
 
 /* ---- Control boundary ---- */
-#control-boundary { background: url(assets/autonomybackground.jpg) center / cover; background-blend-mode: darken; padding: clamp(32px, 5vw, 56px) 0; }
+
+#control-boundary {
+  background: #111111 url(assets/autonomybackground.jpg) center / cover;
+  background-blend-mode: darken;
+  padding: clamp(32px, 5vw, 56px) 0;
+}
 #control-boundary .section-head { max-width: none; margin-bottom: clamp(32px, 5vw, 56px); }
 .cb-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, 440px) minmax(0, 1fr); column-gap: clamp(24px, 4vw, 64px); align-items: start; }
 .cb-col h3 { font-family: var(--font-head); font-weight: 800; font-size: clamp(17px, 1.8vw, 22px); line-height: 1.15; letter-spacing: -.01em; text-transform: uppercase; color: var(--ink); margin: 0 0 22px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
