@@ -351,18 +351,41 @@ if(messageField){
   autoGrow(); // sæt korrekt højde fra start
 }
 
-/* ---------- send us a message: textarea auto-grow ---------- */
+/* ---------- send us a message: åbn mail med udfyldt indhold ---------- */
 (function(){
-  const msg = document.getElementById('smMessage');
-  if(!msg) return;
-  const grow = () => { msg.style.height='auto'; msg.style.height = msg.scrollHeight + 'px'; };
-  msg.addEventListener('input', grow);
-  grow();
-})();
+  const form = document.getElementById('contactForm');
+  if(!form) return;
 
-const burger = document.getElementById('burger');
-  const siteHeader = document.getElementById('siteHeader');
+  const TO = 'info@tessspace.com'; // <-- skift til jeres modtager-mail
 
-  burger.addEventListener('click', () => {
-    siteHeader.classList.toggle('nav-open');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault(); // stopper normal submit; browserens validering kører stadig først
+
+    const inquirySelect = form.elements['inquiry'];
+    const inquiry = inquirySelect.value;
+    const name    = form.elements['name'].value.trim();
+    const org     = form.elements['organization'].value.trim();
+    const email   = form.elements['email'].value.trim();
+    const phone   = form.elements['phone'].value.trim();
+    const message = form.elements['message'].value.trim();
+
+    const subject = `${inquiry} – ${name}${org ? ' (' + org + ')' : ''}`;
+
+    const body = [
+      `Inquiry type: ${inquiry}`,
+      `Name: ${name}`,
+      `Organization: ${org || '-'}`,
+      `Work email: ${email}`,
+      `Phone: ${phone || '-'}`,
+      '',
+      'Message:',
+      message
+    ].join('\r\n');
+
+    const href = 'mailto:' + TO +
+      '?subject=' + encodeURIComponent(subject) +
+      '&body=' + encodeURIComponent(body);
+
+    window.location.href = href;
   });
+})();
