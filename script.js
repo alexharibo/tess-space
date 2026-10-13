@@ -351,7 +351,23 @@ if(messageField){
   autoGrow(); // sæt korrekt højde fra start
 }
 
-/* ---------- send us a message: åbn mail med udfyldt indhold ---------- */
+/* ---------- send us a message: textarea auto-grow ---------- */
+(function(){
+  const msg = document.getElementById('smMessage');
+  if(!msg) return;
+  const grow = () => { msg.style.height='auto'; msg.style.height = msg.scrollHeight + 'px'; };
+  msg.addEventListener('input', grow);
+  grow();
+})();
+
+const burger = document.getElementById('burger');
+  const siteHeader = document.getElementById('siteHeader');
+
+  burger.addEventListener('click', () => {
+    siteHeader.classList.toggle('nav-open');
+  });
+
+  /* ---------- send us a message: åbn mail med udfyldt indhold ---------- */
 (function(){
   const form = document.getElementById('contactForm');
   if(!form) return;
