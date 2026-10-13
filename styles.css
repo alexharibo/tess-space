@@ -4297,50 +4297,280 @@ footer{background:#0a0a0b;border-top:1px solid var(--line);padding:56px 0 28px;}
 .ch-opt p{font-size:12px;color:var(--ink-dim);line-height:1.4;margin:0;}
 @media (max-width:760px){ .ch-options{grid-template-columns:repeat(2,1fr);} }
 
-/* ---------- SEND US A MESSAGE ---------- */
-.sm-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:70px;}
-@media (max-width:900px){ .sm-grid{grid-template-columns:1fr;gap:50px;} }
-
-.sm-h{font-size:clamp(24px,3.2vw,32px);font-weight:800;margin:14px 0 16px;}
-.sm-h .accent{color:var(--accent);}
-.sm-lede{font-size:14px;color:var(--ink-dim);max-width:440px;margin-bottom:32px;line-height:1.7;}
-
-.sm-form{display:flex;flex-direction:column;gap:16px;}
-.sm-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-@media (max-width:560px){ .sm-row{grid-template-columns:1fr;} }
-
-.sm-field{display:flex;flex-direction:column;gap:8px;}
-.sm-field label{font-family:var(--font-head);font-weight:700;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);}
-.sm-field label span{color:var(--ink-faint);text-transform:none;letter-spacing:0;font-weight:600;}
-.sm-field input,.sm-field select,.sm-field textarea{
-  background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:3px;
-  padding:13px 14px;font:600 13.5px var(--font-body);color:var(--ink);outline:none;
-  transition:border-color .2s ease;font-family:inherit;
-}
-.sm-field input::placeholder,.sm-field textarea::placeholder{color:var(--ink-faint);}
-.sm-field input:focus,.sm-field select:focus,.sm-field textarea:focus{border-color:var(--accent);}
-.sm-field select{
-  color-scheme: dark;
+/* ============ Send message section ============ */
+#send-message {
+  --sm-bg: #121212;
+  --sm-panel: #161718;
+  --sm-field: #1f2123;
+  --sm-border: #2a2d30;
+  --sm-text: #f2f2f2;
+  --sm-muted: #9a9ea3;
+  --sm-accent: #ff6a13;
 }
 
-
-.sm-field select option{
-  background: #121417;
-  color: var(--ascent);
-  border:solid;
+#send-message .sm-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+  background: var(--sm-panel);
+  border: 1px solid var(--sm-border);
+  border-radius: 14px;
+  overflow: hidden;
+  min-height: 560px;
 }
 
-.sm-field textarea{resize:none;overflow:hidden;min-height:48px;max-height:220px;line-height:1.5;}
+/* ---------- Form column ---------- */
+#send-message .sm-form-col {
+  padding: 36px 32px 32px;
+  color: var(--sm-text);
+}
 
-.sm-check{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--ink-dim);cursor:pointer;}
-.sm-check input{margin-top:2px;accent-color:var(--accent);}
-.sm-check a{color:var(--ink);text-decoration:underline;}
+#send-message .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--sm-accent);
+  margin-bottom: 14px;
+}
+#send-message .eyebrow::before {
+  content: "";
+  width: 22px;
+  height: 2px;
+  background: var(--sm-accent);
+}
 
-.sm-form .btn{align-self:flex-start;gap:10px;margin-top:4px;}
-.sm-form .btn svg{width:14px;height:14px;}
-.sm-media{aspect-ratio:2/2.5;border-radius:4px;overflow:hidden;border:1px solid var(--line);margin-bottom:34px;background:#111;width:100%;}
-.sm-media img{width:100%;height:100%;object-fit:cover;display:block;}
+#send-message .sm-h {
+  margin: 0 0 12px;
+  font-size: clamp(24px, 2.4vw, 30px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: .01em;
+  text-transform: uppercase;
+  color: #fff;
+}
+#send-message .sm-h .accent { color: var(--sm-accent); }
 
+#send-message .sm-lede {
+  margin: 0 0 26px;
+  max-width: 44ch;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--sm-muted);
+}
+
+/* ---------- Form ---------- */
+#send-message .sm-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#send-message .sm-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+#send-message .sm-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+
+#send-message .sm-field label {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #d6d8da;
+}
+#send-message .sm-field label span {
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--sm-muted);
+}
+
+#send-message .sm-field input,
+#send-message .sm-field select,
+#send-message .sm-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 14px;
+  height: 44px;
+  font: inherit;
+  font-size: 13px;
+  color: var(--sm-text);
+  background: var(--sm-field);
+  border: 1px solid var(--sm-border);
+  border-radius: 6px;
+  outline: none;
+  transition: border-color .15s, box-shadow .15s, background .15s;
+}
+
+#send-message .sm-field textarea {
+  height: auto;
+  min-height: 78px;
+  padding: 12px 14px;
+  resize: vertical;
+  line-height: 1.45;
+}
+
+#send-message .sm-field input::placeholder,
+#send-message .sm-field textarea::placeholder {
+  color: #6f747a;
+}
+
+#send-message .sm-field input:hover,
+#send-message .sm-field select:hover,
+#send-message .sm-field textarea:hover {
+  border-color: #3a3e42;
+}
+
+#send-message .sm-field input:focus,
+#send-message .sm-field select:focus,
+#send-message .sm-field textarea:focus {
+  border-color: var(--sm-accent);
+  box-shadow: 0 0 0 3px rgba(255, 106, 19, .18);
+  background: #232629;
+}
+
+/* Custom select arrow */
+#send-message .sm-field select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 38px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%23f2f2f2' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+#send-message .sm-field select:invalid { color: #c9cbce; }
+#send-message .sm-field select option { background: #1f2123; color: #f2f2f2; }
+
+/* ---------- Checkbox ---------- */
+#send-message .sm-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 2px;
+  font-size: 12px;
+  color: #c9cbce;
+  cursor: pointer;
+}
+#send-message .sm-check input {
+  appearance: none;
+  -webkit-appearance: none;
+  flex: none;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  background: #3a3d40;
+  border: 1px solid #4a4e52;
+  border-radius: 3px;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  transition: background .15s, border-color .15s;
+}
+#send-message .sm-check input::after {
+  content: "";
+  width: 8px;
+  height: 4px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(-45deg) scale(0);
+  margin-top: -2px;
+  transition: transform .12s;
+}
+#send-message .sm-check input:checked {
+  background: var(--sm-accent);
+  border-color: var(--sm-accent);
+}
+#send-message .sm-check input:checked::after { transform: rotate(-45deg) scale(1); }
+#send-message .sm-check input:focus-visible {
+  outline: 2px solid var(--sm-accent);
+  outline-offset: 2px;
+}
+#send-message .sm-check a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ---------- Button ---------- */
+#send-message .btn.btn-solid {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 6px;
+  padding: 0 24px;
+  height: 46px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--sm-accent);
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background .15s, transform .15s;
+}
+#send-message .btn.btn-solid svg { width: 14px; height: 14px; }
+#send-message .btn.btn-solid:hover { background: #ff7d2e; transform: translateY(-1px); }
+#send-message .btn.btn-solid:active { transform: translateY(0); }
+
+/* ---------- Image column ---------- */
+#send-message .sm-side {
+  position: relative;
+  min-height: 100%;
+  background: #0d0d0e;
+}
+#send-message .sm-media {
+  position: absolute;
+  inset: 0;
+}
+#send-message .sm-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+  display: block;
+}
+/* Blød overgang fra formular til billede */
+#send-message .sm-media::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 90px;
+  background: linear-gradient(to right, var(--sm-panel), transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  #send-message .sm-grid { grid-template-columns: 1fr; }
+  #send-message .sm-side { order: -1; min-height: 260px; }
+  #send-message .sm-media::before {
+    inset: auto 0 0 0;
+    width: auto;
+    height: 80px;
+    background: linear-gradient(to top, var(--sm-panel), transparent);
+  }
+}
+@media (max-width: 520px) {
+  #send-message .sm-form-col { padding: 28px 20px 24px; }
+  #send-message .sm-row { grid-template-columns: 1fr; }
+  #send-message .btn.btn-solid { width: 100%; justify-content: center; }
+}
 
 
 /* ---------- FINAL CTA ---------- */
