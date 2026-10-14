@@ -273,6 +273,12 @@ section { position: relative; }
   .btn-row { width:100%;}
   .btn-row .btn { width: 100%; }
   .btn-team { width: 100%; justify-content: center; }
+ 
+}
+
+@media (max-width: 960px) {
+.tess-fan__stage {display:none;}
+ 
 }
 
 
