@@ -412,8 +412,12 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
 .hero-scrim {
   position: absolute; inset: 0; z-index: 1;
   background:
-    linear-gradient(100deg, rgba(6, 6, 7, .94) 0%, rgba(6, 6, 7, .8) 34%, rgba(6, 6, 7, .35) 62%, rgba(6, 6, 7, .1) 100%),
-    linear-gradient(0deg, rgba(6, 6, 7, .55) 0%, rgba(6, 6, 7, 0) 40%);
+    linear-gradient(100deg,
+      rgba(6,6,7,.96) 0%,
+      rgba(6,6,7,.88) 40%,
+      rgba(6,6,7,.45) 65%,
+      rgba(6,6,7,.1) 100%),
+    linear-gradient(0deg, rgba(6,6,7,.65) 0%, rgba(6,6,7,0) 40%);
 }
 .hero-noise { position: absolute; inset: 0; z-index: 1; opacity: .5; mix-blend-mode: overlay; background-image: repeating-linear-gradient(0deg, rgba(255, 255, 255, .025) 0 1px, transparent 1px 3px); }
 .hero .wrap { position: relative; z-index: 2; width: 100%; }
@@ -444,10 +448,18 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
 .trusted-fallback small { font-size: 9px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); }
 
 @media (max-width: 700px) {
-  .hero { padding-bottom: 48px; }
+  video {}
+  .hero-copy { max-width: 600px;}
+
+}
+
+@media (max-width: 700px) {
+  .hero { padding-bottom: 5px; }
   .hero-trusted { flex-direction: column; align-items: flex-start; gap: 16px; margin-top: 36px; }
   .hero-trusted-logos { gap: 24px; }
 }
+
+
 
 /* Hero-video på mobil – fjernet: den globale "video{position:absolute;top:10%}"
    brød andre videoer. Tilføj evt. en scoped regel, fx .hero video { … } */
