@@ -270,7 +270,7 @@ section { position: relative; }
 .text-link:hover svg { transform: translateX(5px); }
 
 @media (max-width: 560px) {
-  .btn-row { flex-direction: column; }
+  .btn-row { width:100%;}
   .btn-row .btn { width: 100%; }
   .btn-team { width: 100%; justify-content: center; }
 }
@@ -457,6 +457,7 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
   .hero {padding-bottom:1px;}
  .companyhero-bg img{height:50vh;}
  .hero {  position: relative; min-height: 50svh; padding-top:10%;}
+
 }
 
 
