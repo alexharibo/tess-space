@@ -1658,7 +1658,7 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
    ========================================================================== */
  
 /* ---- Partner CTA ---- */
-.partner-cta { position: relative; min-height: 520px; display: flex; align-items: center; overflow: hidden; border-top: 1px solid var(--line); background: linear-gradient(100deg, rgba(5, 5, 6, .96) 0%, rgba(5, 5, 6, .7) 46%, rgba(20, 14, 8, .25) 100%), url('./assets/mcard.jpg') center / cover no-repeat; }
+.partner-cta { position: relative; min-height: 520px; display: flex; align-items: center; overflow: hidden; border-top: 1px solid var(--line); background: linear-gradient(100deg, rgba(5, 5, 6, .96) 0%, rgba(5, 5, 6, .7) 46%, rgba(20, 14, 8, .25) 100%), url('./assets/homeugvbuilding.jpg') center / cover no-repeat; }
 .partner-cta .wrap { width: 100%; }
 .partner-cta .rig { display: none; }
 .partner-cta .content { position: relative; z-index: 2; padding: 70px 0; max-width: 560px; margin: 0 auto 0 0; text-align: left; }
