@@ -971,7 +971,7 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
 }
  
 /* ---- Our story ---- */
-.our-story { position: relative; min-height: 560px; display: flex; align-items: center; overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.our-story { position: relative; min-height: 560px; display: flex; align-items: center; overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding-bottom:2%;}
 .story-media { position: absolute; inset: 0; }
 .story-media img { width: 100%; height: 100%; object-fit: cover; }
 .story-scrim { position: absolute; inset: 0; background: linear-gradient(100deg, rgba(6, 6, 7, .95) 0%, rgba(6, 6, 7, .65) 42%, rgba(6, 6, 7, .15) 75%); }
@@ -982,7 +982,7 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
 .story-copy p { font-size: 0.875rem; color: var(--ink-dim); line-height: 1.7; }
 .buttonStory { padding-top: 1%; }
  
-.story-timeline { position: relative; display: flex; padding-top: 24px; }
+.story-timeline { position: relative; display: flex; padding-top: 24px; padding-bottom:24px;}
 .st-track { position: absolute; top: 4px; left: 0; right: 0; height: 1px; background: rgba(255, 255, 255, .15); }
 .st-fill { position: absolute; top: 0; left: 0; width: 16.5%; height: 1px; background: var(--accent); transition: width .4s cubic-bezier(.4, 0, .2, 1); }
 .st-step { position: relative; display: block; flex: 1; padding: 0; text-align: left; background: none; border: none; color: inherit; cursor: pointer; }
