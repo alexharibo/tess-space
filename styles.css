@@ -1734,4 +1734,96 @@ footer { background: #0a0a0b; border-top: 1px solid var(--line); padding: 56px 0
 }
 
 
+/* ---------- FOR INVESTORS (07) ---------- */
+.fi{
+  background:#f3f1ec;
+  color:#111518;
+  padding:clamp(56px,8vw,96px) 0;
+}
+.fi-grid{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  align-items:stretch;
+}
 
+/* venstre */
+.fi-copy{align-self:center;padding-right:clamp(24px,5vw,72px);}
+.fi-eyebrow{
+  font-family:var(--font-head);font-weight:700;font-size:12px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--accent);
+  margin-bottom:22px;
+}
+.fi-copy h2{
+  font-family:var(--font-head);font-weight:800;
+  font-size:clamp(34px,5vw,60px);
+  line-height:1.02;letter-spacing:-.025em;text-transform:uppercase;
+  color:#111518;margin:0 0 24px;
+}
+.fi-copy h2 .dot{color:var(--accent);}
+.fi-copy p{
+  font-size:15px;line-height:1.6;color:#5b5e61;
+  max-width:440px;margin:0 0 32px;
+}
+.fi-btn{
+  display:inline-flex;align-items:center;gap:22px;
+  background:var(--accent);color:#fff;
+  font-family:var(--font-head);font-weight:700;font-size:12px;
+  letter-spacing:.1em;text-transform:uppercase;
+  padding:17px 24px;border-radius:3px;
+  transition:background .2s ease, transform .2s ease;
+}
+.fi-btn:hover{background:#ff7d38;transform:translateY(-1px);}
+.fi-btn svg{width:18px;height:14px;flex:none;}
+
+/* højre */
+.fi-docs{
+  padding:8px 0 8px clamp(24px,5vw,72px);
+  border-left:1px solid rgba(17,21,24,.1);
+}
+.fi-dash{display:block;width:28px;height:3px;background:var(--accent);margin-bottom:14px;}
+.fi-docs h3{
+  font-family:var(--font-head);font-weight:800;font-size:20px;
+  letter-spacing:.14em;text-transform:uppercase;color:#111518;
+  margin:0 0 6px;
+}
+.fi-sub{font-size:14px;color:#6b6e71;margin:0 0 22px;}
+
+.fi-list{list-style:none;margin:0;padding:0;display:grid;gap:12px;}
+.fi-doc{
+  display:flex;align-items:center;gap:18px;
+  background:#faf9f6;border-radius:6px;
+  padding:16px 20px;
+  box-shadow:0 1px 2px rgba(17,21,24,.04), 0 8px 18px -12px rgba(17,21,24,.2);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.fi-doc:hover{
+  transform:translateY(-2px);
+  box-shadow:0 1px 2px rgba(17,21,24,.05), 0 14px 26px -12px rgba(17,21,24,.28);
+}
+.fi-pdf{width:28px;height:34px;color:var(--accent);flex:none;}
+.fi-doc-text{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px;}
+.fi-doc-text strong{font-family:var(--font-head);font-weight:800;font-size:15px;color:#111518;}
+.fi-doc-text small{font-size:12px;color:#8a8d90;letter-spacing:.02em;}
+.fi-dl{
+  width:38px;height:38px;border-radius:50%;flex:none;
+  background:#efede8;color:var(--accent);
+  display:flex;align-items:center;justify-content:center;
+  transition:background .2s ease, color .2s ease;
+}
+.fi-dl svg{width:16px;height:16px;}
+.fi-doc:hover .fi-dl{background:var(--accent);color:#fff;}
+
+/* mobil */
+@media (max-width:860px){
+  .fi-grid{grid-template-columns:1fr;}
+  .fi-copy{padding-right:0;}
+  .fi-docs{
+    border-left:none;border-top:1px solid rgba(17,21,24,.1);
+    padding:36px 0 0;margin-top:40px;
+  }
+}
+@media (max-width:480px){
+  .fi-doc{padding:14px;gap:14px;}
+  .fi-doc-text strong{font-size:14px;}
+  .fi-btn{width:100%;justify-content:space-between;}
+}
