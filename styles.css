@@ -411,7 +411,7 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
   position: relative; min-height: 100svh; display: flex; align-items: center;
   padding-bottom: 70px; overflow: hidden; border-bottom: 1px solid var(--line);
   background:
-    radial-gradient(ellipse 90% 60% at 78% 40%, rgba(var(--accent-rgb), .10), transparent 60%),
+    radial-gradient(ellipse 90% 60% at 78% 40%, rgba(var(--accent-rgb), .10), transparent 30%),
     linear-gradient(120deg, #101012 0%, #08080a 55%, #050506 100%);
 }
 .hero-bg { position: absolute;  z-index: 0; }
@@ -420,10 +420,10 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
   position: absolute; inset: 0; z-index: 1;
   background:
     linear-gradient(100deg,
-      rgba(6,6,7,.96) 0%,
-      rgba(6,6,7,.88) 40%,
-      rgba(6,6,7,.45) 65%,
-      rgba(6,6,7,.1) 100%),
+      rgba(6, 6, 7, 0.64) 0%,
+      rgba(6, 6, 7, 0.761) 40%,
+      rgba(6, 6, 7, 0.785) 65%,
+      rgba(6, 6, 7, 0.611) 100%),
     linear-gradient(0deg, rgba(6,6,7,.65) 0%, rgba(6,6,7,0) 40%);
 }
 .hero-noise { position: absolute; inset: 0; z-index: 1; opacity: .5; mix-blend-mode: overlay; background-image: repeating-linear-gradient(0deg, rgba(255, 255, 255, .025) 0 1px, transparent 1px 3px); }
@@ -431,7 +431,7 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
 .hero-copy { max-width: 600px; padding-top: clamp(96px, 15vw, 180px); }
 .hero h1 { font-size: clamp(2rem, 5.2vw, 3.625rem); font-weight: 800; line-height: 1.04; }
 .hero h1 .accent { color: var(--accent); }
-.hero p.lede { color: var(--ink-dim); max-width: 440px; margin: 22px 0 32px; font-size: clamp(0.90625rem, 1.6vw, 0.96875rem); }
+.hero p.lede { color: #cdcdcd; max-width: 440px; margin: 22px 0 32px; font-size: clamp(0.90625rem, 1.6vw, 0.96875rem); }
  
 /* Variant: foto i højre side */
 .hero--photo-right .hero-bg { inset: 100px 0 0 auto; width: 50%; }
@@ -1820,6 +1820,9 @@ footer { background: #0a0a0b; border-top: 1px solid var(--line); padding: 56px 0
   .fi-docs{
     border-left:none;border-top:1px solid rgba(17,21,24,.1);
     padding:36px 0 0;margin-top:40px;
+  }
+  #beforemissions {
+    display:none;
   }
 }
 @media (max-width:480px){
