@@ -1830,3 +1830,9 @@ footer { background: #0a0a0b; border-top: 1px solid var(--line); padding: 56px 0
   .fi-doc-text strong{font-size:14px;}
   .fi-btn{width:100%;justify-content:space-between;}
 }
+
+#vehicle img {
+  background-position:cover;
+  height:120vh;
+ padding-top:5%;
+}
