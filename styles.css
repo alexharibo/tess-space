@@ -1645,7 +1645,7 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
 #send-message .sm-side { position: relative; min-height: 100%; background: #0d0d0e; }
 #send-message .sm-media { position: absolute; inset: 0; }
 #send-message .sm-media img { width: 100%; height: 100%; object-fit: cover; object-position: center right; }
-#send-message .sm-media::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 90px; z-index: 1; pointer-events: none; background: linear-gradient(to right, var(--sm-panel), transparent); }
+#send-message .sm-media::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 90px; z-index: 1; pointer-events: none;  }
 @media (max-width: 900px) {
   #send-message .sm-grid { grid-template-columns: 1fr; }
   #send-message .sm-side { order: -1; min-height: 260px; }
