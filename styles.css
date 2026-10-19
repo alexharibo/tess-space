@@ -1678,6 +1678,7 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
 .fc-content h2 { font-size: clamp(1.625rem, 3.6vw, 2.5rem); font-weight: 800; line-height: 1.1; margin: 14px 0 18px; }
 .fc-content h2 .accent { color: var(--accent); }
 .fc-content p { font-size: 0.90625rem; color: var(--ink-dim); line-height: 1.7; }
+#final-cta { background-image:url("assets/europeglobe.jpg");background-size:cover;}
  
 /* ---- Bottom CTA ---- */
 .bottom-cta { position: relative; overflow: hidden; background: var(--bg-deep); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: clamp(56px, 8vw, 90px) 0; }
