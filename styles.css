@@ -1832,8 +1832,8 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
 .delivery-scrim { position: absolute; inset: 0;  }
 .delivery-panel.with-tess .delivery-scrim { background: linear-gradient(180deg, rgba(10, 6, 2, .08) 0%, rgba(10, 6, 2, 0.453) 60%, rgba(10, 6, 2, .95) 100%); }
 .delivery-panel.with-tess { border-color: rgba(var(--accent-rgb), .4); box-shadow: 0 0 0 1px rgba(var(--accent-rgb), .08), 0 20px 50px -20px rgba(var(--accent-rgb), .3); }
-.delivery-body { position: relative; z-index: 2; width: 100%; padding: 24px 24px 28px; }
-.delivery-tag { font-family: var(--font-head); font-weight: 700; font-size: 0.65625rem; letter-spacing: .1em; text-transform: uppercase; color:var(--accent); margin-bottom: 14px; }
+.delivery-body {  z-index: 2; width: 100%; padding: 24px 24px 28px; }
+.delivery-tag { position:absolute;top:5%; font-family: var(--font-head); font-weight: 700; font-size: 0.65625rem; letter-spacing: .1em; text-transform: uppercase; color:var(--accent); margin-bottom: 14px; }
 .with-tess .delivery-tag { color: var(--accent); }
 .delivery-line { font-family: var(--font-head); font-weight: 700; font-size: 0.9375rem; color: var(--ink); margin: 0; }
 .delivery-line.strong { font-weight: 800; }
