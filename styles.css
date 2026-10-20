@@ -2080,6 +2080,8 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
  
 /* ---- Bottom CTA ---- */
 .bottom-cta { position: relative; overflow: hidden; background: var(--bg-deep); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: clamp(56px, 8vw, 90px) 0; }
+.bottom-cta  {  background: linear-gradient(rgba(0, 0, 0, 0.854), rgba(0, 0, 0, 0.402)), 
+              url("assets/keeptheplatform.jpg") center / cover no-repeat;}
 .bc-bg { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .9; pointer-events: none; }
 .bc-content { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; text-align: center; }
 .bc-eyebrow { justify-content: center; }
