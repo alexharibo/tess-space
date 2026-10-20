@@ -413,7 +413,7 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
    06. HERO
    ========================================================================== */
 .hero {
-  position: relative; min-height: 100svh; display: flex; align-items: center;
+  position: relative; display: flex; align-items: center;
   padding-bottom: 70px; overflow: hidden; border-bottom: 1px solid var(--line);
   background:
     radial-gradient(ellipse 90% 60% at 78% 40%, rgba(var(--accent-rgb), .10), transparent 30%),
