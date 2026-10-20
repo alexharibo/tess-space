@@ -141,6 +141,38 @@
   </div>
 </section>
 
+<!-- TESS SPACE AI GNC · insert inside the existing website index.html -->
+<section class="tess-gnc-section" id="ai-gnc" aria-label="TESS SPACE AI GNC interactive demonstration">
+  <iframe
+    class="tess-gnc-frame"
+    src="./ai-gnc/index.html"
+    title="TESS SPACE — Sense, Understand, Decide, Control"
+    loading="lazy"
+    allow="fullscreen"
+    allowfullscreen
+  ></iframe>
+</section>
+<style>
+  .tess-gnc-section {
+    width: 100%;
+    background: #080B0E;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .tess-gnc-frame {
+    display: block;
+    width: 100%;
+    height: min(900px, 90svh);
+    min-height: 650px;
+    border: 0;
+    background: #080B0E;
+  }
+  @media (max-width: 900px) {
+    .tess-gnc-frame { height: 760px; min-height: 600px; }
+  }
+</style>
+
+
 <!-- See It In Action Banner -->
 <section class="action-banner">
   <div class="wrap action-banner-content">

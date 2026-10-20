@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TESS SPACE — AI GNC Interactive Experience</title>
+  <link rel="stylesheet" href="./styles.css" />
+
+  <!-- Non-Module Boot Watchdog: Traps syntax/load errors & prevents infinite loading -->
+  <script>
+    window.__TESS_BOOTED = false;
+    window.__showFatalError = function(title, details) {
+      var spinner = document.getElementById('loading-spinner');
+      var text = document.getElementById('loading-text');
+      var errBox = document.getElementById('boot-error-box');
+      if (spinner) spinner.style.display = 'none';
+      if (text) text.textContent = title;
+      if (errBox) {
+        errBox.style.display = 'block';
+        errBox.textContent = details;
+      }
+    };
+
+    window.addEventListener('error', function(e) {
+      var msg = (e.message || 'Script / Module Error') +
+        (e.filename ? '\nFile: ' + e.filename + ':' + e.lineno : '');
+      window.__showFatalError('INITIALIZATION ERROR DETECTED', msg);
+    });
+
+    window.addEventListener('unhandledrejection', function(e) {
+      var reason = e.reason ? (e.reason.stack || e.reason.message || String(e.reason)) : 'Unhandled Promise Rejection';
+      window.__showFatalError('MODULE PROMISE REJECTION', reason);
+    });
+
+    // 20-second timeout allows for CDN latency on the published website
+    setTimeout(function() {
+      if (!window.__TESS_BOOTED) {
+        var protocolHint = window.location.protocol === 'file:'
+          ? '\n\nOpen this experience on the published HTTPS website. ES modules may not run directly from a local file.'
+          : '\n\nCheck DevTools Console (F12) to verify terrain.js and app.js are in the same folder.';
+        window.__showFatalError(
+          'INITIALIZATION TIMEOUT (20s)',
+          'The 3D engine did not finish booting within 20 seconds.' + protocolHint
+        );
+      }
+    }, 20000);
+  </script>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.164.1/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.164.1/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body class="presentation-active">
+  <div id="app-wrapper">
+    <!-- Loading & Error Diagnostic Overlay -->
+    <div id="loading-overlay" role="status" aria-live="polite">
+      <div class="spinner" id="loading-spinner"></div>
+      <div id="loading-text">INITIALIZING TESS SPACE AI GNC DIGITAL TWIN V3.0...</div>
+      <pre id="boot-error-box"></pre>
+    </div>
+
+    <div id="canvas-container"></div>
+    <div id="hud-layer"></div>
+
+    <!-- Top Mode Bar -->
+    <nav id="top-mode-bar">
+      <button class="mode-pill active" id="mode-btn-pres">AUTONOMY EXPERIENCE</button>
+      <button class="mode-pill" id="mode-btn-studio" style="display:none">Studio & Engineering</button>
+      <span class="sim-tag"></span>
+    </nav>
+
+    <!-- Presentation Left Panel -->
+    <aside id="presentation-left">
+      <div class="brand-eyebrow">TESS SPACE AI GNC</div>
+      <h1>FOUR-STAGE AUTONOMOUS NAVIGATION</h1>
+      <p class="lead">
+        Synchronized multi-layer digital twin demonstrating how TESS SPACE Unmanned Ground Vehicles sense raw terrain, localize in 3D space, plan deterministic routes, and execute physical control.
+      </p>
+      <section class="mission-panel" aria-label="Autonomous mission simulation">
+        <div class="mission-eyebrow">SEE MISSION USE CASES</div>
+        <div class="mission-status-row"><span id="mission-status">NEXT · SQUAD SUPPORT &amp; RECON</span><strong id="mission-countdown">00:25</strong></div>
+        <div class="mission-buttons"><button type="button" id="mission-squad">Play Squad Support</button><button type="button" id="mission-drone">Play Drone Encounter</button><button type="button" id="mission-gnss">Play GNSS Denied Scenario</button></div>
+        
+      </section>
+      <div class="telemetry-card">
+        <div class="telemetry-title">
+          <span>UGV LIVE STATE (SHARED 4-LAYER)</span>
+          <span id="tel-mode-badge">PATROL</span>
+        </div>
+        <div class="telemetry-grid">
+          <div class="t-item"><span class="k">COORDINATES (X, Z)</span><span class="v" id="tel-coords">0.00, 0.00 m</span></div>
+          <div class="t-item"><span class="k">ELEVATION / HEADING</span><span class="v" id="tel-elev">0.00 m | 0°</span></div>
+          <div class="t-item"><span class="k">ROUTE PROGRESS</span><span class="v" id="tel-progress">Continuous Loop</span></div>
+          <div class="t-item"><span class="k">EST. REMAINING</span><span class="v" id="tel-eta">--</span></div>
+        </div>
+        <div id="nav-toast" role="alert"></div>
+      </div>
+    </aside>
+
+    <div id="isr-scan-pulse" aria-hidden="true"></div><div id="mission-snapshot" class="mission-snapshot"><strong>SIMULATED CAPTURE · ISR</strong><div>DUAL SENSOR CAPTURE · SAME MOMENT</div><div class="dual-isr"><figure><figcaption>CONTROL · OPTICAL</figcaption><img id="mission-snapshot-control" alt="Optical view from UGV sensor" /></figure><figure><figcaption>SENSE · LiDAR</figcaption><img id="mission-snapshot-sense" alt="LiDAR view from the same UGV sensor" /></figure></div><div class="snapshot-telemetry"><span>OBJECT DETECTED · SIMULATED</span><span>CAM 01 / LiDAR 02</span><span>GNSS: SIMULATED</span><span>TRACK ID: SIM-042</span><span>POS: 56.2631° N / 9.5017° E · DEMO</span></div><div class="snapshot-time">--:--:--</div></div>
+    <svg id="isr-connectors" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><line/><line/><line/><line/></svg><div id="stage-discovery-arrow" aria-hidden="true">➜</div><div id="control-guide" aria-live="off"></div>
+    <div id="presentation-actions" aria-label="Navigation and camera controls">
+      <div class="destination-prompt"><span class="controls-label">CONTROLS · EXPLORE THE 3D WORLD</span><span class="prompt-dot"></span><strong>CLICK ANYWHERE ON THE TERRAIN</strong><span>Set a destination · UGV resumes patrol automatically</span></div>
+      <div class="presentation-camera" aria-label="Camera views">
+        <button type="button" data-camera="infographic" class="selected">View All</button>
+        <button type="button" data-camera="iso">Isometric</button>
+        <button type="button" data-camera="top">Top-down</button>
+        <button type="button" data-camera="ugv">Follow UGV</button>
+      </div>
+      <button type="button" id="presentation-export" title="Export 4K infographic">Export 4K</button>
+    </div>
+
+    <!-- Studio Engineering Panel -->
+    <aside id="toolbar">
+      <div class="toolbar-header">
+        <span class="toolbar-title">TESS SPACE STUDIO V3.9.1</span>
+        <span id="val-badge" class="status-badge status-pass">VERIFYING...</span>
+      </div>
+
+      <div class="slider-row obsolete-control">
+        <span class="label">Vertical Spacing (Z):</span>
+        <input type="range" id="spacing-slider" min="0" max="6.5" step="0.05" value="4.45" />
+        <span class="val" id="spacing-val">4.45m</span>
+      </div>
+
+      <div class="section-label">Camera Presets</div>
+      <div class="btn-grid-4">
+        <button id="cam-infographic" class="active-btn">Infographic</button>
+        <button id="cam-iso">Tech Iso</button>
+        <button id="cam-top">Top-Down</button>
+        <button id="cam-ugv">UGV Close</button>
+      </div>
+
+      <details class="obsolete-control">
+        <summary>Environment, Shaders & Custom UGV</summary>
+        <div class="adv-body">
+          <div class="slider-row">
+            <span class="label">Detail / LOD Preset:</span>
+            <select id="quality-select" style="flex:1;">
+              <option value="performance">Performance (170 grid / 380 trees)</option>
+              <option value="high" selected>High Default (240 grid / 540 trees)</option>
+              <option value="ultra">Ultra Export (290 grid / 680 trees)</option>
+            </select>
+          </div>
+          <div class="slider-row">
+            <span class="label">LiDAR Point Density:</span>
+            <input type="range" id="lidar-density-slider" min="0.25" max="1.0" step="0.05" value="0.90" />
+            <span class="val" id="lidar-density-val">90%</span>
+          </div>
+          <div class="slider-row">
+            <span class="label">LiDAR Point Size:</span>
+            <input type="range" id="lidar-size-slider" min="0.5" max="2.5" step="0.1" value="1.1" />
+            <span class="val" id="lidar-size-val">1.1x</span>
+          </div>
+          <div class="slider-row">
+            <span class="label">Holo Wireframe Alpha:</span>
+            <input type="range" id="wire-slider" min="0.1" max="1.0" step="0.05" value="0.55" />
+            <span class="val" id="wire-val">0.55</span>
+          </div>
+          <div class="slider-row">
+            <span class="label">Bloom Intensity:</span>
+            <input type="range" id="bloom-slider" min="0.0" max="1.0" step="0.05" value="0.26" />
+            <span class="val" id="bloom-val">0.26</span>
+          </div>
+          <div class="slider-row">
+            <span class="label">Custom UGV .GLB:</span>
+            <label class="file-label" style="flex:1;">
+              Load Vehicle .GLB
+              <input type="file" id="ugv-glb-input" accept=".glb,.gltf" style="display:none;" />
+            </label>
+          </div>
+          <div class="section-label">Layer Visibility & Passes</div>
+          <div class="toggle-row">
+            <label class="chk-pill"><input type="checkbox" class="layer-vis" data-idx="0" checked /> SENSE</label>
+            <label class="chk-pill"><input type="checkbox" class="layer-vis" data-idx="1" checked /> UNDERSTAND</label>
+            <label class="chk-pill"><input type="checkbox" class="layer-vis" data-idx="2" checked /> DECIDE</label>
+            <label class="chk-pill"><input type="checkbox" class="layer-vis" data-idx="3" checked /> CONTROL</label>
+            <label class="chk-pill"><input type="checkbox" id="chk-shadows" checked /> Shadows</label>
+            <label class="chk-pill"><input type="checkbox" id="chk-hud" checked /> 3D HUD</label>
+          </div>
+        </div>
+      </details>
+
+      <div class="section-label">Production Exporters & Validation</div>
+      <div class="btn-grid">
+        <button class="primary" id="btn-export-full-4k">📸 Export Full 4K Infographic</button>
+        <button class="secondary-span obsolete-control" id="btn-export-glb">⬇ Export 3D Scene (.GLB)</button>
+        <button id="btn-export-clean-4k">🖼 Clean 3D 4K PNG</button>
+        <button id="btn-export-layers">🗂 4 Transparent PNGs</button>
+        <button class="obsolete-control" id="btn-export-json" style="grid-column: span 2;">📋 Download Measured V3 Validation JSON</button>
+      </div>
+    </aside>
+
+    <!-- Bottom Interactive Autonomy Dock -->
+    <div id="autonomy-dock">
+      <button class="dock-btn active-btn" id="btn-play-pause">⏸ PAUSE</button>
+      <button class="dock-btn active-btn obsolete-control" id="btn-mode-patrol">🔄 PATROL MODE</button>
+      <button class="dock-btn obsolete-control" id="btn-mode-dest">🎯 SET DESTINATION</button>
+      <button class="dock-btn obsolete-control" id="btn-obstacle">🚧 OBSTACLE: OFF</button>
+      <div class="dock-divider"></div>
+      <div class="speed-group">
+        <label for="ugv-speed-slider">SPEED</label>
+        <input type="range" id="ugv-speed-slider" min="0.2" max="2.5" step="0.1" value="0.8" />
+        <span id="ugv-speed-val">0.8x</span>
+      </div>
+      <div class="dock-divider"></div>
+      <button class="dock-btn" id="btn-follow-ugv">🎥 FOLLOW UGV</button>
+      <button class="dock-btn" id="btn-reset-view">⟲ RESET VIEW</button>
+      <button class="dock-btn" id="btn-fullscreen">⛶ FULLSCREEN</button>
+    </div>
+
+    <!-- Right-Hand Four-Stage Information Column -->
+    <aside id="infographic-column">
+      <div class="stage-block">
+        <div class="stage-icon"><svg viewBox="0 0 24 24"><path d="M5 3v18M5 4h11l-2.5 4.5L16 13H5" /></svg></div>
+        <div class="stage-content">
+          <h2>SENSE</h2>
+          <ul><li>Cameras</li><li>LiDAR</li><li>Vehicle data</li><li>Understand environment</li></ul>
+        </div>
+      </div>
+      <div class="stage-block">
+        <div class="stage-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" /><path d="M12 8v4l3 2" /></svg></div>
+        <div class="stage-content">
+          <h2>UNDERSTAND</h2>
+          <ul><li>Perception</li><li>Localization</li><li>Plan and adapt in real time</li></ul>
+        </div>
+      </div>
+      <div class="stage-block">
+        <div class="stage-icon"><svg viewBox="0 0 24 24"><path d="M8 18V6m0 0L5 9m3-3l3 3M16 6v12m0 0l-3-3m3 3l3-3" /></svg></div>
+        <div class="stage-content">
+          <h2>DECIDE</h2>
+          <ul><li>Path planning</li><li>Mission logic</li><li>Give operators confidence</li></ul>
+        </div>
+      </div>
+      <div class="stage-block">
+        <div class="stage-icon">
+          <svg viewBox="0 0 24 24">
+            <circle cx="7" cy="7" r="2.2" /><circle cx="17" cy="7" r="2.2" />
+            <circle cx="7" cy="17" r="2.2" /><circle cx="17" cy="17" r="2.2" />
+            <path d="M9 9l6 6M15 9l-6 6" />
+          </svg>
+        </div>
+        <div class="stage-content">
+          <h2>CONTROL</h2>
+          <ul><li>Vehicle commands</li><li>Real-time response</li><li>Execute safely and repeatably</li></ul>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
+<!-- === EOF index.html === -->
