@@ -1027,7 +1027,7 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
 .st-step.active .st-label { color: var(--ink); }
 .st-step.active .st-desc { opacity: 1; }
  
-.story-nav { position: absolute; width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: transparent; border: 1px solid rgba(255, 255, 255, .25); color: var(--ink-dim); cursor: pointer; transition: border-color .2s ease, color .2s ease; }
+.story-nav { position: absolute; width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: transparent; border: 1px solid rgba(255, 255, 255, .25);  cursor: pointer; transition: border-color .2s ease, color .2s ease; }
 .story-nav:hover { border-color: var(--accent); color: var(--accent); }
 .story-nav svg { width: 16px; height: 16px; }
 .story-prev { left: var(--gutter); }
