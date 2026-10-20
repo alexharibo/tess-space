@@ -807,7 +807,7 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
 .rv-tag span { font-size: 0.6875rem; color: var(--ink-faint); line-height: 1.5; text-align: right; }
 .rv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .rv-card { position: relative; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); aspect-ratio: 3/4.4; display: flex; flex-direction: column; justify-content: flex-end; }
-.rv-media { position: absolute; inset: 0; }
+.rv-media {position:relative; inset: 0; height:100%;}
 .rv-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
 .rv-card:hover .rv-media img { transform: scale(1.05); }
 .rv-scrim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5, 5, 6, 0) 24%, rgba(5, 5, 6, .95) 58%); }
@@ -1340,7 +1340,7 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
 }
 
 .top-content {
-  top: 2px;
+  top: 5px;
 }
 
 .mid-content {
