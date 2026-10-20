@@ -812,7 +812,7 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
 @media (max-width: 480px) { .eco { padding: 44px 0 90px; } .eco-logo { padding: 0 6px; } }
  
 /* ---- Grant stats (lys bjælke) ---- */
-.gstats { background: var(--cream-2); color: #111518; padding: 44px 0; }
+.gstats { background: var(--cream-2); color: #111518; padding: 5%; }
 .gstats-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
 .gstat { padding: 0 clamp(10px, 3vw, 40px); border-left: 1px solid var(--cream-line); }
 .gstat:first-child { padding-left: 0; border-left: none; }
