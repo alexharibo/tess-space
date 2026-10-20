@@ -936,7 +936,7 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
 .careers-media { position: absolute; inset: 0; }
 .careers-media img { width: 100%; height: 100%; object-fit: cover; }
 .careers-scrim { position: absolute; inset: 0; background: linear-gradient(100deg, rgba(6, 6, 7, .95) 0%, rgba(6, 6, 7, .72) 40%, rgba(6, 6, 7, .25) 75%); }
-.careers-content { position: relative; z-index: 2; padding: 80px 0 0; }
+.careers-content { position: relative; z-index: 2;  }
 .careers-copy { max-width: 600px; margin-bottom: 40px; }
 .careers-copy h2 { font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 800; line-height: 1.05; margin-bottom: 18px; }
 .careers-copy .accent { color: var(--accent); }
@@ -1007,7 +1007,7 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
 .story-media { position: absolute; inset: 0; }
 .story-media img { width: 100%; height: 100%; object-fit: cover; }
 .story-scrim { position: absolute; inset: 0; background: linear-gradient(100deg, rgba(6, 6, 7, .95) 0%, rgba(6, 6, 7, .65) 42%, rgba(6, 6, 7, .15) 75%); }
-.story-content { position: relative; z-index: 2; width: 100%; padding: 70px 0 40px; }
+.story-content { position: relative; z-index: 2; width: 100%;  }
 .story-copy { max-width: 480px; margin-bottom: 56px; }
 .story-copy h2 { font-size: clamp(1.875rem, 4.4vw, 2.875rem); font-weight: 800; line-height: 1.06; margin-bottom: 20px; }
 .story-copy .accent { color: var(--accent); }
