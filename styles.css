@@ -847,14 +847,16 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
  
 #key-results { border-top: 1px solid var(--line); padding: 50px 0; }
 .kr-bar { display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
-.kr-head h3 { font-size: clamp(1.375rem, 3vw, 1.875rem); font-weight: 800; line-height: 1.15; margin-top: 14px; }
+.kr-head h3 { font-size: clamp(1.375rem, 3vw, 1.875rem); font-weight: 800; line-height: 1.15; margin-top: 14px; color:black; }
 .kr-head h3 .accent { color: var(--accent); }
+.kr-stats p { color: rgb(146, 146, 146) }
 .kr-note { font-size: 0.8125rem; color: var(--ink-dim); max-width: 220px; line-height: 1.6; margin: 0; }
-.kr-stats { display: flex; margin-left: auto; flex-wrap: wrap; }
-.kr-stats div { padding: 0 32px; border-left: 1px solid var(--line); text-align: center; }
+.kr-stats { display: flex; margin-left: auto;  }
+.kr-stats div { padding: 0 32px; border-left: 1px solid var(--line); text-align: center; color:black;}
 .kr-stats div:first-child { border-left: none; }
 .kr-stats b { display: block; font-family: var(--font-head); font-weight: 800; font-size: clamp(1.375rem, 3vw, 1.75rem); margin-bottom: 6px; }
 .kr-stats span { font-size: 0.65625rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-faint); }
+.white { background-color:#f2efe9 }
 @media (max-width: 860px) { .kr-stats { margin-left: 0; row-gap: 20px; } .kr-stats div { padding: 0 20px 0 0; border: none; text-align: left; } }
  
 .sv-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-bottom: 40px; flex-wrap: wrap; }
