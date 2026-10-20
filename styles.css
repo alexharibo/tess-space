@@ -541,9 +541,30 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
  
 /* ---- Missions (kort) ---- */
 #missions {
-  background: url("assets/homecamo.jpg") center / cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0)), 
+              url("assets/homecamo.jpg") center / cover no-repeat;
+          
 }
 
+
+#missions::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Her kan du justere både mørke (alpha) OG kontrast (f.eks. via brightness/contrast) */
+  background: rgba(0, 0, 0, 0.4); 
+  backdrop-filter: contrast(130%); /* Øger kontrasten, men KUN på baggrunden bagved */
+  z-index: 1;
+}
+
+/* Sørg for at alt indhold (tekst, knapper) ligger oven på overlayet */
+#missions > * {
+  position: relative;
+  z-index: 2;
+}
 
 #beforemissions { text-align: center; padding: 5%; }
 #beforemissions .accent { color: var(--accent); }
