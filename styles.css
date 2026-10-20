@@ -1913,7 +1913,7 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
  
 /* Fælles billedboks til .platform-step og .step-card */
 .step-media { width: 100%; aspect-ratio: 4/3; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-.step-media img { width: 100%; height: 100%; object-fit:cover; display: block; }
+.step-media img {  height: 100%; object-fit:cover; display: block; }
 .platform-step .step-media { margin-bottom: 24px; }
  
 /* ---- Operating scope ---- */
