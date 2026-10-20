@@ -425,10 +425,10 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
   position: absolute; inset: 0; z-index: 1;
   background:
     linear-gradient(100deg,
-      rgba(6, 6, 7, 0.64) 0%,
-      rgba(6, 6, 7, 0.761) 40%,
-      rgba(6, 6, 7, 0.785) 65%,
-      rgba(6, 6, 7, 0.611) 100%),
+      rgba(6, 6, 7, 0.316) 0%,
+      rgba(6, 6, 7, 0.34) 40%,
+      rgba(6, 6, 7, 0.478) 65%,
+      rgba(6, 6, 7, 0.32) 100%),
     linear-gradient(0deg, rgba(6,6,7,.65) 0%, rgba(6,6,7,0) 40%);
 }
 .hero-noise { position: absolute; inset: 0; z-index: 1; opacity: .5; mix-blend-mode: overlay; background-image: repeating-linear-gradient(0deg, rgba(255, 255, 255, .025) 0 1px, transparent 1px 3px); }
