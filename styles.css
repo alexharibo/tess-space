@@ -541,8 +541,10 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
  
 /* ---- Missions (kort) ---- */
 #missions {
-  background: linear-gradient(rgba(16, 16, 16, 0.5), rgba(0, 0, 0, .5)), url("assets/tessbackground.jfif") center / cover no-repeat;
+  background: url("assets/homecamo.jpg") center / cover no-repeat;
 }
+
+
 #beforemissions { text-align: center; padding: 5%; }
 #beforemissions .accent { color: var(--accent); }
  
