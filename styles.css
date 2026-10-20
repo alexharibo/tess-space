@@ -1842,8 +1842,7 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
 .delivery-mid { flex: 0 0 auto; align-self: center; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(var(--accent-rgb), .5); color: var(--accent); }
 .delivery-mid svg { width: 14px; height: 14px; }
 .delivery-note { font-size: 0.84375rem; color: var(--ink-dim); margin-bottom: 24px; }
-#autonomytext { display:grid;
-grid-template-columns: 1fr 0.87fr; }
+
 @media (max-width: 760px) { .delivery-mid { display: none; } .delivery-panel { min-height: 260px; } }
  
 /* ---- Delivery system (3 trin) ---- */
