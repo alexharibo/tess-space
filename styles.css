@@ -1110,22 +1110,22 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
    ========================================================================== */
  
 /* Fælles base for 'split'-sektioner */
-.autonomy-section, .approach-section, .core-section, .progress-section,
+.autonomy-section, .investment-case-section, .core-section, .progress-section,
 .people-section, .investment-section, .investor-contact-section {
   position: relative; width: 100%; overflow: hidden; font-family: var(--font-ui);
 }
-.autonomy-section .wrap, .approach-section .wrap, .core-section .wrap, .progress-section .wrap,
+.autonomy-section .wrap, .investment-case-section .wrap, .core-section .wrap, .progress-section .wrap,
 .people-section .wrap, .investment-section .wrap, .investor-contact-section .wrap { position: relative; z-index: 2; }
  
 .autonomy-bg-split, .core-bg-split, .people-bg-split { position: absolute; inset: 0; z-index: 1; }
 .autonomy-bg-split .bg-left, .core-bg-split .bg-left { position: absolute; inset: 0; background: var(--cream); }
  
 /* Fælles typografi i split-kolonner */
-.autonomy-left-col .subtitle, .approach-left-col .subtitle, .core-left-col .subtitle,
+.autonomy-left-col .subtitle, .investment-case-section.subtitle, .core-left-col .subtitle,
 .progress-left-col .subtitle, .people-right-col .subtitle, .investment-left-col .subtitle,
 .contact-col-left .subtitle { color: var(--accent-on-light); font-size: 0.8125rem; font-weight: 700; letter-spacing: 2px; margin-bottom: 20px; }
  
-.approach-left-col .main-title, .progress-left-col .main-title, .people-right-col .main-title,
+.investment-case-section .main-title, .progress-left-col .main-title, .people-right-col .main-title,
 .investment-left-col .main-title, .contact-col-left .main-title, .core-left-col .main-title, .autonomy-left-col .main-title {
   font-weight: 900; line-height: 1.02; letter-spacing: -.5px;
 }
@@ -1165,30 +1165,399 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
 }
 @media (max-width: 560px) { .autonomy-left-col .stats-grid { gap: 20px; } }
  
-/* ---- Approach (mørk) ---- */
-.approach-section { background: #080707; }
-.approach-bg { position: absolute; inset: 0; z-index: 1; background: radial-gradient(circle at 80% 50%, rgba(226, 97, 18, .15) 0%, transparent 60%), linear-gradient(to right, #080707 40%, rgba(8, 7, 7, .8) 100%); }
-.approach-content-grid { display: flex; align-items: center; min-height: 560px; padding: 60px 0; gap: 40px; }
-.approach-left-col { flex: 1.2; color: #fff; }
-.approach-left-col .main-title { font-size: clamp(2rem, 4.5vw, 3rem); margin: 0 0 25px; color: #fff; }
-.approach-left-col .description { color: #b0b0b0; font-size: 0.9375rem; line-height: 1.55; margin: 0 0 45px; max-width: 90%; }
-.workflow-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; border-top: 1px solid rgba(255, 255, 255, .12); padding-top: 25px; }
-.workflow-item { display: flex; flex-direction: column; }
-.workflow-item .icon-wrap { width: 28px; height: 28px; color: var(--accent-on-light); margin-bottom: 12px; }
-.workflow-item .icon-wrap svg { width: 100%; height: 100%; }
-.workflow-title { font-size: 0.75rem; font-weight: 800; color: #fff; letter-spacing: 1px; margin-bottom: 8px; }
-.workflow-list { list-style: none; padding: 0; margin: 0; }
-.workflow-list li { position: relative; font-size: 0.71875rem; color: #888; line-height: 1.4; margin-bottom: 3px; }
-.workflow-list li::before { content: "- "; color: var(--accent-on-light); }
-.approach-right-col { flex: .8; display: flex; justify-content: center; align-items: center; }
-.approach-right-col .hardware-img { width: 100%; max-width: 480px; height: auto; object-fit: contain; filter: drop-shadow(0 10px 30px rgba(0, 0, 0, .7)); }
-@media (max-width: 992px) {
-  .approach-content-grid { flex-direction: column; align-items: stretch; padding: 40px 0; min-height: 0; }
-  .approach-left-col .description { max-width: 100%; margin-bottom: 32px; }
-  .workflow-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
-  .approach-right-col { width: 100%; margin-top: 30px; }
+/* --- INVESTMENT CASE SECTION --- */
+.investment-case-section {
+  background-color: #08080a;
+  color: #ffffff;
+  padding: 80px 0 60px 0;
+  font-family: 'Nunito', sans-serif;
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
-@media (max-width: 550px) { .workflow-grid { grid-template-columns: 1fr; } }
+
+.investment-top-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1.3fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Kolonne 1 */
+.inv-col-left .subtitle {
+  color: #ff6600;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+}
+
+.inv-col-left .main-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 42px;
+  line-height: 1.05;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.inv-col-left .accent {
+  color: #ff6600;
+}
+
+.inv-col-left .description {
+  color: #a0a5b5;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.inv-col-left .btn-row {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.inv-col-left .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-solid {
+  background: #ff6600;
+  color: #fff;
+  border: 1px solid #ff6600;
+}
+
+.btn-solid:hover {
+  background: #e05500;
+}
+
+.btn-outline {
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+}
+
+.btn-outline:hover {
+  border-color: #ff6600;
+  color: #ff6600;
+}
+
+.dl-icon {
+  width: 14px;
+  height: 14px;
+}
+
+/* Kolonne 2: Circles Diagram */
+.inv-col-center {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.market-signals-header, .milestones-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+.orange-dash {
+  width: 16px;
+  height: 3px;
+  background: #ff6600;
+  margin-top: 6px;
+}
+
+.market-signals-header strong, .milestones-header strong {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+}
+
+.market-signals-header small, .milestones-header small {
+  display: block;
+  font-size: 10px;
+  color: #71778d;
+  letter-spacing: 1px;
+}
+
+/* Cirkel-struktur */
+.circles-container {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  border: 1px solid rgba(255, 102, 0, 0.4);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 0 25px rgba(255, 102, 0, 0.05) inset;
+}
+
+.circle-outer {
+  width: 310px;
+  height: 310px;
+  background: radial-gradient(circle, rgba(255, 102, 0, 0.08) 0%, rgba(10, 10, 12, 0.9) 70%);
+}
+
+.circle-mid {
+  width: 220px;
+  height: 220px;
+  border-color: rgba(255, 102, 0, 0.6);
+  background: rgba(255, 102, 0, 0.05);
+}
+
+.circle-inner {
+  width: 130px;
+  height: 130px;
+  border-color: #ff6600;
+  background: rgba(255, 102, 0, 0.15);
+  box-shadow: 0 0 15px rgba(255, 102, 0, 0.3);
+}
+
+.circle-content {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.top-content {
+  top: 15px;
+}
+
+.mid-content {
+  top: 15px;
+}
+
+.inner-content {
+  top: 22px;
+}
+
+.circle-content .val {
+  display: block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.top-content .val { font-size: 22px; }
+.mid-content .val { font-size: 18px; }
+.inner-content .val { font-size: 16px; }
+
+.circle-content .label {
+  display: block;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #d1d5db;
+}
+
+.circle-content .sub {
+  display: block;
+  font-size: 8px;
+  color: #838a9d;
+}
+
+/* Ukraine Card Overlay */
+.ukraine-card {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: rgba(12, 13, 16, 0.95);
+  border: 1px solid rgba(255, 102, 0, 0.3);
+  border-radius: 6px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.ukraine-val {
+  display: block;
+  font-weight: 800;
+  font-size: 13px;
+  color: #ff6600;
+}
+
+.ukraine-title {
+  display: block;
+  font-size: 9px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.ukraine-sub {
+  display: block;
+  font-size: 8px;
+  color: #71778d;
+}
+
+/* Kolonne 3: Timeline */
+.inv-col-right {
+  border-left: 1px solid rgba(255,255,255,0.08);
+  padding-left: 30px;
+}
+
+.milestones-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 10px;
+}
+
+.timeline-line-vertical {
+  position: absolute;
+  left: 54px;
+  top: 6px;
+  bottom: 6px;
+  width: 1px;
+  background: rgba(255,255,255,0.15);
+}
+
+.milestone-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  position: relative;
+}
+
+.m-year {
+  font-weight: 700;
+  font-size: 13px;
+  color: #ff6600;
+  width: 40px;
+  text-align: right;
+}
+
+.m-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  margin-top: 3px;
+  z-index: 2;
+  background: #08080a;
+}
+
+.m-dot.filled {
+  background: #ff6600;
+  border: 2px solid #ff6600;
+  box-shadow: 0 0 8px rgba(255, 102, 0, 0.6);
+}
+
+.m-dot.hollow {
+  border: 2px solid #ff6600;
+}
+
+.m-body strong {
+  display: block;
+  font-size: 13px;
+  color: #ffffff;
+  margin-bottom: 2px;
+}
+
+.m-body p {
+  font-size: 11px;
+  color: #838a9d;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.m-body sup {
+  color: #ff6600;
+}
+
+/* Nederste Bånd: Investment Thesis */
+.investment-thesis-wrap {
+  margin-top: 60px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 20px;
+}
+
+.thesis-header-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #838a9d;
+  margin-bottom: 20px;
+}
+
+.thesis-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.thesis-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: rgba(255,255,255,0.02);
+  padding: 15px;
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+.thesis-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.thesis-text h4 {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+}
+
+.thesis-text p {
+  font-size: 11px;
+  color: #838a9d;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Responsiv tilpasning for mindre skærme */
+@media (max-width: 992px) {
+  .investment-top-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .inv-col-right {
+    border-left: none;
+    padding-left: 0;
+  }
+  .thesis-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .thesis-grid {
+    grid-template-columns: 1fr;
+  }
+}
  
 /* ---- Validated core (lys + kort) ---- */
 .core-bg-split .bg-right {
