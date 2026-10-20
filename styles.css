@@ -1935,7 +1935,7 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
 @media (max-width: 768px) { .scope-grid { grid-template-columns: 1fr; margin-bottom: 2.5rem; } }
  
 /* ---- "See it in action" banner ---- */
-.action-banner { padding: 4rem 0; border-top: 1px solid #22262a; background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url('assets/seeitaction2.jpg') center / cover no-repeat; }
+.action-banner { padding: 4rem 0; border-top: 1px solid #22262a; background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url('assets/seeitaction2.jpg') center / cover no-repeat; height:35vh;}
 .action-banner-content { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
 .action-info { display: flex; align-items: center; gap: 1.5rem; padding-bottom: 5%; }
 .play-icon svg { width: 48px; height: 48px; }
