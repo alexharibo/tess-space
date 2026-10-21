@@ -1977,7 +1977,7 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
  
 /* ---- Vehicle onboarding (6 trin) ---- */
 .onboarding-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1rem; margin-top: 2rem; }
-.step-card { display: flex; flex-direction: column; background: var(--bg-card); border: 1px solid #22262a; border-radius: var(--radius); overflow: hidden; }
+.step-card { display: flex; flex-direction: column;  border: 1px solid #22262a; border-radius: var(--radius); overflow: hidden; }
 .step-body { display: flex; flex-direction: column; flex-grow: 1; padding: 1.25rem 1rem; }
 .step-num { font-size: .8rem; font-weight: 700; color: var(--accent); margin-bottom: .5rem; }
 .step-arrow { margin-left: .2rem; }
