@@ -591,7 +591,7 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
 .mcard .link { font-family: var(--font-head); font-size: 0.6875rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ink); display: inline-flex; align-items: center; gap: 6px; }
 .mcard .link svg { width: 12px; height: 12px; }
 .mcard .badge { position: absolute; top: 14px; right: 14px; width: 26px; height: 26px; z-index: 2; opacity: .85; transition: transform .4s ease, filter .4s ease; }
-.contentwrap { height: 120px; }
+.contentwrap { height: 105px; }
  
 @media (hover: hover) and (pointer: fine) {
   .mcard:hover { transform: scale(1.045); border-color: var(--accent); box-shadow: 0 0 20px rgba(255, 255, 255, .08), 0 0 45px rgba(var(--accent-rgb), .25); z-index: 5; }
