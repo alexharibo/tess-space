@@ -203,7 +203,7 @@ const burger = document.getElementById('burger');
   const form = document.getElementById('contactForm');
   if(!form) return;
 
-  const TO = 'info@tessspace.com'; // <-- skift til jeres modtager-mail
+  const TO = 'contact@tess-space.com'; // <-- skift til jeres modtager-mail
 
   form.addEventListener('submit', (e) => {
     e.preventDefault(); // stopper normal submit; browserens validering kører stadig først
