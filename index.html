@@ -10,6 +10,79 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <link rel="icon" type="image/png" href="assets/tessicon.png">
+
+
+<!-- Indsæt i din eksisterende <head> -->
+<link rel="stylesheet" href="cookies.css">
+<script src="cookies.js" defer></script>
+
+<!-- Indsæt i din eksisterende <body> -->
+<div id="cookie-banner" class="cookie-banner" role="dialog"
+     aria-labelledby="cookie-title" aria-describedby="cookie-description"
+     aria-modal="false" hidden>
+  <div class="cookie-content">
+    <div class="cookie-icon" aria-hidden="true">🍪</div>
+
+    <div class="cookie-text">
+      <h2 id="cookie-title">Vi bruger cookies</h2>
+      <p id="cookie-description">
+        Vi bruger nødvendige cookies for at få hjemmesiden til at fungere.
+        Med dit samtykke kan vi også bruge valgfrie cookies til statistik
+        og forbedring af din oplevelse.
+      </p>
+      <a href="cookiepolitik.html">Læs vores cookiepolitik</a>
+    </div>
+  </div>
+
+  <div class="cookie-actions">
+    <button id="cookie-settings" class="cookie-btn cookie-secondary">
+      Indstillinger
+    </button>
+    <button id="cookie-reject" class="cookie-btn cookie-secondary">
+      Afvis alle
+    </button>
+    <button id="cookie-accept" class="cookie-btn cookie-primary">
+      Accepter alle
+    </button>
+  </div>
+
+  <div id="cookie-preferences" class="cookie-preferences" hidden>
+    <h3>Cookieindstillinger</h3>
+
+    <label class="cookie-option">
+      <span>
+        <strong>Nødvendige cookies</strong>
+        <small>Kræves for at hjemmesiden fungerer.</small>
+      </span>
+      <input type="checkbox" checked disabled>
+    </label>
+
+    <label class="cookie-option">
+      <span>
+        <strong>Statistik</strong>
+        <small>Hjælper med at forstå, hvordan hjemmesiden bruges.</small>
+      </span>
+      <input type="checkbox" id="cookie-analytics">
+    </label>
+
+    <label class="cookie-option">
+      <span>
+        <strong>Marketing</strong>
+        <small>Kan bruges til målrettet markedsføring.</small>
+      </span>
+      <input type="checkbox" id="cookie-marketing">
+    </label>
+
+    <button id="cookie-save" class="cookie-btn cookie-primary">
+      Gem mine valg
+    </button>
+  </div>
+</div>
+
+<!-- Kan også placeres i din hjemmesides footer -->
+<button id="open-cookie-settings" class="cookie-reopen" type="button">
+  🍪 Cookieindstillinger
+</button>
 </head>
 <body>
 
