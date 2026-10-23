@@ -81,12 +81,12 @@
 }
 
 .cookie-primary {
-  background: #60a5fa;
+  background: #c5c9d5;
   color: #111827;
 }
 
 .cookie-primary:hover {
-  background: #93c5fd;
+  background: #b2b5c0;
 }
 
 .cookie-secondary {
@@ -133,7 +133,7 @@
 .cookie-option input {
   width: 19px;
   height: 19px;
-  accent-color: #60a5fa;
+  accent-color:  #c5c9d5;
   flex-shrink: 0;
 }
 
