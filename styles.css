@@ -312,7 +312,7 @@ header .wrap { display: flex; align-items: center; justify-content: space-betwee
 
 
 /* FARVE */
-nav.links a.active { color: #fff; }
+
 nav.links a::after { background: var(--page-color, var(--accent)); }
 .nav-idx { color: var(--page-color, var(--accent)); }
  
