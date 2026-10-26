@@ -309,6 +309,12 @@ header .wrap { display: flex; align-items: center; justify-content: space-betwee
 .logo { display: flex; align-items: center; gap: 10px; font-family: var(--font-head); font-weight: 800; font-size: 0.90625rem; letter-spacing: .06em; }
 .logo svg { width: 26px; height: 26px; flex: none; }
 #siteHeader .logo img { width: auto; max-width: 100%; height: auto; max-height: 50px; }
+
+
+/* FARVE */
+nav.links a.active { color: #fff; }
+nav.links a::after { background: var(--page-color, var(--accent)); }
+.nav-idx { color: var(--page-color, var(--accent)); }
  
 nav.links, .links { display: flex; gap: clamp(18px, 2.4vw, 30px); }
 nav.links a {
@@ -322,8 +328,10 @@ nav.links a::after {
   transition: transform .32s cubic-bezier(.4, 0, .2, 1);
 }
 nav.links a:hover, nav.links a.active { color: var(--ink); }
-nav.links a.active { color: var(--accent); }
+nav.links a.active { color: var(--ink); }
 nav.links a:hover::after, nav.links a.active::after { transform: scaleX(1); transform-origin: left; }
+
+
  
 .nav-idx {
   display: inline-block; width: 0; margin-right: 0; opacity: 0; overflow: hidden; white-space: nowrap;
@@ -2306,4 +2314,5 @@ height: 780px;
 border-radius: 8px;
 }
 }
+
 
