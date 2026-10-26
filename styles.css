@@ -2317,3 +2317,15 @@ border-radius: 8px;
 }
 
 
+
+@media (max-width:400px){
+.tess-gnc-section {display:none;}
+}
+
+@media (max-width:680px){
+.tess-gnc-section {display:none;}
+}
+
+@media (max-width:920px){
+.tess-gnc-section {display:none;}
+}
