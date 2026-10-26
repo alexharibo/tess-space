@@ -1856,7 +1856,7 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
 .delivery-line { font-family: var(--font-head); font-weight: 700; font-size: 0.9375rem; color: var(--ink); margin: 0; }
 .delivery-line.strong { font-weight: 800; }
 .delivery-line span { color: var(--accent); margin: 0 2px; }
-.delivery-arrow { width: 15px; height: 15px; color: var(--ink-faint); margin: 6px 0; }
+.delivery-arrow { width: 15px; height: 15px; color: #f26a1b; margin: 6px 0; }
 .delivery-mid { flex: 0 0 auto; align-self: center; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(var(--accent-rgb), .5); color: var(--accent); }
 .delivery-mid svg { width: 14px; height: 14px; }
 .delivery-note { font-size: 0.84375rem; color: var(--ink-dim); margin-bottom: 24px; }
