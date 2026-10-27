@@ -907,7 +907,7 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
 .investor h2 { font-size: clamp(2.25rem, 7vw, 4.6875rem); font-weight: 800; line-height: 1.05; margin-bottom: clamp(28px, 4vw, 50px); color: #000; }
 .investor p { color: var(--paper-dim); max-width: 440px; margin-bottom: clamp(28px, 4vw, 50px); font-size: 0.96875rem; }
 .investor .wrap { position: relative; z-index: 1; }
-.investor-book { position: absolute; z-index: -1; right: -30%; bottom: -8%; width: 100%; height: 720px; pointer-events: none; background: url("assets/investorbook.png") center / contain no-repeat; }
+.investor-book { position: absolute; z-index: -1; right: -20%; bottom: -1%; width: 100%; height: 720px; pointer-events: none; background: url("assets/investorbook.png") center / contain no-repeat; }
 @media (max-width: 1520px) { .investor-book { display: none; } }
 
  
