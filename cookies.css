@@ -147,25 +147,25 @@
 
 .cookie-secondary:hover {
   background: #14161d;
-  border-color: #ff5500;
-  color: #ff5500;
+  border-color: #FF7900;
+  color: #FF7900;
 }
 
 /* Orange knap (ACCEPT ALL) */
 .cookie-primary {
-  background: #ff5500;
+  background: #FF7900;
   color: #000000;
-  border: 1px solid #ff5500;
+  border: 1px solid #FF7900
 }
 
 .cookie-primary:hover {
-  background: #e04a00;
-  border-color: #e04a00;
+  background: #FF7900;
+  border-color: #FF7900;
 }
 
 .cookie-btn:focus-visible,
 .cookie-reopen:focus-visible {
-  outline: 2px solid #ff5500;
+  outline: 2px solid #FF7900;
   outline-offset: 3px;
 }
 
@@ -181,7 +181,7 @@
   font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: #ff5500;
+  color: #FF7900;
 }
 
 .cookie-option {
@@ -208,7 +208,7 @@
 .cookie-option input {
   width: 18px;
   height: 18px;
-  accent-color: #ff5500;
+  accent-color: #FF7900;
   flex-shrink: 0;
   cursor: pointer;
 }
@@ -226,18 +226,18 @@
   left: 16px;
   padding: 10px 14px;
   background: #060709;
-  color: #ff5500;
-  border: 1px solid #ff5500;
+  color: #FF7900;
+  border: 1px solid #FF7900;
   cursor: pointer;
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  clip-path: polygon(6px 0, calc(100% - 6px) 0, 100% 6px, 100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0 calc(100% - 6px), 0 6px);
+  
 }
 
 .cookie-reopen:hover {
-  background: #ff5500;
+  background: #FF7900;
   color: #000000;
 }
 
