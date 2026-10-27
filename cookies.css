@@ -2,6 +2,8 @@
    TACTICAL / SCI-FI COOKIE BANNER (Matches Image Design)
    ========================================================================== */
 
+
+   
 .cookie-banner {
   position: fixed;
   z-index: 9999;
@@ -14,16 +16,7 @@
   border: 1.5px solid #ff5500; /* Neon Orange border */
   
   /* Hakkede hjørner (chamfered corners) som på billedet */
-  clip-path: polygon(
-    14px 0, 
-    calc(100% - 14px) 0, 
-    100% 14px, 
-    100% calc(100% - 14px), 
-    calc(100% - 14px) 100%, 
-    14px 100%, 
-    0 calc(100% - 14px), 
-    0 14px
-  );
+
   
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 15px rgba(255, 85, 0, 0.15);
   font-family: inherit;
@@ -98,7 +91,7 @@
 
 .cookie-text a::after {
   content: '→';
-  color: #ff5500;
+ 
   text-decoration: none;
   display: inline-block;
   font-size: 14px;
@@ -124,18 +117,9 @@
   transition: all 0.2s ease;
   text-align: center;
   background: transparent;
+border: 1px solid;
+border-radius:3px;
 
-  /* Hakkede hjørner på knapperne */
-  clip-path: polygon(
-    8px 0, 
-    calc(100% - 8px) 0, 
-    100% 8px, 
-    100% calc(100% - 8px), 
-    calc(100% - 8px) 100%, 
-    8px 100%, 
-    0 calc(100% - 8px), 
-    0 8px
-  );
 }
 
 /* Mørke knapper (SETTINGS & REJECT ALL) */
@@ -154,7 +138,7 @@
 /* Orange knap (ACCEPT ALL) */
 .cookie-primary {
   background: #FF7900;
-  color: #000000;
+  color: #ffffff;
   border: 1px solid #FF7900
 }
 
@@ -273,3 +257,9 @@
     width: 100%;
   }
 }
+
+  /* Typografi */
+  --font-head: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-body: 'Nunito', system-ui, sans-serif;
+  --font-ui: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Barlow Condensed', Barlow, Arial, sans-serif;
