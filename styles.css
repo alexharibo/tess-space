@@ -1885,7 +1885,7 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
   border-radius: 12px;
   overflow: hidden;
 
-  background: #0d0e12;
+ 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1922,6 +1922,8 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
  height:40vh;
   overflow: hidden;
   position: relative;
+  border-radius:15px;
+      border: 1px solid rgb(18, 18, 18);
 }
 
 .delivery-media img {
