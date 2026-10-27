@@ -507,6 +507,7 @@ nav.links a:hover .nav-idx, nav.links a.active .nav-idx { width: 17px; margin-ri
 .dash { display: block; width: 16px; height: 1px; background: var(--accent); margin-bottom: 14px; }
  
 /* Partners strip */
+#company-strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding-top: 2%; padding-bottom:2%;background-color:#050506}
 #partners-strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding-top: 2%; }
 .partners-heading { font-family: var(--font-head); font-weight: 800; font-size: clamp(1.125rem, 2.2vw, 1.5rem); color: var(--ink); margin-bottom: 32px; }
 .partners-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
