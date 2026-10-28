@@ -460,3 +460,5 @@ body.presentation-active .destination-prompt{box-shadow:0 0 0 1px rgba(255,121,0
 #mission-gnss {border:1px solid #ff7900;background:#141413;color:#ff9a32;cursor:pointer;}
 .mission-buttons {display:flex;flex-wrap:wrap;gap:7px;}
 .mission-buttons button {flex:1 1 135px;min-height:32px;}
+
+

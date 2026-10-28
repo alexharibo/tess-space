@@ -1,18 +1,25 @@
+/* ==========================================================================
+   TACTICAL / SCI-FI COOKIE BANNER (Matches Image Design)
+   ========================================================================== */
 
 
+   
 .cookie-banner {
   position: fixed;
   z-index: 9999;
   right: 24px;
   bottom: 24px;
-  width: min(680px, calc(100% - 48px));
-  padding: 24px;
-  background: #171923;
-  color: #f8fafc;
-  border: 1px solid #383b49;
-  border-radius: 18px;
-  box-shadow: 0 16px 60px rgba(0, 0, 0, 0.3);
-  font-family: Arial, sans-serif;
+  width: min(640px, calc(100% - 48px));
+  padding: 28px 32px;
+  background: #060709;
+  color: #ffffff;
+  border: 1.5px solid #ff5500; /* Neon Orange border */
+  
+  /* Hakkede hjørner (chamfered corners) som på billedet */
+
+  
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 15px rgba(255, 85, 0, 0.15);
+  font-family: inherit;
   box-sizing: border-box;
 }
 
@@ -24,12 +31,25 @@
 .cookie-content {
   display: flex;
   align-items: flex-start;
-  gap: 16px;
+  gap: 24px;
 }
 
+/* Orange Ikon */
 .cookie-icon {
-  font-size: 36px;
-  line-height: 1.2;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  color: #ff5500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cookie-icon svg,
+.cookie-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .cookie-text {
@@ -38,76 +58,114 @@
 
 .cookie-text h2 {
   margin: 0 0 10px;
-  font-size: 23px;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
 }
 
 .cookie-text p {
-  margin: 0 0 12px;
-  color: #c5c9d5;
-  font-size: 14px;
-  line-height: 1.7;
+  margin: 0 0 14px;
+  color: #a0a5b1;
+  font-size: 13.5px;
+  line-height: 1.6;
+  font-weight: 400;
 }
 
+/* "Read more in our cookie policy ->" link */
 .cookie-text a {
-  color: #93c5fd;
+  color: #a0a5b1;
+  font-size: 13.5px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s;
+}
+
+.cookie-text a:hover {
+  color: #ff5500;
+}
+
+.cookie-text a::after {
+  content: '→';
+ 
+  text-decoration: none;
+  display: inline-block;
   font-size: 14px;
 }
 
+/* Knap række */
 .cookie-actions {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 22px;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
 }
 
+/* Generel knap-stil med afskårne hjørner */
 .cookie-btn {
+  flex: 1;
   padding: 12px 16px;
-  border: 1px solid transparent;
-  border-radius: 9px;
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
+  transition: all 0.2s ease;
+  text-align: center;
+  background: transparent;
+border: 1px solid;
+border-radius:3px;
+
 }
 
-.cookie-btn:hover {
-  transform: translateY(-1px);
+/* Mørke knapper (SETTINGS & REJECT ALL) */
+.cookie-secondary {
+  background: #08090c;
+  color: #ffffff;
+  border: 1px solid #2e323d;
+}
+
+.cookie-secondary:hover {
+  background: #14161d;
+  border-color: #FF7900;
+  color: #FF7900;
+}
+
+/* Orange knap (ACCEPT ALL) */
+.cookie-primary {
+  background: #FF7900;
+  color: #ffffff;
+  border: 1px solid #FF7900
+}
+
+.cookie-primary:hover {
+  background: #FF7900;
+  border-color: #FF7900;
 }
 
 .cookie-btn:focus-visible,
 .cookie-reopen:focus-visible {
-  outline: 3px solid #93c5fd;
+  outline: 2px solid #FF7900;
   outline-offset: 3px;
 }
 
-.cookie-primary {
-  background: #c5c9d5;
-  color: #111827;
-}
-
-.cookie-primary:hover {
-  background: #b2b5c0;
-}
-
-.cookie-secondary {
-  background: #272b38;
-  color: #f8fafc;
-  border-color: #4b5060;
-}
-
-.cookie-secondary:hover {
-  background: #363b4b;
-}
-
+/* Preferencer (Når brugeren trykker på Settings) */
 .cookie-preferences {
   margin-top: 22px;
   padding-top: 18px;
-  border-top: 1px solid #383b49;
+  border-top: 1px solid #2e323d;
 }
 
 .cookie-preferences h3 {
   margin: 0 0 12px;
-  font-size: 18px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #FF7900;
 }
 
 .cookie-option {
@@ -115,26 +173,28 @@
   justify-content: space-between;
   align-items: center;
   gap: 16px;
-  padding: 13px 0;
-  border-bottom: 1px solid #383b49;
+  padding: 12px 0;
+  border-bottom: 1px solid #1a1c23;
 }
 
 .cookie-option span {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 4px;
 }
 
 .cookie-option small {
-  color: #c5c9d5;
-  line-height: 1.5;
+  color: #808593;
+  line-height: 1.4;
+  font-size: 12px;
 }
 
 .cookie-option input {
-  width: 19px;
-  height: 19px;
-  accent-color:  #c5c9d5;
+  width: 18px;
+  height: 18px;
+  accent-color: #FF7900;
   flex-shrink: 0;
+  cursor: pointer;
 }
 
 #cookie-save {
@@ -142,40 +202,51 @@
   width: 100%;
 }
 
+/* Re-open knap nederst til venstre */
 .cookie-reopen {
   position: fixed;
   z-index: 9998;
   bottom: 16px;
   left: 16px;
   padding: 10px 14px;
-  background: #171923;
-  color: #fff;
-  border: 1px solid #4b5060;
-  border-radius: 10px;
+  background: #060709;
+  color: #FF7900;
+  border: 1px solid #FF7900;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  
 }
 
-@media (max-width: 540px) {
+.cookie-reopen:hover {
+  background: #FF7900;
+  color: #000000;
+}
+
+/* Mobil-tilpasning */
+@media (max-width: 600px) {
   .cookie-banner {
     right: 12px;
     bottom: 12px;
     width: calc(100% - 24px);
-    padding: 18px;
+    padding: 20px;
     max-height: 90vh;
     overflow-y: auto;
   }
 
   .cookie-content {
-    gap: 10px;
+    gap: 14px;
   }
 
   .cookie-icon {
-    font-size: 28px;
+    width: 32px;
+    height: 32px;
   }
 
   .cookie-text h2 {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .cookie-actions {
@@ -186,3 +257,5 @@
     width: 100%;
   }
 }
+
+  
